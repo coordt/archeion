@@ -1,4 +1,4 @@
--c prod.txt
+-r prod.txt
 
 coverage>=6.1.2
 pre-commit>=2.15.0
