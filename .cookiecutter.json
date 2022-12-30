@@ -1,28 +1,41 @@
 {
-    "_copy_without_render": [
-        ".github/**/*.jinja"
-    ],
-    "_dev_requirements": {
-        "bump2version": ">=1.0.1",
-        "generate-changelog": ">=0.7.6",
-        "git-fame": ">=1.12.2",
-        "pip-tools": ""
-    },
-    "_prod_requirements": {
-        "environs": ">=9.3.5"
-    },
-    "_test_requirements": {
-        "coverage": ">=6.1.2",
-        "pre-commit": ">=2.15.0",
-        "pytest": ">=6.0.0",
-        "pytest-cov": ">=3.0.0"
-    },
-    "author": "Corey Oordt",
-    "email": "coreyoordt@gmail.com",
-    "friendly_name": "Archeion",
-    "github_user": "coordt",
-    "project_name": "archeion",
-    "project_short_description": "An archive of documents",
-    "project_slug": "archeion",
-    "version": "0.1.0"
+  "_copy_without_render": [
+    ".github/**/*.yaml",
+    ".github/**/*.jinja",
+    "docsrc/**/*.rst"
+  ],
+  "_dev_requirements": {
+    "bump2version": ">=1.0.1",
+    "generate-changelog": ">=0.7.6",
+    "git-fame": ">=1.12.2",
+    "pip-tools": ""
+  },
+  "_prod_requirements": {
+    "environs": ">=9.3.5",
+    "rich-click": ""
+  },
+  "_test_requirements": {
+    "coverage": ">=6.1.2",
+    "pre-commit": ">=2.15.0",
+    "pytest": ">=6.0.0",
+    "pytest-cov": ">=3.0.0"
+  },
+  "author": "Corey Oordt",
+  "email": "coreyoordt@gmail.com",
+  "friendly_name": "Archeion",
+  "github_user": "coordt",
+  "project_name": "archeion",
+  "project_short_description": "An archive of documents",
+  "project_slug": "archeion",
+  "version": "0.1.0",
+  "_docs_requirements": {
+    "Sphinx": ">=4.3.0",
+    "furo": "",
+    "ghp-import": "",
+    "linkify-it-py": "",
+    "myst-parser": "",
+    "sphinx-autodoc-typehints": "",
+    "sphinx-click": "",
+    "sphinx-copybutton": ""
+  }
 }

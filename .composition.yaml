@@ -1,0 +1,99 @@
+checkout: null
+commit: 54db9a52e81bee190903adb5711c53bc200a340f
+context:
+  _copy_without_render:
+    - .github/**/*.jinja
+  _dev_requirements:
+    bump2version: '>=1.0.1'
+    generate-changelog: '>=0.7.6'
+    git-fame: '>=1.12.2'
+    pip-tools: ''
+  _prod_requirements:
+    environs: '>=9.3.5'
+  _test_requirements:
+    coverage: '>=6.1.2'
+    pre-commit: '>=2.15.0'
+    pytest: '>=6.0.0'
+    pytest-cov: '>=3.0.0'
+  author: Corey Oordt
+  email: coreyoordt@gmail.com
+  friendly_name: Archeion
+  github_user: coordt
+  project_name: archeion
+  project_short_description: An archive of documents
+  project_slug: archeion
+  version: 0.1.0
+directory: cookiecutter-boilerplate
+merge_strategies:
+  '*.json': comprehensive
+  '*.yaml': comprehensive
+  '*.yml': comprehensive
+no_input: false
+overwrite: []
+overwrite_exclude: []
+password: null
+skip_generation: []
+skip_hooks: false
+skip_if_file_exists: true
+template: /Users/OORDCOR/Projects/datascience-cookiecomposer-templates
+---
+checkout: null
+commit: 54db9a52e81bee190903adb5711c53bc200a340f
+context:
+  _copy_without_render:
+    - .github/**/*.yaml
+  _prod_requirements:
+    rich-click: ''
+  friendly_name: Archeion
+  project_name: archeion
+  project_short_description: An archive of documents
+  project_slug: archeion
+  version: 0.1.0
+directory: cookiecutter-cli
+merge_strategies:
+  '*.cfg': comprehensive
+  '*.json': comprehensive
+  '*.yaml': comprehensive
+  '*.yml': comprehensive
+no_input: false
+overwrite: []
+overwrite_exclude: []
+password: null
+skip_generation: []
+skip_hooks: false
+skip_if_file_exists: true
+template: /Users/OORDCOR/Projects/datascience-cookiecomposer-templates
+---
+checkout: null
+commit: 54db9a52e81bee190903adb5711c53bc200a340f
+context:
+  _copy_without_render:
+    - docsrc/**/*.rst
+  _dev_requirements: {}
+  _docs_requirements:
+    Sphinx: '>=4.3.0'
+    furo: ''
+    ghp-import: ''
+    linkify-it-py: ''
+    myst-parser: ''
+    sphinx-autodoc-typehints: ''
+    sphinx-click: ''
+    sphinx-copybutton: ''
+  _prod_requirements: {}
+  friendly_name: Archeion
+  github_user: coordt
+  project_name: archeion
+  project_slug: archeion
+directory: cookiecutter-docs
+merge_strategies:
+  '*.json': comprehensive
+  '*.yaml': comprehensive
+  '*.yml': comprehensive
+no_input: false
+overwrite: []
+overwrite_exclude: []
+password: null
+skip_generation: []
+skip_hooks: false
+skip_if_file_exists: true
+template: /Users/OORDCOR/Projects/datascience-cookiecomposer-templates
