@@ -54,7 +54,7 @@ repos:
     rev: 6.1.1
     hooks:
       - id: pydocstyle
-        exclude: test.*
+        exclude: test.*|migrations.*
         additional_dependencies: [toml]
   - repo: https://github.com/terrencepreilly/darglint
     rev: v1.8.1
@@ -69,7 +69,7 @@ repos:
     rev: 1.5.0  # or master if you're bold
     hooks:
       - id: interrogate
-        exclude: test.*
+        exclude: test.*|migrations.*
   - repo: local
     hooks:
       - id: check-dependencies

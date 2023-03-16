@@ -168,3 +168,7 @@ site-packages
 reports
 *.env
 todo.txt
+archives/
+index.sqlite3
+.seleniumwire
+node_modules/

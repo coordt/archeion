@@ -19,6 +19,7 @@ show_missing = true
 exclude_lines = [
     "raise NotImplementedError",
     "pragma: no-coverage",
+    "pragma: no cover",
 ]
 
 [tool.pytest.ini_options]
@@ -31,8 +32,11 @@ norecursedirs = [
     "venv",
     "requirements*",
     "lib",
+    "node_modules",
 ]
 python_files = "test*.py"
+addopts = "--cov-report html --cov=archeion"
+DJANGO_SETTINGS_MODULE = "config.settings.test"
 
 [tool.interrogate]
 ignore-init-method = true
@@ -68,5 +72,5 @@ color_output = true
 
 [tool.pydocstyle]
 convention = "google"
-add-ignore = ["D107", "D200", "D212"]
+add-ignore = ["D105", "D106", "D107", "D200", "D212"]
 match = "(?!test_).*\\.py"

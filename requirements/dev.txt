@@ -4,25 +4,25 @@
 #
 #    pip-compile --output-file=dev.txt dev.in
 #
-alabaster==0.7.12
+alabaster==0.7.13
     # via
     #   -r docs.txt
     #   sphinx
-argopt==0.7.1
+argopt==0.8.2
     # via git-fame
 attrs==22.2.0
     # via
     #   -r test.txt
     #   pytest
-babel==2.11.0
+babel==2.12.0
     # via
     #   -r docs.txt
     #   sphinx
-beautifulsoup4==4.11.1
+beautifulsoup4==4.11.2
     # via
     #   -r docs.txt
     #   furo
-build==0.9.0
+build==0.10.0
     # via pip-tools
 bump2version==1.0.1
     # via -r dev.in
@@ -34,7 +34,7 @@ cfgv==3.3.1
     # via
     #   -r test.txt
     #   pre-commit
-charset-normalizer==2.1.1
+charset-normalizer==3.0.1
     # via
     #   -r docs.txt
     #   requests
@@ -46,11 +46,7 @@ click==8.1.3
     #   rich-click
     #   sphinx-click
     #   typer
-commonmark==0.9.1
-    # via
-    #   -r test.txt
-    #   rich
-coverage[toml]==7.0.1
+coverage[toml]==7.2.1
     # via
     #   -r test.txt
     #   pytest-cov
@@ -82,9 +78,9 @@ git-fame==1.15.2
     # via -r dev.in
 gitdb==4.0.10
     # via gitpython
-gitpython==3.1.30
+gitpython==3.1.31
     # via generate-changelog
-identify==2.5.11
+identify==2.5.18
     # via
     #   -r test.txt
     #   pre-commit
@@ -96,7 +92,7 @@ imagesize==1.4.1
     # via
     #   -r docs.txt
     #   sphinx
-iniconfig==1.1.1
+iniconfig==2.0.0
     # via
     #   -r test.txt
     #   pytest
@@ -108,24 +104,27 @@ jinja2==3.1.2
     #   sphinx
 linkify-it-py==2.0.0
     # via -r docs.txt
-markdown-it-py==2.1.0
+markdown-it-py==2.2.0
     # via
     #   -r docs.txt
+    #   -r test.txt
     #   mdit-py-plugins
     #   myst-parser
-markupsafe==2.1.1
+    #   rich
+markupsafe==2.1.2
     # via
     #   -r docs.txt
     #   jinja2
-mdit-py-plugins==0.3.3
+mdit-py-plugins==0.3.4
     # via
     #   -r docs.txt
     #   myst-parser
 mdurl==0.1.2
     # via
     #   -r docs.txt
+    #   -r test.txt
     #   markdown-it-py
-more-itertools==9.0.0
+more-itertools==9.1.0
     # via generate-changelog
 myst-parser==0.18.1
     # via -r docs.txt
@@ -133,18 +132,16 @@ nodeenv==1.7.0
     # via
     #   -r test.txt
     #   pre-commit
-packaging==22.0
+packaging==23.0
     # via
     #   -r docs.txt
     #   -r test.txt
     #   build
     #   pytest
     #   sphinx
-pep517==0.13.0
-    # via build
-pip-tools==6.12.1
+pip-tools==6.12.2
     # via -r dev.in
-platformdirs==2.6.2
+platformdirs==3.0.0
     # via
     #   -r test.txt
     #   virtualenv
@@ -152,16 +149,18 @@ pluggy==1.0.0
     # via
     #   -r test.txt
     #   pytest
-pre-commit==2.21.0
+pre-commit==3.1.1
     # via -r test.txt
-pygments==2.13.0
+pygments==2.14.0
     # via
     #   -r docs.txt
     #   -r test.txt
     #   furo
     #   rich
     #   sphinx
-pytest==7.2.0
+pyproject-hooks==1.0.0
+    # via build
+pytest==7.2.1
     # via
     #   -r test.txt
     #   pytest-cov
@@ -171,25 +170,21 @@ python-dateutil==2.8.2
     # via
     #   -r docs.txt
     #   ghp-import
-pytz==2022.7
-    # via
-    #   -r docs.txt
-    #   babel
 pyyaml==6.0
     # via
     #   -r docs.txt
     #   -r test.txt
     #   myst-parser
     #   pre-commit
-requests==2.28.1
+requests==2.28.2
     # via
     #   -r docs.txt
     #   sphinx
-rich==13.0.0
+rich==13.3.1
     # via
     #   -r test.txt
     #   rich-click
-rich-click==1.6.0
+rich-click==1.6.1
     # via -r test.txt
 ruamel-yaml==0.17.21
     # via generate-changelog
@@ -205,7 +200,7 @@ snowballstemmer==2.2.0
     # via
     #   -r docs.txt
     #   sphinx
-soupsieve==2.3.2.post1
+soupsieve==2.4
     # via
     #   -r docs.txt
     #   beautifulsoup4
@@ -218,7 +213,7 @@ sphinx==5.3.0
     #   sphinx-basic-ng
     #   sphinx-click
     #   sphinx-copybutton
-sphinx-autodoc-typehints==1.19.5
+sphinx-autodoc-typehints==1.22
     # via -r docs.txt
 sphinx-basic-ng==1.0.0b1
     # via
@@ -228,7 +223,7 @@ sphinx-click==4.4.0
     # via -r docs.txt
 sphinx-copybutton==0.5.1
     # via -r docs.txt
-sphinxcontrib-applehelp==1.0.2
+sphinxcontrib-applehelp==1.0.4
     # via
     #   -r docs.txt
     #   sphinx
@@ -236,7 +231,7 @@ sphinxcontrib-devhelp==1.0.2
     # via
     #   -r docs.txt
     #   sphinx
-sphinxcontrib-htmlhelp==2.0.0
+sphinxcontrib-htmlhelp==2.0.1
     # via
     #   -r docs.txt
     #   sphinx
@@ -259,13 +254,13 @@ tomli==2.0.1
     #   -r test.txt
     #   build
     #   coverage
-    #   pep517
+    #   pyproject-hooks
     #   pytest
 tqdm==4.64.1
     # via git-fame
 typer==0.7.0
     # via generate-changelog
-typing-extensions==4.4.0
+typing-extensions==4.5.0
     # via
     #   -r docs.txt
     #   myst-parser
@@ -273,11 +268,11 @@ uc-micro-py==1.0.1
     # via
     #   -r docs.txt
     #   linkify-it-py
-urllib3==1.26.13
+urllib3==1.26.14
     # via
     #   -r docs.txt
     #   requests
-virtualenv==20.17.1
+virtualenv==20.19.0
     # via
     #   -r test.txt
     #   pre-commit
