@@ -1,0 +1,67 @@
+{% comment "required params" %}
+    artifacts: dict of artifacts keyed by name
+    link: Link object
+    metadata: metadata HTML string or None
+{% endcomment %}
+
+  <!-- accordion -->
+  <div id="link-info" class="accordion accordion-flush border mb-3">
+    <div class="accordion-item">
+      <h2 id="link-info-header" class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#link-info-body"
+                aria-expanded="false" aria-controls="link-info-body">
+          {% if link.favicon_url %}
+            <img src="{{ link.favicon_url }}" alt="favicon" width="16" height="16">
+            &nbsp;
+          {% endif %}
+          {% firstof link.title link.url %}
+        </button>
+      </h2>
+      <div id="link-info-body" class="accordion-collapse collapse" aria-labelledby="link-info-header"
+           data-bs-parent="#link-info">
+        <div class="accordion-body">
+          <div class="mb-3">
+            <label id="tags-label" for="tags" class="form-label">Tags</label>
+            <div id="tags" class="form-control">
+              {% for tag in link.tags.all %}
+                <a href="{{ tag.get_absolute_url }}" aria-labelledby="tags-label" class="btn btn-light btn-sm"
+                   role="button">{{ tag.name }}</a>
+              {% empty %}
+                No tags
+              {% endfor %}
+            </div>
+          </div>
+          <div class="mb-3">
+            <label id="url-label" for="url" class="form-label">URL</label>
+            <div id="url" class="form-control" aria-labelledby="url-label"><a href="{{ link.url }}">{{ link.url }}
+              <i class="fa-solid fa-external-link"></i></a></div>
+          </div>
+          {% if metadata %}
+            <div class="mb-3">
+              <label id="url-label" for="url" class="form-label">Metadata</label>
+              {{ metadata }}
+            </div>
+          {% endif %}
+          <div class="row mb-3">
+            <div class="col">
+              <label id="content-type-label" for="content-type" class="form-label">Content Type</label>
+              <input id="content-type" type="text" class="form-control" value="{{ link.content_type }}">
+            </div>
+            <div class="col">
+              <label id="ld-type-label" for="ld-type" class="form-label">Linked Data Type</label>
+              <input id="ld-type" type="text" class="form-control" value="{{ link.ld_type }}">
+            </div>
+            <div class="col">
+              <label id="created-at-label" for="created-at" class="form-label">Created</label>
+              <input id="created-at" type="text" class="form-control" value="{{ link.created_at }}">
+            </div>
+            <div class="col">
+              <label id="updated-at-label" for="updated-at" class="form-label">Updated</label>
+              <input id="updated-at" type="text" class="form-control" value="{{ link.updated_at }}">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end accordion -->

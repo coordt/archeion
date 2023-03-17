@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}{{ artifact.plugin_name }} | {{ artifact.link_id }}{% endblock title %}
+
+{% block navigation %}
+  {% include "includes/_link_accordion.html" with link=artifact.link artifacts=artifacts metadata=metadata %}
+  {% include "includes/_link_tabs.html" with tabs=tabs %}
+{% endblock navigation %}
+{% block content %}
+    <iframe src="{{ MEDIA_URL }}{{ artifact.archive_output_path }}"
+            title="Content of artifact {{ artifact.plugin_name }} for {{ artifact.link }}" style="
+      position: relative;
+      {#top: 0;#}
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      border: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      z-index: 999999;
+      height: 100%;
+      "></iframe>
+{% endblock content %}

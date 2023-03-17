@@ -1,0 +1,81 @@
+header {
+  grid-area: header;
+}
+
+#nav {
+  grid-area: navigation;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow: hidden;
+  height: 100vh;
+}
+
+main {
+  grid-area: content;
+}
+
+.wrapper {
+  height: 100%;
+  display: grid;
+  grid-template-rows: min-content min-content 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: "header" "navigation" "content";
+}
+
+.alert-debug {
+  color: black;
+  background-color: white;
+  border-color: #d6e9c6;
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
+}
+
+table.table thead > tr > th.orderable {
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5rem;
+  /*box-sizing: content-box;*/
+}
+
+table.table td a {
+  text-decoration: none;
+  color: var(--bs-table-color);
+}
+
+table.table thead > tr > th.orderable > a {
+  text-decoration: none;
+  color: var(--bs-table-color);
+  display: block;
+}
+
+th.orderable > a::after {
+  font-weight: 900;
+  font-family: 'Font Awesome 6 Free';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: var(--fa-display, inline-block);
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  content: "\f0dc";
+  position: absolute;
+  right: .5rem;
+}
+
+th.asc.orderable > a::after {
+  content: "\f15d";
+}
+
+th.desc.orderable > a::after {
+  content: "\f881";
+}

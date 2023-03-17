@@ -1,0 +1,11 @@
+{% comment "parameters" %}
+    tabs: the tabs
+{% endcomment %}
+<ul class="nav nav-tabs">
+  {% for tab in tabs %}
+    <li class="nav-item">
+      <a class="nav-link{% if tab.title == artifact.plugin_name %} active" aria-current="page"
+         href="#{% else %}" href="{{ tab.url }}{% endif %}">{{ tab.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

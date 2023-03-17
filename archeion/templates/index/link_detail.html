@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{ object.id }}{% endblock title %}
+
+{% block navigation %}
+  {% include "includes/_link_accordion.html" with link=object artifacts=artifacts metadata=metadata %}
+  {% include "includes/_link_tabs.html" with tabs=tabs %}
+{% endblock navigation %}
+
+{% block content %}
+{% endblock content %}
