@@ -44,7 +44,7 @@ repos:
     rev: 1.7.4
     hooks:
       - id: bandit
-        args: [--skip, "B101,B104", --recursive, "-q"]
+        args: [--skip, "B101,B104,B603", --recursive, "-q"]
   - repo: https://github.com/PyCQA/flake8
     rev: 6.0.0
     hooks:

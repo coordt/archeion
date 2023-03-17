@@ -1,0 +1,11 @@
+{
+  "name": "archeion",
+  "version": "0.1.0",
+  "description": "Archeion",
+  "author": "Corey Oordt <coreyoordt@gmail.com>",
+  "repository": "github:coordt/archeion",
+  "license": "BSD",
+  "dependencies": {
+    "single-filez-cli": "latest"
+  }
+}
