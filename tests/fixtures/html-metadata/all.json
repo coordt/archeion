@@ -1,0 +1,186 @@
+{
+  "dublincore": [
+    {
+      "elements": [
+        {
+          "URI": "http://purl.org/dc/elements/1.1/title",
+          "content": "Testing Metadata Extraction with Catalog | by Pat Down | TestRunner | Large Site",
+          "name": "title"
+        },
+        {
+          "URI": "http://purl.org/dc/elements/1.1/description",
+          "content": "TL;DR \u2014 I talk about TestRunner\u2019s latest testing tests, Catalog [GitHub, PyPI, Docs], for extracting and evaluating metadata stuff systems.",
+          "name": "description"
+        }
+      ],
+      "namespaces": {},
+      "terms": []
+    }
+  ],
+  "github": {
+    "keywords": []
+  },
+  "html": [
+    {
+      "author": "Pat Down",
+      "description": "TL;DR \u2014 I talk about TestRunner\u2019s latest testing tests, Catalog [GitHub, PyPI, Docs], for extracting and evaluating metadata stuff systems.",
+      "referrer": "unsafe-url",
+      "robots": "index,follow,max-image-preview:large",
+      "theme-color": "#000000",
+      "title": "Testing Metadata Extraction with Catalog | by Pat Down | TestRunner | Large Site",
+      "viewport": "width=device-width,minimum-scale=1,initial-scale=1"
+    }
+  ],
+  "json-ld": [
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "author": {
+        "@type": "Person",
+        "name": "Pat Down",
+        "url": "https://large-site.com/@patdown"
+      },
+      "creator": [
+        "Pat Down"
+      ],
+      "dateCreated": "2021-05-04T19:11:02.311Z",
+      "dateModified": "2021-06-20T18:45:25.160Z",
+      "datePublished": "2021-05-04T19:11:02.311Z",
+      "description": "TL;DR \u2014 I talk about TestRunner\u2019s latest testing tests, Catalog [GitHub, PyPI, Docs], for extracting and evaluating metadata stuff systems.",
+      "headline": "Testing Metadata Extraction with Catalog",
+      "identifier": "18c73ab30fbd",
+      "image": [
+        "https://miro.large-site.com/max/1200/0*qSV9c1tAv-TN8Iae"
+      ],
+      "mainEntityOfPage": "https://large-site.com/testrunner/testing-metadata-extraction-with-catalog-18c73ab30fbd",
+      "name": "Testing Metadata Extraction with Catalog",
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type": "ImageObject",
+          "height": 60,
+          "url": "https://miro.large-site.com/max/546/1*cAawW8I5BpAOGBqk-Y8OQg.png",
+          "width": 273
+        },
+        "name": "TestRunner",
+        "url": "https://large-site.com/testrunner"
+      },
+      "url": "https://large-site.com/testrunner/testing-metadata-extraction-with-catalog-18c73ab30fbd"
+    }
+  ],
+  "microdata": [],
+  "microformat": [],
+  "opengraph": [
+    {
+      "namespace": {
+        "article": "http://ogp.me/ns/article#",
+        "og": "http://ogp.me/ns#"
+      },
+      "properties": [
+        [
+          "og:url",
+          "https://large-site.com/testrunner/testing-metadata-extraction-with-catalog-18c73ab30fbd"
+        ],
+        [
+          "og:site_name",
+          "Large Site"
+        ],
+        [
+          "og:type",
+          "article"
+        ],
+        [
+          "og:title",
+          "Testing Metadata Extraction with Catalog"
+        ],
+        [
+          "og:description",
+          "Getting data, training a model, and talking about beer!"
+        ],
+        [
+          "og:image",
+          "https://miro.large-site.com/max/1200/0*qSV9c1tAv-TN8Iae"
+        ],
+        [
+          "article:published_time",
+          "2021-05-04T20:16:56.056Z"
+        ],
+        [
+          "article:author",
+          "https://large-site.com/@patdown"
+        ]
+      ]
+    }
+  ],
+  "rdfa": [
+    {
+      "@id": "",
+      "al:web:url": [
+        {
+          "@value": "https://large-site.com/testrunner/testing-metadata-extraction-with-catalog-18c73ab30fbd"
+        }
+      ],
+      "http://ogp.me/ns#description": [
+        {
+          "@value": "Getting data, training a model, and talking about beer!"
+        }
+      ],
+      "http://ogp.me/ns#image": [
+        {
+          "@value": "https://miro.large-site.com/max/1200/0*qSV9c1tAv-TN8Iae"
+        }
+      ],
+      "http://ogp.me/ns#site_name": [
+        {
+          "@value": "Large Site"
+        }
+      ],
+      "http://ogp.me/ns#title": [
+        {
+          "@value": "Testing Metadata Extraction with Catalog"
+        }
+      ],
+      "http://ogp.me/ns#type": [
+        {
+          "@value": "article"
+        }
+      ],
+      "http://ogp.me/ns#url": [
+        {
+          "@value": "https://large-site.com/testrunner/testing-metadata-extraction-with-catalog-18c73ab30fbd"
+        }
+      ],
+      "http://ogp.me/ns/article#author": [
+        {
+          "@value": "https://large-site.com/@patdown"
+        }
+      ],
+      "http://ogp.me/ns/article#published_time": [
+        {
+          "@value": "2021-05-04T20:16:56.056Z"
+        }
+      ],
+      "https://dev.twitter.com/cards#description": [
+        {
+          "@value": "Extracting data, testing thinggs, and doing anything else!"
+        }
+      ],
+      "https://dev.twitter.com/cards#title": [
+        {
+          "@value": "Testing Metadata Extraction with Catalog"
+        }
+      ]
+    }
+  ],
+  "twitter": [
+    {
+      "card": "summary_large_image",
+      "data1": "10 min read",
+      "description": "Extracting data, testing thinggs, and doing anything else!",
+      "image:src": "https://miro.large-site.com/max/1200/0*qSV9c1tAv-TN8Iae",
+      "label1": "Reading time",
+      "site": "@testrunner",
+      "title": "Testing Metadata Extraction with Catalog"
+    }
+  ]
+}

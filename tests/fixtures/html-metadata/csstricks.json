@@ -1,0 +1,303 @@
+{
+  "dublincore": [
+    {
+      "elements": [
+        {
+          "URI": "http://purl.org/dc/elements/1.1/description",
+          "content": "I'm no English major, but as a writer and consumer of loads of educational (mostly tech) writing, I've come to notice a number of words and phrases that",
+          "name": "description"
+        }
+      ],
+      "namespaces": {},
+      "terms": []
+    }
+  ],
+  "github": {
+    "keywords": []
+  },
+  "html": [
+    {
+      "description": "I'm no English major, but as a writer and consumer of loads of educational (mostly tech) writing, I've come to notice a number of words and phrases that",
+      "jetpack-boost-ready": "true",
+      "monetization": "$ilp.uphold.com/biyqg2MkQKbe",
+      "msapplication-TileImage": "https://i1.wp.com/css-tricks.com/wp-content/uploads/2021/07/star.png?fit=180%2C180&ssl=1",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "theme-color": "#ff7a18",
+      "title": "Words To Avoid in Educational Writing | CSS-Tricks",
+      "viewport": "width=device-width"
+    }
+  ],
+  "json-ld": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@id": "https://css-tricks.com/#organization",
+          "@type": "Organization",
+          "image": {
+            "@id": "https://css-tricks.com/#logo"
+          },
+          "logo": {
+            "@id": "https://css-tricks.com/#logo",
+            "@type": "ImageObject",
+            "caption": "CSS-Tricks",
+            "contentUrl": "https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/06/akqRGyta_400x400.jpg?fit=%2C&ssl=1",
+            "inLanguage": "en-US",
+            "url": "https://i0.wp.com/css-tricks.com/wp-content/uploads/2019/06/akqRGyta_400x400.jpg?fit=%2C&ssl=1"
+          },
+          "name": "CSS-Tricks",
+          "sameAs": [
+            "https://www.facebook.com/CSSTricks",
+            "https://www.instagram.com/real_css_tricks/",
+            "https://www.youtube.com/channel/UCADyUOnhyEoQqrw_RrsGleA",
+            "https://twitter.com/CSS"
+          ],
+          "url": "https://css-tricks.com/"
+        },
+        {
+          "@id": "https://css-tricks.com/#website",
+          "@type": "WebSite",
+          "description": "Tips, Tricks, and Techniques on using Cascading Style Sheets.",
+          "inLanguage": "en-US",
+          "name": "CSS-Tricks",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "query-input": "required name=search_term_string",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://css-tricks.com/?s={search_term_string}"
+              }
+            }
+          ],
+          "publisher": {
+            "@id": "https://css-tricks.com/#organization"
+          },
+          "url": "https://css-tricks.com/"
+        },
+        {
+          "@id": "https://css-tricks.com/words-avoid-educational-writing/#webpage",
+          "@type": "WebPage",
+          "breadcrumb": {
+            "@id": "https://css-tricks.com/words-avoid-educational-writing/#breadcrumb"
+          },
+          "dateModified": "2014-07-30T21:57:15+00:00",
+          "datePublished": "2014-01-05T15:47:02+00:00",
+          "description": "I'm no English major, but as a writer and consumer of loads of educational (mostly tech) writing, I've come to notice a number of words and phrases that",
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@id": "https://css-tricks.com/#website"
+          },
+          "name": "Words To Avoid in Educational Writing | CSS-Tricks",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://css-tricks.com/words-avoid-educational-writing/"
+              ]
+            }
+          ],
+          "url": "https://css-tricks.com/words-avoid-educational-writing/"
+        },
+        {
+          "@id": "https://css-tricks.com/words-avoid-educational-writing/#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://css-tricks.com/",
+              "name": "Home",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "name": "Words To Avoid in Educational Writing",
+              "position": 2
+            }
+          ]
+        },
+        {
+          "@id": "https://css-tricks.com/words-avoid-educational-writing/#article",
+          "@type": "Article",
+          "articleSection": [
+            "Article"
+          ],
+          "author": {
+            "@id": "https://css-tricks.com/#/schema/person/439366a88619858a797824d5498cf50f"
+          },
+          "dateModified": "2014-07-30T21:57:15+00:00",
+          "datePublished": "2014-01-05T15:47:02+00:00",
+          "headline": "Words To Avoid in Educational Writing",
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@id": "https://css-tricks.com/words-avoid-educational-writing/#webpage"
+          },
+          "mainEntityOfPage": {
+            "@id": "https://css-tricks.com/words-avoid-educational-writing/#webpage"
+          },
+          "publisher": {
+            "@id": "https://css-tricks.com/#organization"
+          },
+          "wordCount": 580
+        },
+        {
+          "@id": "https://css-tricks.com/#/schema/person/439366a88619858a797824d5498cf50f",
+          "@type": "Person",
+          "description": "Founder, writer, designer, spam-deleter, email personality",
+          "image": {
+            "@id": "https://css-tricks.com/#personlogo",
+            "@type": "ImageObject",
+            "caption": "Chris Coyier",
+            "contentUrl": "https://secure.gravatar.com/avatar/8081b26e05bb4354f7d65ffc34cbbd67?s=96&d=retro&r=pg",
+            "inLanguage": "en-US",
+            "url": "https://secure.gravatar.com/avatar/8081b26e05bb4354f7d65ffc34cbbd67?s=96&d=retro&r=pg"
+          },
+          "name": "Chris Coyier",
+          "sameAs": [
+            "http://chriscoyier.net",
+            "https://twitter.com/chriscoyier"
+          ],
+          "url": "https://css-tricks.com/author/chriscoyier/"
+        }
+      ]
+    }
+  ],
+  "microdata": [],
+  "microformat": [],
+  "opengraph": [
+    {
+      "namespace": {
+        "article": "http://ogp.me/ns/article#",
+        "og": "http://ogp.me/ns#"
+      },
+      "properties": [
+        [
+          "og:locale",
+          "en_US"
+        ],
+        [
+          "og:type",
+          "article"
+        ],
+        [
+          "og:title",
+          "Words To Avoid in Educational Writing"
+        ],
+        [
+          "og:description",
+          "I'm no English major, but as a writer and consumer of loads of educational (mostly tech) writing, I've come to notice a number of words and phrases that"
+        ],
+        [
+          "og:url",
+          "https://css-tricks.com/words-avoid-educational-writing/"
+        ],
+        [
+          "og:site_name",
+          "CSS-Tricks"
+        ],
+        [
+          "article:publisher",
+          "https://www.facebook.com/CSSTricks"
+        ],
+        [
+          "article:published_time",
+          "2014-01-05T15:47:02+00:00"
+        ],
+        [
+          "article:modified_time",
+          "2014-07-30T21:57:15+00:00"
+        ],
+        [
+          "og:image",
+          "https://css-tricks.com/wp-json/social-image-generator/v1/image/159581"
+        ],
+        [
+          "og:image:width",
+          "1200"
+        ],
+        [
+          "og:image:height",
+          "630"
+        ]
+      ]
+    }
+  ],
+  "rdfa": [
+    {
+      "@id": "",
+      "http://ogp.me/ns#description": [
+        {
+          "@value": "I'm no English major, but as a writer and consumer of loads of educational (mostly tech) writing, I've come to notice a number of words and phrases that"
+        }
+      ],
+      "http://ogp.me/ns#image": [
+        {
+          "@value": "https://css-tricks.com/wp-json/social-image-generator/v1/image/159581"
+        }
+      ],
+      "http://ogp.me/ns#image:height": [
+        {
+          "@value": "630"
+        }
+      ],
+      "http://ogp.me/ns#image:width": [
+        {
+          "@value": "1200"
+        }
+      ],
+      "http://ogp.me/ns#locale": [
+        {
+          "@value": "en_US"
+        }
+      ],
+      "http://ogp.me/ns#site_name": [
+        {
+          "@value": "CSS-Tricks"
+        }
+      ],
+      "http://ogp.me/ns#title": [
+        {
+          "@value": "Words To Avoid in Educational Writing"
+        }
+      ],
+      "http://ogp.me/ns#type": [
+        {
+          "@value": "article"
+        }
+      ],
+      "http://ogp.me/ns#url": [
+        {
+          "@value": "https://css-tricks.com/words-avoid-educational-writing/"
+        }
+      ],
+      "http://ogp.me/ns/article#modified_time": [
+        {
+          "@value": "2014-07-30T21:57:15+00:00"
+        }
+      ],
+      "http://ogp.me/ns/article#published_time": [
+        {
+          "@value": "2014-01-05T15:47:02+00:00"
+        }
+      ],
+      "http://ogp.me/ns/article#publisher": [
+        {
+          "@value": "https://www.facebook.com/CSSTricks"
+        }
+      ],
+      "https://api.w.org/": [
+        {
+          "@id": "https://css-tricks.com/wp-json/"
+        }
+      ]
+    }
+  ],
+  "twitter": [
+    {
+      "card": "summary_large_image",
+      "creator": "@chriscoyier",
+      "image": "https://css-tricks.com/wp-json/social-image-generator/v1/image/159581",
+      "site": "@CSS"
+    }
+  ]
+}

@@ -1,0 +1,490 @@
+{
+  "dublincore": [
+    {
+      "elements": [
+        {
+          "URI": "http://purl.org/dc/elements/1.1/title",
+          "content": "Fetching Better Beer Recommendations with Collie (Part 1) | by Nathan Cooper Jones | ShopRunner | Medium",
+          "data-rh": "true",
+          "name": "title"
+        },
+        {
+          "URI": "http://purl.org/dc/elements/1.1/description",
+          "content": "TL;DR \u2014 I talk about ShopRunner\u2019s latest open source library, Collie [GitHub, PyPI, Docs], for training and evaluating deep learning recommendations systems. We use Collie to train a model to\u2026",
+          "data-rh": "true",
+          "name": "description"
+        }
+      ],
+      "namespaces": {},
+      "terms": []
+    }
+  ],
+  "github": {
+    "keywords": []
+  },
+  "html": [
+    {
+      "author": "Nathan Cooper Jones",
+      "description": "TL;DR \u2014 I talk about ShopRunner\u2019s latest open source library, Collie [GitHub, PyPI, Docs], for training and evaluating deep learning recommendations systems. We use Collie to train a model to\u2026",
+      "referrer": "unsafe-url",
+      "robots": "index,follow,max-image-preview:large",
+      "theme-color": "#000000",
+      "title": "Fetching Better Beer Recommendations with Collie (Part 1) | by Nathan Cooper Jones | ShopRunner | Medium",
+      "viewport": "width=device-width,minimum-scale=1,initial-scale=1"
+    }
+  ],
+  "json-ld": [
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "author": {
+        "@type": "Person",
+        "name": "Nathan Cooper Jones",
+        "url": "https://medium.com/@nathancooperjones"
+      },
+      "creator": [
+        "Nathan Cooper Jones"
+      ],
+      "dateCreated": "2021-05-04T19:11:02.311Z",
+      "dateModified": "2021-06-20T18:45:25.160Z",
+      "datePublished": "2021-05-04T19:11:02.311Z",
+      "description": "TL;DR \u2014 I talk about ShopRunner\u2019s latest open source library, Collie [GitHub, PyPI, Docs], for training and evaluating deep learning recommendations systems. We use Collie to train a model to\u2026",
+      "headline": "Fetching Better Beer Recommendations with Collie (Part 1)",
+      "identifier": "18c73ab30fbd",
+      "image": [
+        "https://miro.medium.com/max/1200/0*qSV9c1tAv-TN8Iae"
+      ],
+      "mainEntityOfPage": "https://medium.com/shoprunner/fetching-better-beer-recommendations-with-collie-part-1-18c73ab30fbd",
+      "name": "Fetching Better Beer Recommendations with Collie (Part 1)",
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type": "ImageObject",
+          "height": 60,
+          "url": "https://miro.medium.com/max/546/1*cAawW8I5BpAOGBqk-Y8OQg.png",
+          "width": 273
+        },
+        "name": "ShopRunner",
+        "url": "https://medium.com/shoprunner"
+      },
+      "url": "https://medium.com/shoprunner/fetching-better-beer-recommendations-with-collie-part-1-18c73ab30fbd"
+    }
+  ],
+  "microdata": [],
+  "microformat": [],
+  "opengraph": [
+    {
+      "namespace": {
+        "article": "http://ogp.me/ns/article#",
+        "og": "http://ogp.me/ns#"
+      },
+      "properties": [
+        [
+          "og:site_name",
+          "Medium"
+        ],
+        [
+          "og:type",
+          "article"
+        ],
+        [
+          "article:published_time",
+          "2021-05-04T20:16:56.056Z"
+        ],
+        [
+          "og:title",
+          "Fetching Better Beer Recommendations with Collie (Part 1)"
+        ],
+        [
+          "og:description",
+          "Getting data, training a model, and talking about beer!"
+        ],
+        [
+          "og:url",
+          "https://medium.com/shoprunner/fetching-better-beer-recommendations-with-collie-part-1-18c73ab30fbd"
+        ],
+        [
+          "og:image",
+          "https://miro.medium.com/max/1200/0*qSV9c1tAv-TN8Iae"
+        ],
+        [
+          "article:author",
+          "https://medium.com/@nathancooperjones"
+        ]
+      ]
+    }
+  ],
+  "rdfa": [
+    {
+      "@id": "",
+      "al:android:app_name": [
+        {
+          "@value": "Medium"
+        }
+      ],
+      "al:android:package": [
+        {
+          "@value": "com.medium.reader"
+        }
+      ],
+      "al:android:url": [
+        {
+          "@value": "medium://p/18c73ab30fbd"
+        }
+      ],
+      "al:ios:app_name": [
+        {
+          "@value": "Medium"
+        }
+      ],
+      "al:ios:app_store_id": [
+        {
+          "@value": "828256236"
+        }
+      ],
+      "al:ios:url": [
+        {
+          "@value": "medium://p/18c73ab30fbd"
+        }
+      ],
+      "al:web:url": [
+        {
+          "@value": "https://medium.com/shoprunner/fetching-better-beer-recommendations-with-collie-part-1-18c73ab30fbd"
+        }
+      ],
+      "http://ogp.me/ns#description": [
+        {
+          "@value": "Getting data, training a model, and talking about beer!"
+        }
+      ],
+      "http://ogp.me/ns#image": [
+        {
+          "@value": "https://miro.medium.com/max/1200/0*qSV9c1tAv-TN8Iae"
+        }
+      ],
+      "http://ogp.me/ns#site_name": [
+        {
+          "@value": "Medium"
+        }
+      ],
+      "http://ogp.me/ns#title": [
+        {
+          "@value": "Fetching Better Beer Recommendations with Collie (Part 1)"
+        }
+      ],
+      "http://ogp.me/ns#type": [
+        {
+          "@value": "article"
+        }
+      ],
+      "http://ogp.me/ns#url": [
+        {
+          "@value": "https://medium.com/shoprunner/fetching-better-beer-recommendations-with-collie-part-1-18c73ab30fbd"
+        }
+      ],
+      "http://ogp.me/ns/article#author": [
+        {
+          "@value": "https://medium.com/@nathancooperjones"
+        }
+      ],
+      "http://ogp.me/ns/article#published_time": [
+        {
+          "@value": "2021-05-04T20:16:56.056Z"
+        }
+      ],
+      "http://ogp.me/ns/fb#app_id": [
+        {
+          "@value": "542599432471018"
+        }
+      ],
+      "https://dev.twitter.com/cards#description": [
+        {
+          "@value": "Getting data, training a model, and talking about beer!"
+        }
+      ],
+      "https://dev.twitter.com/cards#title": [
+        {
+          "@value": "Fetching Better Beer Recommendations with Collie (Part 1)"
+        }
+      ]
+    },
+    {
+      "@id": "_:N1088387b7d12461cb6af86f4c033bc40",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nae68eb29f165425e90d4ff4a1fffaa18",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nfd8e157ebe7240aeaa3a44bc9fd76135",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Ncd8e28455a494b73a8fd57b3a5758401",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N3358ba11798942f2b244542e1e3f0260",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N222f742d208c41cb92477c56e2c5365f",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N74111286dc0d4d7d9349c3e386aa1c36",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N8711b216730a456a8583d7eb36f63596",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Ndcf592db225c45fd8e60865c52310ec0",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N9bf656d75485445c98f4a806d7364ea0",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N34ae4a0ef97d4b8ea9398403d556ec53",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N0b65806fed0041299d6885455774e319",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N67285a309fa144e5bca5b21b4cc32bb8",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N11065281ac514b21805fced01dad78b2",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N8caa23e932714746baa66c6f8859bc4b",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N7d9c3ac5eb984fa6b6f82dc67c75a873",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N610442774cdf4722baa93fe9b81bbc7d",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nd1f15510c18640a9b9f4c1ff52760343",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nbb117adad55547a587b0631e5d0c0c99",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N04a3df7fef434e4eaeb1c331be3ad841",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N041d0a05c7714b6aa1e9711f611f5994",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Na8063c4a5c304c6ca30ed363c9093ab4",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N8695241d6b8a4594b1152f1ddf30f53e",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N80bdb776d9b4449d81267403cbbe101c",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:Ncb4cb4c6a5ff41ee9498682c6dc951a2",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N1f2a30a9294b4ee9a3c3478790e6b773",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nac790d743ef445a8aa9f8a087a21ae8e",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N73537598cf30497597875849896f8cdf",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nb0d05759bd6a4d54bdaef5c7cfb30ded",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N5278aa8d1731451394602af9c8c5d17c",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Ne07a3d89567745efb07a31352ab67889",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N3f815b93d682434b9e57ba3e86f1bdb0",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N499b75610de7458cbf8474b36804e831",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    }
+  ],
+  "twitter": [
+    {
+      "app:id:iphone": "828256236",
+      "app:name:iphone": "Medium",
+      "app:url:iphone": "medium://p/18c73ab30fbd",
+      "card": "summary_large_image",
+      "data1": "10 min read",
+      "description": "Getting data, training a model, and talking about beer!",
+      "image:src": "https://miro.medium.com/max/1200/0*qSV9c1tAv-TN8Iae",
+      "label1": "Reading time",
+      "site": "@shoprunner",
+      "title": "Fetching Better Beer Recommendations with Collie (Part 1)"
+    }
+  ]
+}

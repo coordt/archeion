@@ -1,0 +1,140 @@
+{
+  "dublincore": [
+    {
+      "elements": [],
+      "namespaces": {},
+      "terms": []
+    }
+  ],
+  "github": {
+    "keywords": []
+  },
+  "html": [{"title": "The Rock (1996)"}],
+  "json-ld": [],
+  "microdata": [],
+  "microformat": [],
+  "opengraph": [
+    {
+      "namespace": {
+        "article": "http://ogp.me/ns/article#",
+        "og": "http://ogp.me/ns#"
+      },
+      "properties": [
+        [
+          "og:title",
+          "The Rock"
+        ],
+        [
+          "og:type",
+          "video.movie"
+        ],
+        [
+          "og:url",
+          "https://www.imdb.com/title/tt0117500/"
+        ],
+        [
+          "og:image",
+          "https://ia.media-imdb.com/images/rock.jpg"
+        ],
+        [
+          "og:image:type",
+          "image/jpeg"
+        ],
+        [
+          "og:image:width",
+          "400"
+        ],
+        [
+          "og:image:height",
+          "300"
+        ],
+        [
+          "og:image:alt",
+          "A rock"
+        ],
+        [
+          "og:image",
+          "https://example.com/rock2.jpg"
+        ],
+        [
+          "og:image",
+          "https://example.com/rock3.jpg"
+        ],
+        [
+          "og:image:height",
+          "1000"
+        ],
+        [
+          "article:author",
+          "Pat Down"
+        ],
+        [
+          "article:author",
+          "Lift Up"
+        ]
+      ]
+    }
+  ],
+  "rdfa": [
+    {
+      "@id": "",
+      "http://ogp.me/ns#image": [
+        {
+          "@value": "https://ia.media-imdb.com/images/rock.jpg"
+        },
+        {
+          "@value": "https://example.com/rock2.jpg"
+        },
+        {
+          "@value": "https://example.com/rock3.jpg"
+        }
+      ],
+      "http://ogp.me/ns#image:alt": [
+        {
+          "@value": "A rock"
+        }
+      ],
+      "http://ogp.me/ns#image:height": [
+        {
+          "@value": "300"
+        },
+        {
+          "@value": "1000"
+        }
+      ],
+      "http://ogp.me/ns#image:type": [
+        {
+          "@value": "image/jpeg"
+        }
+      ],
+      "http://ogp.me/ns#image:width": [
+        {
+          "@value": "400"
+        }
+      ],
+      "http://ogp.me/ns#title": [
+        {
+          "@value": "The Rock"
+        }
+      ],
+      "http://ogp.me/ns#type": [
+        {
+          "@value": "video.movie"
+        }
+      ],
+      "http://ogp.me/ns#url": [
+        {
+          "@value": "https://www.imdb.com/title/tt0117500/"
+        }
+      ],
+      "http://ogp.me/ns/article#author": [
+        {
+          "@value": "Lift Up"
+        },
+        {
+          "@value": "Pat Down"
+        }
+      ]
+    }
+  ]
+}

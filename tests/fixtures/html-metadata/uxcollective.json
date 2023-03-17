@@ -1,0 +1,346 @@
+{
+  "dublincore": [
+    {
+      "elements": [
+        {
+          "URI": "http://purl.org/dc/elements/1.1/title",
+          "content": "How to design data visualizations that are actually valuable | by Angelica Gutierrez | Jul, 2021 | UX Collective",
+          "data-rh": "true",
+          "name": "title"
+        },
+        {
+          "URI": "http://purl.org/dc/elements/1.1/description",
+          "content": "Great visualizations help people quickly and accurately make sense of the data so they can make appropriate decisions. These types of visualizations optimize for the human visual system making\u2026",
+          "data-rh": "true",
+          "name": "description"
+        }
+      ],
+      "namespaces": {},
+      "terms": []
+    }
+  ],
+  "github": {
+    "keywords": []
+  },
+  "html": [
+    {
+      "author": "Angelica Gutierrez",
+      "description": "Great visualizations help people quickly and accurately make sense of the data so they can make appropriate decisions. These types of visualizations optimize for the human visual system making\u2026",
+      "referrer": "unsafe-url",
+      "robots": "index,follow,max-image-preview:large",
+      "theme-color": "#000000",
+      "title": "How to design data visualizations that are actually valuable | by Angelica Gutierrez | Jul, 2021 | UX Collective",
+      "viewport": "width=device-width,minimum-scale=1,initial-scale=1"
+    }
+  ],
+  "json-ld": [
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "author": {
+        "@type": "Person",
+        "name": "Angelica Gutierrez",
+        "url": "https://angelica08.medium.com"
+      },
+      "creator": [
+        "Angelica Gutierrez"
+      ],
+      "dateCreated": "2021-07-11T01:15:44.247Z",
+      "dateModified": "2021-07-21T17:56:26.656Z",
+      "datePublished": "2021-07-11T01:15:44.247Z",
+      "description": "Great visualizations help people quickly and accurately make sense of the data so they can make appropriate decisions. These types of visualizations optimize for the human visual system making\u2026",
+      "headline": "How to design data visualizations that are actually valuable",
+      "identifier": "e8b752835b9a",
+      "image": [
+        "https://miro.medium.com/max/1200/1*5kQX7PO5R-ooD-Oo6_S5uw.png"
+      ],
+      "mainEntityOfPage": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",
+      "name": "How to design data visualizations that are actually valuable",
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type": "ImageObject",
+          "height": 60,
+          "url": "https://miro.medium.com/max/720/1*9V9oqYyYnfP5yy7cb7YTMQ.png",
+          "width": 360
+        },
+        "name": "UX Collective",
+        "url": "uxdesign.cc"
+      },
+      "url": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a"
+    }
+  ],
+  "microdata": [],
+  "microformat": [],
+  "opengraph": [
+    {
+      "namespace": {
+        "article": "http://ogp.me/ns/article#",
+        "og": "http://ogp.me/ns#"
+      },
+      "properties": [
+        [
+          "og:site_name",
+          "Medium"
+        ],
+        [
+          "og:type",
+          "article"
+        ],
+        [
+          "article:published_time",
+          "2021-07-21T17:53:30.905Z"
+        ],
+        [
+          "og:title",
+          "How to design data visualizations that are actually valuable"
+        ],
+        [
+          "og:description",
+          "A guide to understanding how people interpret data and choosing elements to create clear visualizations"
+        ],
+        [
+          "og:url",
+          "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a"
+        ],
+        [
+          "og:image",
+          "https://miro.medium.com/max/1200/1*5kQX7PO5R-ooD-Oo6_S5uw.png"
+        ],
+        [
+          "article:author",
+          "https://angelica08.medium.com"
+        ]
+      ]
+    }
+  ],
+  "rdfa": [
+    {
+      "@id": "",
+      "al:android:app_name": [
+        {
+          "@value": "Medium"
+        }
+      ],
+      "al:android:package": [
+        {
+          "@value": "com.medium.reader"
+        }
+      ],
+      "al:android:url": [
+        {
+          "@value": "medium://p/e8b752835b9a"
+        }
+      ],
+      "al:ios:app_name": [
+        {
+          "@value": "Medium"
+        }
+      ],
+      "al:ios:app_store_id": [
+        {
+          "@value": "828256236"
+        }
+      ],
+      "al:ios:url": [
+        {
+          "@value": "medium://p/e8b752835b9a"
+        }
+      ],
+      "al:web:url": [
+        {
+          "@value": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a"
+        }
+      ],
+      "http://ogp.me/ns#description": [
+        {
+          "@value": "A guide to understanding how people interpret data and choosing elements to create clear visualizations"
+        }
+      ],
+      "http://ogp.me/ns#image": [
+        {
+          "@value": "https://miro.medium.com/max/1200/1*5kQX7PO5R-ooD-Oo6_S5uw.png"
+        }
+      ],
+      "http://ogp.me/ns#site_name": [
+        {
+          "@value": "Medium"
+        }
+      ],
+      "http://ogp.me/ns#title": [
+        {
+          "@value": "How to design data visualizations that are actually valuable"
+        }
+      ],
+      "http://ogp.me/ns#type": [
+        {
+          "@value": "article"
+        }
+      ],
+      "http://ogp.me/ns#url": [
+        {
+          "@value": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a"
+        }
+      ],
+      "http://ogp.me/ns/article#author": [
+        {
+          "@value": "https://angelica08.medium.com"
+        }
+      ],
+      "http://ogp.me/ns/article#published_time": [
+        {
+          "@value": "2021-07-21T17:53:30.905Z"
+        }
+      ],
+      "http://ogp.me/ns/fb#app_id": [
+        {
+          "@value": "542599432471018"
+        }
+      ],
+      "https://dev.twitter.com/cards#description": [
+        {
+          "@value": "A guide to understanding how people interpret data and choosing elements to create clear visualizations"
+        }
+      ],
+      "https://dev.twitter.com/cards#title": [
+        {
+          "@value": "How to design data visualizations that are actually valuable"
+        }
+      ]
+    },
+    {
+      "@id": "_:N30dbbce06f83485ab965daa0ddd5e099",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N3e5a7b0a8eeb4abf84383f1018eea27e",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N9f83dbd7025345389a52404d376fea1a",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N2cfe19218f5b43d7b863c6f8111c0f42",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N3bcafa5f1e8844b08f87306a15c956d6",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N550502daf00b440995c35f679941b712",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nc923b03613d14c5a88639a24bb58dce2",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#tooltip"
+        }
+      ]
+    },
+    {
+      "@id": "_:N7570c4aba59048b48b92981ddd5dad13",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#combobox"
+        }
+      ]
+    },
+    {
+      "@id": "_:N3a6019c86c45442090b2f96f661c1dc8",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#separator"
+        }
+      ]
+    },
+    {
+      "@id": "_:N205914256e54407482203f62556f8b74",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#tooltip"
+        }
+      ]
+    },
+    {
+      "@id": "_:N590c4d85e8d4494ca1f0119a5e79ab64",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#tooltip"
+        }
+      ]
+    },
+    {
+      "@id": "_:N5cc05409c1964f498863b5bc2150d230",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nbd37c237d47f45b4aea80e312746db99",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#tooltip"
+        }
+      ]
+    },
+    {
+      "@id": "_:N94b62fe725d241a0ab24e00c301a0ef3",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N50989fa8bfb64de2bd75e29762f6c49e",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    }
+  ],
+  "twitter": [
+    {
+      "app:id:iphone": "828256236",
+      "app:name:iphone": "Medium",
+      "app:url:iphone": "medium://p/e8b752835b9a",
+      "card": "summary_large_image",
+      "data1": "6 min read",
+      "description": "A guide to understanding how people interpret data and choosing elements to create clear visualizations",
+      "image:src": "https://miro.medium.com/max/1200/1*5kQX7PO5R-ooD-Oo6_S5uw.png",
+      "label1": "Reading time",
+      "site": "@uxdesigncc",
+      "title": "How to design data visualizations that are actually valuable"
+    }
+  ]
+}
