@@ -3,6 +3,7 @@ import os
 
 from django.core.exceptions import SuspiciousFileOperation
 from django.core.files.base import ContentFile
+from django.utils import timezone
 
 from archeion.index.models import ArtifactStatus, Link
 from archeion.index.storage import get_artifact_storage
@@ -22,7 +23,9 @@ def convert_to_markdown(content: str, link: Link, overwrite: bool = True) -> Non
     """
     import html2text
 
-    artifact = link.artifacts.get_or_create(plugin_name=PLUGIN_NAME, defaults={"output_path": "html_metadata.json"})
+    artifact, _ = link.artifacts.get_or_create(
+        plugin_name=PLUGIN_NAME, defaults={"output_path": "markdown.md", "start_ts": timezone.now()}
+    )
     if artifact.status == ArtifactStatus.SUCCEEDED and not overwrite:
         return
 
@@ -40,4 +43,8 @@ def convert_to_markdown(content: str, link: Link, overwrite: bool = True) -> Non
         success(f"Saved {PLUGIN_NAME} to {filepath}")
     except SuspiciousFileOperation as e:  # pragma: no coverage
         artifact.status = ArtifactStatus.FAILED
+        artifact.save()
         error([f"{PLUGIN_NAME} failed:", e])
+
+    artifact.end_ts = timezone.now()
+    artifact.save()

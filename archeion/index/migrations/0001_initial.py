@@ -6,6 +6,8 @@ import django_extensions.db.fields
 import shortuuid.django_fields
 from django.db import migrations, models
 
+import archeion.utils
+
 
 class Migration(migrations.Migration):
     initial = True
@@ -157,6 +159,7 @@ class Migration(migrations.Migration):
                         default=dict,
                         help_text="Metadata ",
                         verbose_name="metadata",
+                        encoder=archeion.utils.IterableEncoder,
                     ),
                 ),
                 (

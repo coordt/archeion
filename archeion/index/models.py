@@ -13,7 +13,7 @@ from django_extensions.db.fields import AutoSlugField
 from shortuuid.django_fields import ShortUUIDField
 
 from archeion.index.storage import get_artifact_storage
-from archeion.utils import get_dir_size, model_slugify
+from archeion.utils import IterableEncoder, get_dir_size, model_slugify
 
 
 class Tag(models.Model):
@@ -131,7 +131,9 @@ class Link(models.Model):
         related_name="links",
         help_text=_("Tags applied to the link."),
     )
-    metadata = models.JSONField(_("metadata"), null=False, blank=True, default=dict, help_text=_("Metadata "))
+    metadata = models.JSONField(
+        _("metadata"), encoder=IterableEncoder, null=False, blank=True, default=dict, help_text=_("Metadata ")
+    )
     created_at = models.DateTimeField(
         _("created at"),
         null=False,

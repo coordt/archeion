@@ -4,11 +4,13 @@ import os
 
 from django.core.exceptions import SuspiciousFileOperation
 from django.core.files.base import ContentFile
+from django.utils import timezone
 
 from archeion.index.models import ArtifactStatus, Link, Tag
 from archeion.index.storage import get_artifact_storage
 from archeion.logging import error, success
 from archeion.post_processors.dandelion import get_dandelion_tags
+from archeion.utils import IterableEncoder
 
 PLUGIN_NAME = "html_metadata"
 
@@ -22,7 +24,9 @@ def save_html_metadata(content: str, link: Link, overwrite: bool = True) -> None
         link: The link to save the metadata for
         overwrite: Whether to overwrite an existing metadata artifact
     """
-    artifact, _ = link.artifacts.get_or_create(plugin_name=PLUGIN_NAME, defaults={"output_path": "html_metadata.json"})
+    artifact, _ = link.artifacts.get_or_create(
+        plugin_name=PLUGIN_NAME, defaults={"output_path": "html_metadata.json", "start_ts": timezone.now()}
+    )
     if artifact.status == ArtifactStatus.SUCCEEDED and not overwrite:
         return
 
@@ -31,7 +35,7 @@ def save_html_metadata(content: str, link: Link, overwrite: bool = True) -> None
 
     # Create the tags and add the tags to the link.tags
     for tag in metadata.get("tags", []):
-        tag = Tag.objects.get_or_create(name=tag)
+        tag, _ = Tag.objects.get_or_create(name=tag)
         link.tags.add(tag)
 
     # add or update the metadata to the link.metadata
@@ -45,12 +49,15 @@ def save_html_metadata(content: str, link: Link, overwrite: bool = True) -> None
     try:
         storage = get_artifact_storage()
         filepath = os.path.join(link.archive_path, artifact.output_path)
-        storage.save(filepath, ContentFile(json.dumps(metadata)))
+        storage.save(filepath, ContentFile(json.dumps(metadata, cls=IterableEncoder)))
         artifact.status = ArtifactStatus.SUCCEEDED
         success(f"Saved {PLUGIN_NAME} to {filepath}")
     except SuspiciousFileOperation as e:  # pragma: no coverage
         artifact.status = ArtifactStatus.FAILED
         error([f"{PLUGIN_NAME} failed:", e])
+
+    artifact.end_ts = timezone.now()
+    artifact.save()
 
 
 def parse_html_metadata(content: str, source: str) -> dict:

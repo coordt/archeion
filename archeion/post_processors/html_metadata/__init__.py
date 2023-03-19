@@ -5,6 +5,7 @@ import logging
 from collections import ChainMap
 from datetime import datetime, timezone
 
+from archeion.post_processors.html_metadata import custom_extract
 from archeion.post_processors.html_metadata.github import parse_gh_tags
 from archeion.post_processors.html_metadata.html import process_html_metadata
 from archeion.post_processors.html_metadata.jsonld import parse_jsonld_data
@@ -196,10 +197,9 @@ def extract_metadata(page_source: str, url: Optional[str] = None) -> dict:
     """
     from collections import defaultdict
 
-    import extruct
     from bs4 import BeautifulSoup
 
-    data = extruct.extract(page_source, base_url=url)
+    data = custom_extract.extract(page_source, base_url=url)
 
     soup = BeautifulSoup(page_source, "html.parser")
     meta_groups: Dict[str, Dict[str, Any]] = defaultdict(dict)

@@ -8,6 +8,7 @@ from pathlib import Path
 
 from django.conf import settings
 from django.core.files.storage import Storage
+from django.core.serializers.json import DjangoJSONEncoder
 from slugify import slugify
 
 from archeion.stopwords import STOPWORDS
@@ -135,3 +136,20 @@ def normalize_url(url: str) -> str:
     url_dict["query"] = urlencode(new_qs)
 
     return urlunparse(tuple(url_dict.values()))
+
+
+class IterableEncoder(DjangoJSONEncoder):
+    """
+    A custom encoder that sorts list items.
+    """
+
+    def default(self, obj):
+        """Check for iterables and sort them."""
+        try:
+            iterable = iter(obj)
+        except TypeError:
+            pass
+        else:
+            return sorted(list(iterable))
+        # Let the base class default method raise the TypeError
+        return DjangoJSONEncoder.default(self, obj)
