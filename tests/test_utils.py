@@ -1,4 +1,8 @@
 """Test Archeion utils.py."""
+from typing import Any
+
+import datetime
+import json
 
 import pytest
 from pytest import param
@@ -29,3 +33,19 @@ from archeion import utils
 def test_normalize_url(url: str, expected: str):
     """Normalizing a URL should return expected results."""
     assert utils.normalize_url(url) == expected
+
+
+@pytest.mark.parametrize(
+    "data,expected",
+    [
+        param({"a", "b", "c"}, '["a", "b", "c"]', id="set-of-strings-to-list-of-strings"),
+        param(
+            datetime.datetime(2023, 3, 18, 12, 34, 56, tzinfo=datetime.timezone.utc),
+            '"2023-03-18T12:34:56Z"',
+            id="datetime-to-string",
+        ),
+    ],
+)
+def test_iterable_encoder(data: Any, expected: Any):
+    """IterableEncoder should return a list."""
+    assert json.dumps(data, cls=utils.IterableEncoder) == expected
