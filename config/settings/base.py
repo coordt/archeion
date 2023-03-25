@@ -175,10 +175,7 @@ X_FRAME_OPTIONS = "SAMEORIGIN"
 
 # EMAIL
 # ------------------------------------------------------------------------------
-EMAIL_BACKEND = env.dj_email_url(
-    "ARCHEION_EMAIL_BACKEND",
-    default="django.core.mail.backends.console.EmailBackend",
-)
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 EMAIL_TIMEOUT = 5
 
 DEFAULT_FROM_EMAIL = env("ARCHEION_DEFAULT_FROM_EMAIL", default="Archeion <noreply@archeion.dev>")
@@ -220,15 +217,15 @@ LOGGING = {
     "loggers": {
         "WDM": {"handlers": ["console"], "level": "ERROR", "propagate": True},
         "django.request": {
-            "handlers": ["mail_admins"],
-            "level": "ERROR",
+            "handlers": ["console"],
+            "level": "DEBUG",
             "propagate": True,
         },
-        "django.security.DisallowedHost": {
-            "level": "ERROR",
-            "handlers": ["console", "mail_admins"],
-            "propagate": True,
-        },
+        # "django.security.DisallowedHost": {
+        #     "level": "ERROR",
+        #     "handlers": ["console", "mail_admins"],
+        #     "propagate": True,
+        # },
     },
 }
 

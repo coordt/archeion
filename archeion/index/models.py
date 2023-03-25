@@ -195,6 +195,22 @@ class Link(models.Model):
 
         return cache.get_or_set(cache_key, calc_dir_size)
 
+    def update_metadata(self, new_metadata: dict) -> None:
+        """Update the link's metadata."""
+        metadata = self.metadata or {}
+        metadata.update(new_metadata)
+
+        # Create the tags and add the tags to the link.tags
+        for tag in metadata.get("keywords", []):
+            tag, _ = Tag.objects.get_or_create(name=tag)
+            self.tags.add(tag)
+
+        if not self.ld_type and "type" in metadata:
+            self.ld_type = metadata.get("type", None)
+
+        if not self.title and "headline" in metadata:
+            self.title = metadata["headline"][:255]
+
 
 class ArtifactStatus(models.TextChoices):
     """Status choices for Artifacts."""

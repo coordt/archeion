@@ -32,24 +32,14 @@ def save_html_metadata(content: str, link: Link, overwrite: bool = True) -> None
 
     # Create the metadata
     metadata = parse_html_metadata(content, link.url)
-
-    # Create the tags and add the tags to the link.tags
-    for tag in metadata.get("tags", []):
-        tag, _ = Tag.objects.get_or_create(name=tag)
-        link.tags.add(tag)
-
-    # add or update the metadata to the link.metadata
-    if link.metadata:
-        link.metadata.update(metadata)
-    else:
-        link.metadata = metadata
+    link.update_metadata(metadata)
     link.save()
 
     # save the artifact and metadata to storage
     try:
         storage = get_artifact_storage()
         filepath = os.path.join(link.archive_path, artifact.output_path)
-        storage.save(filepath, ContentFile(json.dumps(metadata, cls=IterableEncoder)))
+        storage.save(filepath, ContentFile(json.dumps(metadata, cls=IterableEncoder, indent=2)))
         artifact.status = ArtifactStatus.SUCCEEDED
         success(f"Saved {PLUGIN_NAME} to {filepath}")
     except SuspiciousFileOperation as e:  # pragma: no coverage
