@@ -57,6 +57,7 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+.ruff_cache/
 
 # Translations
 *.mo
@@ -172,3 +173,5 @@ archives/
 index.sqlite3
 .seleniumwire
 node_modules/
+temp.py
+temp.sh

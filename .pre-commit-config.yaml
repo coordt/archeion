@@ -1,12 +1,12 @@
 repos:
-  - repo: https://github.com/timothycrosley/isort
-    rev: 5.11.4
+  - repo: https://github.com/charliermarsh/ruff-pre-commit
+    # Ruff version.
+    rev: 'v0.0.254'
     hooks:
-      - id: isort
-        additional_dependencies: [toml]
-        args: ["--profile", "black"]
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
   - repo: https://github.com/python/black
-    rev: 22.12.0
+    rev: 23.1.0
     hooks:
       - id: black
         args: ["--line-length", "119", "--check"]
@@ -35,27 +35,12 @@ repos:
         args: ["--remove"]
       - id: requirements-txt-fixer
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v0.991
+    rev: v1.0.1
     hooks:
       - id: mypy
+        exclude: test.*
         args: [--no-strict-optional, --ignore-missing-imports]
         additional_dependencies: ["pydantic", "toml", "types-all"]
-  - repo: https://github.com/PyCQA/bandit
-    rev: 1.7.4
-    hooks:
-      - id: bandit
-        args: [--skip, "B101,B104,B603", --recursive, "-q"]
-  - repo: https://github.com/PyCQA/flake8
-    rev: 6.0.0
-    hooks:
-      - id: flake8
-        exclude: test.*
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.1.1
-    hooks:
-      - id: pydocstyle
-        exclude: test.*|migrations.*
-        additional_dependencies: [toml]
   - repo: https://github.com/terrencepreilly/darglint
     rev: v1.8.1
     hooks:
@@ -69,7 +54,7 @@ repos:
     rev: 1.5.0  # or master if you're bold
     hooks:
       - id: interrogate
-        exclude: test.*|migrations.*
+        exclude: test.*
   - repo: local
     hooks:
       - id: check-dependencies
@@ -79,4 +64,4 @@ repos:
         files: ^requirements.*?\.(in|txt)$
         pass_filenames: false
         additional_dependencies:
-          - pip-tools
+          - pip-tools==6.11.0
