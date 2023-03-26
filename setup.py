@@ -1,12 +1,11 @@
 """The setup script."""
-from typing import List, Optional
-
 from pathlib import Path
+from typing import List, Optional
 
 from setuptools import setup
 
 
-def parse_reqs_in(filepath: Path, visited: Optional[set] = None) -> List[str]:
+def parse_reqs_in(filepath: Path, visited: Optional[set] = None) -> List[str]:  # noqa: C901
     """
     Parse a file path containing a pip-tools requirements.in and return a list of requirements.
 
@@ -16,7 +15,8 @@ def parse_reqs_in(filepath: Path, visited: Optional[set] = None) -> List[str]:
     Other ``pip-tools`` and ``pip``-specific lines are excluded.
 
     Args:
-        filepath (Path): The path to the requirements file
+        filepath: The path to the requirements file
+        visited: Used to avoid infinite recursion
 
     Returns:
         All the requirements as a list.
@@ -26,7 +26,7 @@ def parse_reqs_in(filepath: Path, visited: Optional[set] = None) -> List[str]:
     reqstr: str = filepath.read_text()
     reqs: List[str] = []
     for line in reqstr.splitlines():
-        line = line.strip()
+        line = line.strip()  # noqa: PLW2901
         if line == "":
             continue
         elif not line or line.startswith("#"):

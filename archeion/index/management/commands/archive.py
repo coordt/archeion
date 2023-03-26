@@ -17,7 +17,7 @@ class Command(BaseCommand):
         super().__init__(*args, **kwargs)
         self.archivers = get_archivers_map()
 
-    def handle(self, *args, **options):
+    def handle(self, *args, **options) -> None:
         """Archives any pending or failed Artifacts."""
         from archeion.logging import info
 

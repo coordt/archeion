@@ -1,8 +1,7 @@
 """Configuration setup for Archeion."""
-from typing import Any, Dict, List, Optional, Pattern
-
 from copy import deepcopy
 from pathlib import Path
+from typing import Any, Dict, List, Optional, Pattern
 
 from pydantic import BaseSettings, Field
 
@@ -210,10 +209,10 @@ class Settings(BaseSettings):
         @classmethod
         def customise_sources(
             cls,
-            init_settings,
-            env_settings,
-            file_secret_settings,
-        ):
+            init_settings: Any,
+            env_settings: Any,
+            file_secret_settings: Any,
+        ) -> tuple:
             """Change the order of importance of config sources so that config files have top priority."""
             return (
                 env_settings,
@@ -225,7 +224,7 @@ class Settings(BaseSettings):
 
 def get_settings() -> Settings:
     """Return the settings singleton, instantiating them if necessary."""
-    global SETTINGS
+    global SETTINGS  # noqa: PLW0603
 
     if SETTINGS is None:
         SETTINGS = get_default_settings()
@@ -260,7 +259,7 @@ def get_default_settings(archive_root: Optional[Path] = None) -> Settings:
         return Settings(**defaults)
 
 
-def write_config_file(archive_root: Path, default_overrides: Optional[Dict[str, Any]] = None):
+def write_config_file(archive_root: Path, default_overrides: Optional[Dict[str, Any]] = None) -> None:
     """Write the config file to disk."""
     import yaml
 

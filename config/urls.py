@@ -1,5 +1,6 @@
 """URL route definitions for the application."""
 import mimetypes
+
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
@@ -28,7 +29,8 @@ urlpatterns = [
     path("archive/<str:link_id>/<str:slug>", ArtifactDetailView.as_view(), name="artifact-detail"),
     path("index.html", RedirectView.as_view(url="/")),
     path("", HomepageView.as_view(), name="Home"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True)
+    *static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT, show_indexes=True),
+]
 
 if settings.DEBUG:
     # Static file serving when using Gunicorn + Uvicorn for local web socket development
@@ -58,4 +60,4 @@ if settings.DEBUG:
     if "debug_toolbar" in settings.INSTALLED_APPS:
         import debug_toolbar
 
-        urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+        urlpatterns = [path("__debug__/", include(debug_toolbar.urls)), *urlpatterns]

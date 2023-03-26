@@ -6,7 +6,7 @@ from django.core.exceptions import SuspiciousFileOperation
 from django.core.files.base import ContentFile
 from django.utils import timezone
 
-from archeion.index.models import ArtifactStatus, Link, Tag
+from archeion.index.models import ArtifactStatus, Link
 from archeion.index.storage import get_artifact_storage
 from archeion.logging import error, success
 from archeion.post_processors.dandelion import get_dandelion_tags
@@ -83,9 +83,9 @@ def strip_excess_elements(page_source: str) -> str:
     Returns:
         The HTML without those tags
     """
-    from bs4 import BeautifulSoup
+    from bs4 import BeautifulSoup, Tag
 
-    def not_jsonld(element) -> bool:
+    def not_jsonld(element: Tag) -> bool:
         if element.name != "script":
             return False
 

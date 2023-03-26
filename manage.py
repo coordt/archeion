@@ -5,7 +5,7 @@ import sys
 from pathlib import Path
 
 
-def main():
+def main() -> None:
     """Run administrative tasks."""
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.local")
     try:

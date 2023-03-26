@@ -9,7 +9,6 @@ from archeion.index.models import Artifact, ArtifactStatus, Link, Tag
 
 
 class TagFactory(DjangoModelFactory):
-
     name = Faker("word")
     enabled = True
     substitute = None

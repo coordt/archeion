@@ -1,4 +1,6 @@
 """Run post-processing methods on all DOM artifacts."""
+from typing import Any
+
 from django.core.management.base import BaseCommand
 
 from archeion.index.models import ArtifactStatus, Link
@@ -16,11 +18,11 @@ class Command(BaseCommand):
         super().__init__(*args, **kwargs)
         self.archivers = get_archivers_map()
 
-    def add_arguments(self, parser):
+    def add_arguments(self, parser: Any) -> None:
         """Add the command's arguments to the parser."""
         pass
 
-    def handle(self, *args, **options):
+    def handle(self, *args, **options) -> None:
         """Run the command."""
         from archeion.logging import info
 

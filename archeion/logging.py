@@ -1,9 +1,8 @@
 """Logging and user notification."""
-from typing import List, Optional, Union
-
 from dataclasses import dataclass
 from datetime import datetime
 from pathlib import Path
+from typing import List, Optional, Union
 
 from django.utils import timezone
 from rich.console import Console
@@ -16,7 +15,7 @@ ERR_CONSOLE = Console(stderr=True)
 
 def message(
     text: Union[str, List[str]], left_indent: int = 0, color: Optional[str] = None, emoji_name: Optional[str] = None
-):
+) -> None:
     """Output a message to the console."""
     if not isinstance(text, list):
         text = [text]
@@ -87,7 +86,7 @@ class RuntimeStats:
 _LAST_RUN_STATS = RuntimeStats()
 
 
-def log_cli_command(subcommand: str, subcommand_args: List[str], pwd: str):
+def log_cli_command(subcommand: str, subcommand_args: List[str], pwd: str) -> None:
     """Log a command to the CLI."""
     from archeion import __version__
 

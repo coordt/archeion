@@ -8,7 +8,7 @@ import dateutil.parser
 from django.conf import settings
 
 
-def process_opengraph_data(data: dict) -> dict:
+def process_opengraph_data(data: dict) -> dict:  # noqa: C901
     """
     Process Open Graph data as extracted from :mod:`extruct`.
 

@@ -1,7 +1,6 @@
 """Methods for parsing links from input sources."""
-from typing import Callable, List
-
 from pathlib import Path
+from typing import Callable, List
 
 from archeion.logging import error
 

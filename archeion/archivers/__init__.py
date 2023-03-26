@@ -1,9 +1,8 @@
 """Plugins for archiving a link or extracting data from a link."""
-from typing import List, Optional, Protocol
-
 import logging
 from copy import deepcopy
 from pathlib import Path
+from typing import List, Optional, Protocol
 
 from django.utils.functional import cached_property
 
@@ -76,7 +75,7 @@ def get_all_archivers() -> List[ArchiverSettings]:
     return plugins
 
 
-def disable_plugin(plugin_info, class_name) -> dict:
+def disable_plugin(plugin_info: ArchiverSettings, class_name: str) -> ArchiverSettings:
     """Disable a plugin."""
     plugin_info.enabled = False
     plugin_info.name = class_name

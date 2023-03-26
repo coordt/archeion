@@ -1,7 +1,6 @@
 """Parse an HTML document for its links."""
-from typing import List, Optional
-
 from html.parser import HTMLParser
+from typing import List, Optional, Tuple
 from urllib.parse import urljoin
 
 import w3lib.html
@@ -14,7 +13,7 @@ class HrefParser(HTMLParser):
         super().__init__()
         self.urls = []
 
-    def handle_starttag(self, tag, attrs):
+    def handle_starttag(self, tag: str, attrs: Optional[List[Tuple[str, str]]]) -> None:
         """Handle start tag."""
         if tag != "a":
             return

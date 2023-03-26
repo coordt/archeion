@@ -1,8 +1,7 @@
 """JSON-LD parsing."""
-from typing import List, Optional
-
 import json
 from collections import ChainMap
+from typing import List, Optional
 
 import dateutil.parser
 import networkx as nx
@@ -10,6 +9,7 @@ from django.conf import settings
 
 from archeion.dependency import run_shell
 from archeion.logging import error
+from archeion.utils import ensure_list
 
 jsonld_type_blacklist = ("ReadAction", "BreadcrumbList", "ListItem", "SearchAction")
 
@@ -33,7 +33,7 @@ def contextify(context: str, value: str) -> str:
     return value
 
 
-def parse_jsonld_data(data: List[dict]) -> dict:
+def parse_jsonld_data(data: List[dict]) -> dict:  # noqa: C901
     """
     Parse JSON-LD data from :mod:`extruct`.
 
@@ -62,10 +62,7 @@ def parse_jsonld_data(data: List[dict]) -> dict:
     indexes = [index_jsonld_obj(item) for item in data]
     master_index = dict(ChainMap(*indexes))
     edge = get_primary_node(master_index)
-    if edge:
-        items = [edge]
-    else:
-        items = list(master_index.values())
+    items = [edge] if edge else list(master_index.values())
     retval = {}
 
     for item in items:
@@ -83,38 +80,17 @@ def parse_jsonld_data(data: List[dict]) -> dict:
             continue
         else:
             output["type"] = contextify(current_context, item.get("type", "CreativeWork"))
+
         if "headline" in item or "name" in item:
             output["headline"].append(item.get("headline", item.get("name")))
         if "description" in item:
             output["description"].append(item.get("description"))
 
-        authors: List[dict] = item.get("author", [])
-        if not isinstance(authors, (list, tuple)):  # pragma: no-cover
-            authors = [authors]  # NOQA
+        authors: List[dict] = ensure_list(item.get("author", []))
+        output["author"] = contextify_authors(authors, current_context, master_index)
 
-        for author in authors:
-            if isinstance(author, str):
-                author = {"type": contextify(current_context, "Person"), "name": author}
-            elif isinstance(author, dict) and len(author) == 1 and "id" in author:
-                author = master_index[author["id"]]
-
-            if isinstance(author, dict) and "type" in author:
-                author["type"] = contextify(current_context, author["type"])
-
-            output["author"].append(author)
-
-        publishers: List[dict] = item.get("publisher", [])
-        if not isinstance(publishers, (list, tuple)):  # pragma: no-cover
-            publishers = [publishers]  # NOQA
-
-        for publisher in publishers:
-            if isinstance(publisher, dict) and len(publisher) == 1 and "id" in publisher:
-                publisher = master_index[publisher["id"]]
-
-            if isinstance(publisher, dict) and "type" in publisher:
-                publisher["type"] = contextify(current_context, publisher["type"])
-
-            output["publisher"].append(publisher)
+        publishers: List[dict] = ensure_list(item.get("publisher", []))
+        output["publisher"] = contextify_publishers(publishers, current_context, master_index)
 
         if "keywords" in item:
             if isinstance(item["keywords"], (list, tuple)):
@@ -130,7 +106,46 @@ def parse_jsonld_data(data: List[dict]) -> dict:
             val = retval.get(key, [])
             if len(val) == 1:
                 retval[key] = val[0]
+
     return retval
+
+
+def contextify_publishers(publishers: list, context_url: str, master_index: dict) -> list:
+    """Contextify a list of publishers."""
+    output = []
+    for publisher in publishers:
+        if isinstance(publisher, dict):
+            if len(publisher) == 1 and "id" in publisher:
+                publisher_ctx = master_index[publisher["id"]]
+            else:
+                publisher_ctx = publisher.copy()
+
+            if "type" in publisher_ctx:
+                publisher_ctx["type"] = contextify(context_url, publisher_ctx["type"])
+        else:
+            publisher_ctx = str(publisher)
+
+        output.append(publisher_ctx)
+    return output
+
+
+def contextify_authors(authors: list, context_url: str, master_index: dict) -> list:
+    """Contextify a list of authors."""
+    output = []
+    for author in authors:
+        if isinstance(author, dict):
+            if len(author) == 1 and "id" in author:
+                author_ctx = master_index[author["id"]]
+            else:
+                author_ctx = author.copy()
+        else:
+            author_ctx = {"type": "Person", "name": str(author)}
+
+        if "type" in author_ctx:
+            author_ctx["type"] = contextify(context_url, author["type"])
+
+        output.append(author_ctx)
+    return output
 
 
 def index_jsonld_obj(data: dict) -> dict:
@@ -180,7 +195,7 @@ def get_primary_node(index: dict) -> Optional[dict]:
 
     g = nx.MultiDiGraph()
     g.add_nodes_from(index)
-    for key, val in index.items():
+    for _key, val in index.items():
         if "isPartOf" in val:
             if isinstance(val["isPartOf"], str):
                 g.add_edge(val["isPartOf"], val["id"])

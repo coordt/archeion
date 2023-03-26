@@ -1,9 +1,8 @@
 """Gather and normalize HTML html_metadata."""
-from typing import Any, Dict, List, Optional
-
 import logging
 from collections import ChainMap
 from datetime import datetime, timezone
+from typing import Any, Dict, List, Optional
 
 from archeion.post_processors.html_metadata import custom_extract
 from archeion.post_processors.html_metadata.github import parse_gh_tags
@@ -34,7 +33,7 @@ class Normalizer:
     data: dict
     """The html_metadata extracted from an HTML document."""
 
-    def __init__(self, data, default_source: Optional[str] = None):
+    def __init__(self, data: dict, default_source: Optional[str] = None):
         self.data = data
         self.default_source = default_source
         self.lookup = ChainMap(
@@ -169,7 +168,7 @@ class Normalizer:
         return set().union(*[m.get("keywords", set()) for m in self.lookup.maps])
 
     @property
-    def datePublished(self) -> datetime:
+    def datePublished(self) -> datetime:  # noqa: N802
         """Figure out the keywords from all the html_metadata."""
         return self.lookup.get("datePublished", datetime.now(tz=timezone.utc))
 
@@ -179,7 +178,7 @@ class Normalizer:
         return self.lookup.get("source", self.default_source)
 
     @property
-    def sourceEncodingFormat(self) -> str:
+    def sourceEncodingFormat(self) -> str:  # noqa: N802
         """Figure out the keywords from all the html_metadata."""
         return self.lookup.get("sourceEncodingFormat", "text/html")
 

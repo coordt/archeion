@@ -1,7 +1,6 @@
 """Modified from https://github.com/scrapinghub/extruct ."""
-from typing import Any, Iterable, List, Optional, Protocol, Tuple
-
 import logging
+from typing import Any, Iterable, List, Optional, Protocol, Tuple
 
 from extruct.dublincore import DublinCoreExtractor
 from extruct.jsonld import JsonLdExtractor
@@ -10,7 +9,7 @@ from extruct.opengraph import OpenGraphExtractor
 from extruct.rdfa import RDFaExtractor
 from extruct.w3cmicrodata import MicrodataExtractor
 from extruct.xmldom import XmlDomHTMLParser
-from lxml import html  # nosec B410
+from lxml import html
 
 logger = logging.getLogger(__name__)
 SYNTAXES = ("microdata", "opengraph", "json-ld", "microformat", "rdfa", "dublincore")
@@ -28,16 +27,12 @@ class Extractor(Protocol):
         ...
 
 
-def extract(
-    htmlstring: str,
-    base_url: Optional[str] = None,
-    syntaxes: Iterable = SYNTAXES,
-):
+def extract(html_str: str, base_url: Optional[str] = None, syntaxes: Iterable = SYNTAXES) -> dict:
     """
     Extracts metadata from an HTML document.
 
     Args:
-        htmlstring: string with valid html document;
+        html_str: string with valid html document;
         base_url: base url of the html document
         syntaxes: list of syntaxes to extract
 
@@ -50,21 +45,21 @@ def extract(
     if any(v not in SYNTAXES for v in syntaxes):
         raise ValueError(f"`syntaxes` must be a list with any or all (default) of these values: {SYNTAXES}")
 
-    body = htmlstring.strip().replace("\x00", "").encode("utf8") or b"<html/>"
+    body = html_str.strip().replace("\x00", "").encode("utf8") or b"<html/>"
     parser = XmlDomHTMLParser(recover=True, encoding="utf8")
-    tree = html.document_fromstring(body, parser=parser, base_url=base_url)  # nosec B320
-    processors = get_processors(syntaxes, htmlstring, tree)
+    tree = html.document_fromstring(body, parser=parser, base_url=base_url)
+    processors = get_processors(syntaxes, html_str, tree)
 
     return {syntax: list(extractor(document, base_url=base_url)) for syntax, extractor, document in processors}
 
 
-def get_processors(syntaxes: Iterable, htmlstring: str, tree) -> List[Tuple[str, Extractor, Any]]:
+def get_processors(syntaxes: Iterable, html_str: str, tree: Any) -> List[Tuple[str, Extractor, Any]]:
     """
     Returns a list of tuples (syntax, extractor, document).
 
     Args:
         syntaxes: The list of syntaxes to extract.
-        htmlstring: A string with valid html document.
+        html_str: A string with valid html document.
         tree: The html tree.
 
     Returns:
@@ -84,7 +79,7 @@ def get_processors(syntaxes: Iterable, htmlstring: str, tree) -> List[Tuple[str,
     if "opengraph" in syntaxes:
         processors.append(("opengraph", OpenGraphExtractor().extract_items, tree))
     if "microformat" in syntaxes:
-        processors.append(("microformat", MicroformatExtractor().extract_items, htmlstring))
+        processors.append(("microformat", MicroformatExtractor().extract_items, html_str))
     if "rdfa" in syntaxes:
         processors.append(
             (

@@ -14,12 +14,11 @@ Contributors:
 LICENSE: MIT
 --------
 """
-from typing import Any, Callable, Dict, List, Optional
-
 import json as json_parser
 from collections import OrderedDict
 from html import escape as html_escape
 from string import Template
+from typing import Any, Callable, Dict, List, Optional
 
 TABLE_WRAPPER = "<table>\n<tbody>\n${rows}\n</tbody>\n</table>"
 ROW_WRAPPER = "<tr>\n<th>${key}</th>\n<td>${value}</td></tr>"

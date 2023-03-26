@@ -4,21 +4,20 @@ Automatically detect the true Python type of a string and cast it to the correct
 Based on https://github.com/cgreer/cgAutoCast/blob/master/cgAutoCast.py
 """
 
+import contextlib
 from typing import Any
 
-import contextlib
 
-
-def boolify(s):
+def boolify(s: str) -> bool:
     """Convert a string to a boolean."""
-    if s in ["True", "true"]:
+    if s in {"True", "true"}:
         return True
-    if s in ["False", "false"]:
+    if s in {"False", "false"}:
         return False
     raise ValueError("Not Boolean Value!")
 
 
-def noneify(s):
+def noneify(s: str) -> None:
     """Convert a string to None."""
     if s == "None":
         return None

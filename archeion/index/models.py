@@ -1,5 +1,6 @@
 """Models for keeping track of links and the artifacts generated from them."""
 import os
+from typing import Any
 from urllib.parse import urlparse
 
 import httpx
@@ -64,7 +65,7 @@ class Tag(models.Model):
         """Return the name of the tag."""
         return self.name
 
-    def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs) -> None:
         """Manage the substitutions and enable/disable the tag."""
         super().save(*args, **kwargs)
         if self.substitute:
@@ -156,14 +157,14 @@ class Link(models.Model):
         verbose_name_plural = _("Links")
         ordering = ["title"]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.title or self.url
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         """Return the absolute URL of the link."""
         return reverse("link-detail", kwargs={"pk": self.pk})
 
-    def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs) -> None:
         """
         Describe why you are overriding the save method here.
         """
@@ -186,11 +187,11 @@ class Link(models.Model):
         super().save(*args, **kwargs)
 
     @cached_property
-    def archive_size(self):
+    def archive_size(self) -> int:
         """Calculate the total amount of storage taken up by the archive."""
         cache_key = f"{str(self.id)[:12]}-{(self.updated_at or self.created_at).timestamp()}-size"
 
-        def calc_dir_size():
+        def calc_dir_size() -> int:
             return get_dir_size(storage=get_artifact_storage(), path=self.archive_path)
 
         return cache.get_or_set(cache_key, calc_dir_size)
@@ -201,8 +202,8 @@ class Link(models.Model):
         metadata.update(new_metadata)
 
         # Create the tags and add the tags to the link.tags
-        for tag in metadata.get("keywords", []):
-            tag, _ = Tag.objects.get_or_create(name=tag)
+        for tag_name in metadata.get("keywords", []):
+            tag, _ = Tag.objects.get_or_create(name=tag_name)
             self.tags.add(tag)
 
         if not self.ld_type and "type" in metadata:
@@ -279,20 +280,22 @@ class Artifact(models.Model):
         order_with_respect_to = "link"
         constraints = [models.UniqueConstraint(fields=["link", "plugin_name"], name="unique_link_plugin_name")]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.plugin_name
 
-    def get_absolute_url(self):
+    def get_absolute_url(self) -> str:
         """Return the absolute URL of the artifact."""
         return reverse("artifact-detail", kwargs={"link_id": self.link_id, "slug": self.plugin_name})
 
     @property
-    def archive_output_path(self):
+    def archive_output_path(self) -> str:
         """Return the full path to the output file."""
         return os.path.join(self.link.archive_path, self.output_path)
 
 
-def m2m_save_listener(sender, instance, action, reverse, model, pk_set, using, **kwargs):  # NOQA
+def m2m_save_listener(
+    sender: models.Model, instance: Any, action: str, reverse: bool, model: Any, pk_set: set, using: str, **kwargs
+) -> None:
     """This does the substitution of tags when added by a link."""
     if action == "pre_add" and not reverse:
         sub_ids = model.objects.filter(pk__in=pk_set).exclude(substitute_id=None).values_list("id", "substitute_id")

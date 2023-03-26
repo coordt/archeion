@@ -1,11 +1,8 @@
 """Test the Link model."""
 
 import pytest
-from django.conf import settings
 
 from archeion.index.models import Link
-
-from ..factories import ArtifactFactory, LinkFactory
 
 pytestmark = pytest.mark.django_db
 

@@ -1,7 +1,6 @@
 """Download a link using Selenium WebDriver."""
-from typing import Optional
-
 from pathlib import Path
+from typing import Optional
 
 import selenium
 from distlib.util import cached_property

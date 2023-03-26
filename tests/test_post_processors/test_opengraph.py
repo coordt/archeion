@@ -17,69 +17,69 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
     [
         pytest.param(
             METADATA_DIR / "github.json",
-            dict(
-                type=settings.OG_TYPE_MAP["object"],
-                headline="archivy/archivy",
-                description=(
+            {
+                "type": settings.OG_TYPE_MAP["object"],
+                "headline": "archivy/archivy",
+                "description": (
                     "Archivy is a self-hosted knowledge repository that allows you to safely preserve useful content "
                     "that contributes to your own personal, searchable and extendable wiki. - archivy/archivy"
                 ),
-                author=None,
-                publisher=[{"type": "https://schema.org/Organization", "name": "GitHub"}],
-                keywords=set(),
-                datePublished=None,
-                source="https://github.com/archivy/archivy",
-                encodingFormat="text/html",
-                sourceEncodingFormat="text/html",
-            ),
+                "author": None,
+                "publisher": [{"type": "https://schema.org/Organization", "name": "GitHub"}],
+                "keywords": set(),
+                "datePublished": None,
+                "source": "https://github.com/archivy/archivy",
+                "encodingFormat": "text/html",
+                "sourceEncodingFormat": "text/html",
+            },
             id="github",
         ),
         pytest.param(
             METADATA_DIR / "medium.json",
-            dict(
-                type=settings.OG_TYPE_MAP["article"],
-                headline="Fetching Better Beer Recommendations with Collie (Part 1)",
-                description="Getting data, training a model, and talking about beer!",
-                author=[
+            {
+                "type": settings.OG_TYPE_MAP["article"],
+                "headline": "Fetching Better Beer Recommendations with Collie (Part 1)",
+                "description": "Getting data, training a model, and talking about beer!",
+                "author": [
                     {
                         "type": "https://schema.org/Person",
                         "name": "https://medium.com/@nathancooperjones",
                     }
                 ],
-                publisher=[{"type": "https://schema.org/Organization", "name": "Medium"}],
-                keywords=set(),
-                datePublished=dateutil.parser.isoparse("2021-05-04T20:16:56.056Z"),
-                source=(
+                "publisher": [{"type": "https://schema.org/Organization", "name": "Medium"}],
+                "keywords": set(),
+                "datePublished": dateutil.parser.isoparse("2021-05-04T20:16:56.056Z"),
+                "source": (
                     "https://medium.com/shoprunner/fetching-better-beer-recommendations-"
                     "with-collie-part-1-18c73ab30fbd"
                 ),
-                encodingFormat="text/html",
-                sourceEncodingFormat="text/html",
-            ),
+                "encodingFormat": "text/html",
+                "sourceEncodingFormat": "text/html",
+            },
             id="medium",
         ),
         pytest.param(
             METADATA_DIR / "uxcollective.json",
-            dict(
-                type=settings.OG_TYPE_MAP["article"],
-                headline="How to design data visualizations that are actually valuable",
-                description=(
+            {
+                "type": settings.OG_TYPE_MAP["article"],
+                "headline": "How to design data visualizations that are actually valuable",
+                "description": (
                     "A guide to understanding how people interpret data and choosing elements to create "
                     "clear visualizations"
                 ),
-                author=[
+                "author": [
                     {
                         "type": "https://schema.org/Person",
                         "name": "https://angelica08.medium.com",
                     }
                 ],
-                publisher=[{"type": "https://schema.org/Organization", "name": "Medium"}],
-                keywords=set(),
-                datePublished=dateutil.parser.isoparse("2021-07-21T17:53:30.905Z"),
-                source="https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",
-                encodingFormat="text/html",
-                sourceEncodingFormat="text/html",
-            ),
+                "publisher": [{"type": "https://schema.org/Organization", "name": "Medium"}],
+                "keywords": set(),
+                "datePublished": dateutil.parser.isoparse("2021-07-21T17:53:30.905Z"),
+                "source": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",  # noqa: E501
+                "encodingFormat": "text/html",
+                "sourceEncodingFormat": "text/html",
+            },
             id="uxcollective",
         ),
     ],

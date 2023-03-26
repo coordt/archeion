@@ -33,22 +33,22 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
         ),
         pytest.param(
             METADATA_DIR / "uxcollective.json",
-            dict(
-                type="https://schema.org/NewsArticle",
-                headline="How to design data visualizations that are actually valuable",
-                description=(
+            {
+                "type": "https://schema.org/NewsArticle",
+                "headline": "How to design data visualizations that are actually valuable",
+                "description": (
                     "Great visualizations help people quickly and accurately make sense of the data so they can make "
                     "appropriate decisions. These types of visualizations optimize for the human visual system "
                     "making\u2026"
                 ),
-                author=[
+                "author": [
                     {
                         "type": "https://schema.org/Person",
                         "name": "Angelica Gutierrez",
                         "url": "https://angelica08.medium.com",
                     }
                 ],
-                publisher=[
+                "publisher": [
                     {
                         "type": "https://schema.org/Organization",
                         "name": "UX Collective",
@@ -61,12 +61,12 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
                         },
                     }
                 ],
-                keywords=set(),
-                datePublished=dateutil.parser.isoparse("2021-07-11T01:15:44.247Z"),
-                source="https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",
-                encodingFormat="text/html",
-                sourceEncodingFormat="text/html",
-            ),
+                "keywords": set(),
+                "datePublished": dateutil.parser.isoparse("2021-07-11T01:15:44.247Z"),
+                "source": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",  # noqa: E501
+                "encodingFormat": "text/html",
+                "sourceEncodingFormat": "text/html",
+            },
             id="uxcollective",
         ),
     ],

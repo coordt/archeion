@@ -2,7 +2,6 @@
 
 from archeion.parsers import (
     get_parsers,
-    parse_input,
     str_is_atom,
     str_is_html,
     str_is_path,

@@ -1,6 +1,5 @@
-from typing import Any
-
 from collections.abc import Sequence
+from typing import Any
 
 from django.contrib.auth import get_user_model
 from factory import Faker, post_generation
@@ -8,7 +7,6 @@ from factory.django import DjangoModelFactory
 
 
 class UserFactory(DjangoModelFactory):
-
     username = Faker("user_name")
     email = Faker("email")
     first_name = Faker("first_name")

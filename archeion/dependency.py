@@ -1,11 +1,10 @@
 """External binary dependency management."""
-from typing import Dict, Optional, Sequence, Union
-
 import importlib.resources
 import shutil
 import subprocess  # nosec B404
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Dict, Optional, Sequence, Union
 
 from django.conf import settings
 
@@ -255,7 +254,7 @@ def install_node(archive_root: Path) -> None:
         hint(f"Try deleting {archive_root}/node_modules and running it again")
 
 
-def cleanup_old_node(archive_root):
+def cleanup_old_node(archive_root: Path) -> None:
     """
     Cleanup any old node installation in the archive root.
 

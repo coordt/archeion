@@ -1,7 +1,7 @@
 """Functions that check and validate the setup."""
 
 
-def check_db():
+def check_db() -> None:
     """Check if the database is compatible with this version of the program."""
     from django.conf import settings
     from django.db import connection
@@ -26,7 +26,7 @@ def check_db():
             cursor.execute("PRAGMA busy_timeout = 5000;")
             cursor.execute("PRAGMA synchronous = NORMAL;")
     except OperationalError as e:
-        ERR_CONSOLE.print(f"[red]:x: Your SQLite3 version is missing the required JSON1 extension: {e}[\]")  # noqa
+        ERR_CONSOLE.print(f"[red]:x: Your SQLite3 version is missing the required JSON1 extension: {e}[\\]")
         ERR_CONSOLE.print(
             Padding(
                 "[magenta][bold]Hint:[/bold] Upgrade your Python version or install the extension manually:"

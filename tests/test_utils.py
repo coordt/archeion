@@ -1,8 +1,7 @@
 """Test Archeion utils.py."""
-from typing import Any
-
 import datetime
 import json
+from typing import Any
 
 import pytest
 from pytest import param

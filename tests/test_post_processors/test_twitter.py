@@ -15,71 +15,71 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
     [
         pytest.param(
             METADATA_DIR / "github.json",
-            dict(
-                type="https://schema.org/CreativeWork",
-                headline="archivy/archivy",
-                description=(
+            {
+                "type": "https://schema.org/CreativeWork",
+                "headline": "archivy/archivy",
+                "description": (
                     "Archivy is a self-hosted knowledge repository that allows you to safely preserve useful content "
                     "that contributes to your own personal, searchable and extendable wiki. - archivy/archivy"
                 ),
-                author=None,
-                publisher=[
+                "author": None,
+                "publisher": [
                     {
                         "type": "https://schema.org/Organization",
                         "url": "https://twitter.com/github",
                     }
                 ],
-                keywords=set(),
-                datePublished=None,
-                source=None,
-                encodingFormat="text/html",
-                sourceEncodingFormat="text/html",
-            ),
+                "keywords": set(),
+                "datePublished": None,
+                "source": None,
+                "encodingFormat": "text/html",
+                "sourceEncodingFormat": "text/html",
+            },
             id="github",
         ),
         pytest.param(
             METADATA_DIR / "medium.json",
-            dict(
-                type="https://schema.org/CreativeWork",
-                headline="Fetching Better Beer Recommendations with Collie (Part 1)",
-                description="Getting data, training a model, and talking about beer!",
-                author=None,
-                publisher=[
+            {
+                "type": "https://schema.org/CreativeWork",
+                "headline": "Fetching Better Beer Recommendations with Collie (Part 1)",
+                "description": "Getting data, training a model, and talking about beer!",
+                "author": None,
+                "publisher": [
                     {
                         "type": "https://schema.org/Organization",
                         "url": "https://twitter.com/shoprunner",
                     }
                 ],
-                keywords=set(),
-                datePublished=None,
-                source=None,
-                encodingFormat="text/html",
-                sourceEncodingFormat="text/html",
-            ),
+                "keywords": set(),
+                "datePublished": None,
+                "source": None,
+                "encodingFormat": "text/html",
+                "sourceEncodingFormat": "text/html",
+            },
             id="medium",
         ),
         pytest.param(
             METADATA_DIR / "uxcollective.json",
-            dict(
-                type="https://schema.org/CreativeWork",
-                headline="How to design data visualizations that are actually valuable",
-                description=(
+            {
+                "type": "https://schema.org/CreativeWork",
+                "headline": "How to design data visualizations that are actually valuable",
+                "description": (
                     "A guide to understanding how people interpret data and choosing elements to create "
                     "clear visualizations"
                 ),
-                author=None,
-                publisher=[
+                "author": None,
+                "publisher": [
                     {
                         "type": "https://schema.org/Organization",
                         "url": "https://twitter.com/uxdesigncc",
                     }
                 ],
-                keywords=set(),
-                datePublished=None,
-                source=None,
-                encodingFormat="text/html",
-                sourceEncodingFormat="text/html",
-            ),
+                "keywords": set(),
+                "datePublished": None,
+                "source": None,
+                "encodingFormat": "text/html",
+                "sourceEncodingFormat": "text/html",
+            },
             id="uxcollective",
         ),
     ],

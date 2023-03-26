@@ -1,5 +1,5 @@
 """Admin classes for the index app."""
-from typing import List
+from typing import Any, List
 
 from django.conf import settings
 from django.contrib import admin
@@ -29,7 +29,7 @@ class TagAdmin(admin.ModelAdmin):
     raw_id_fields = ["substitute"]
 
     @admin.display(description=_("Name"), ordering="name")
-    def name_with_sub(self):
+    def name_with_sub(self) -> Any:
         """
         Render the name, or name with indication what its substitute is.
         """
@@ -143,7 +143,7 @@ class LinkAdmin(admin.ModelAdmin):
     #     for obj in queryset:
     #         obj.tags.remove(*tags)
     #
-    # remove_tags.short_description = "–"
+    # remove_tags.short_description = "-"
 
 
 @admin.register(Artifact)
@@ -171,7 +171,7 @@ class ArtifactAdmin(admin.ModelAdmin):
     list_per_page = settings.ITEMS_PER_PAGE
 
     @admin.display(description=_("output"), ordering="output_path")
-    def output_path_link(self, obj: Artifact):
+    def output_path_link(self, obj: Artifact) -> Any:
         """Return the output path as a link."""
         if obj.output_path:
             return format_html(

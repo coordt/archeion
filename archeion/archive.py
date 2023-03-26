@@ -1,7 +1,6 @@
 """Methods for archiving Links into the index."""
-from typing import List, Optional
-
 import asyncio
+from typing import List, Optional
 
 from asgiref.sync import async_to_sync
 from django.db.models import QuerySet
@@ -16,7 +15,7 @@ def get_links_with_status(status: ArtifactStatus = ArtifactStatus.PENDING) -> Qu
     return Link.objects.filter(artifacts__status=status).order_by("-created_at").distinct()
 
 
-def archive_links(links: Optional[List[Link]] = None, overwrite=False):
+def archive_links(links: Optional[List[Link]] = None, overwrite: bool = False) -> None:
     """Archive links."""
     if links is None:
         links = get_links_with_status(ArtifactStatus.PENDING)  # type: ignore[arg-type]

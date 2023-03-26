@@ -1,12 +1,11 @@
 """Archive the link using the singlepage CLI utility."""
-from typing import Optional
-
 import json
 import os
 import shutil
 import subprocess  # nosec B404
 from functools import cached_property
 from pathlib import Path
+from typing import Optional
 
 from django.conf import settings
 from django.core.exceptions import SuspiciousFileOperation

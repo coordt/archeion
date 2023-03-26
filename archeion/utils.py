@@ -1,10 +1,9 @@
 """Generic utilities that don't fit anywhere else."""
-from typing import Optional, Union
-
 import contextlib
 import os
 import re
 from pathlib import Path
+from typing import Any, Generator, Optional, Union
 
 from django.conf import settings
 from django.core.files.storage import Storage
@@ -15,7 +14,7 @@ from archeion.stopwords import STOPWORDS
 
 
 @contextlib.contextmanager
-def temp_cd(path: Union[str, Path]):
+def temp_cd(path: Union[str, Path]) -> Generator:
     """
     Temporarily change the current working directory to the given path.
 
@@ -143,13 +142,18 @@ class IterableEncoder(DjangoJSONEncoder):
     A custom encoder that sorts list items.
     """
 
-    def default(self, obj):
+    def default(self, obj: Any) -> Any:
         """Check for iterables and sort them."""
         try:
             iterable = iter(obj)
         except TypeError:
             pass
         else:
-            return sorted(list(iterable))
+            return sorted(iterable)
         # Let the base class default method raise the TypeError
         return DjangoJSONEncoder.default(self, obj)
+
+
+def ensure_list(item: Any) -> list:
+    """Ensure that the item is a list by making it one if it isn't."""
+    return list(item) if isinstance(item, (list, tuple)) else [item]

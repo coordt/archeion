@@ -1,5 +1,5 @@
 """Production settings."""
-from .base import *  # noqa
+from .base import *  # noqa: F403
 from .base import env
 
 # GENERAL
@@ -8,7 +8,7 @@ ALLOWED_HOSTS = env.list("DJANGO_ALLOWED_HOSTS", default=["localhost"])
 
 # DATABASES
 # ------------------------------------------------------------------------------
-DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)  # noqa F405
+DATABASES["default"]["CONN_MAX_AGE"] = env.int("CONN_MAX_AGE", default=60)  # noqa: F405
 
 # SECURITY
 # ------------------------------------------------------------------------------

@@ -1,4 +1,6 @@
 """Tables for listing the models in HTML."""
+from typing import Any
+
 import django_filters
 import django_tables2 as tables
 from crispy_forms.helper import FormHelper
@@ -38,6 +40,6 @@ class LinkTable(tables.Table):
             # "thead": {"class": "table-light"},
         }
 
-    def render_url(self, value, record):
+    def render_url(self, value: Any, record: dict) -> str:
         """Return the value to render for the URL column."""
-        return record.title or value
+        return record.get("title", str(value))

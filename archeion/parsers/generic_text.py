@@ -1,9 +1,8 @@
 """Parser for URLs in text files."""
 
-from typing import List
-
 import re
 from pathlib import Path
+from typing import List
 
 from archeion.parsers import str_is_path
 

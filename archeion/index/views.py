@@ -3,6 +3,7 @@ from typing import Any
 
 from django.conf import settings
 from django.contrib.auth.mixins import UserPassesTestMixin
+from django.db.models import QuerySet
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
 from django.utils.safestring import mark_safe
@@ -48,7 +49,7 @@ class LinkDetailView(DetailView):
     template_name = "index/link_detail.html"
     queryset = Link.objects.all().prefetch_related()
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs) -> dict:
         """Add additional information to the context."""
         context = super().get_context_data(**kwargs)
         context["artifacts"] = {}
@@ -74,12 +75,12 @@ class ArtifactDetailView(DetailView):
     template_name = "index/artifact_detail.html"
     slug_field = "plugin_name"
 
-    def get_queryset(self):
+    def get_queryset(self) -> QuerySet:
         """Get the artifacts related to a link id."""
         link = get_object_or_404(Link, pk=self.kwargs["link_id"])
         return Artifact.objects.filter(link=link)
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs) -> dict:
         """Add additional context for the templates."""
         context = super().get_context_data(**kwargs)
         context["artifacts"] = {}
@@ -106,7 +107,7 @@ class AddView(UserPassesTestMixin, FormView):
     template_name = "add.html"
     form_class = AddLinkForm
 
-    def get_initial(self):
+    def get_initial(self) -> dict:
         """Prefill the AddLinkForm with the 'url' GET parameter."""
         if self.request.method == "GET":
             url = self.request.GET.get("url", None)
@@ -115,11 +116,11 @@ class AddView(UserPassesTestMixin, FormView):
 
         return super().get_initial()
 
-    def test_func(self):
+    def test_func(self) -> bool:
         """The test the user must pass to be able to add a link."""
         return settings.PUBLIC_ADD_VIEW or self.request.user.is_authenticated
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs) -> dict:
         """Add additional context data for the templates."""
         return {
             **super().get_context_data(**kwargs),
@@ -131,7 +132,7 @@ class AddView(UserPassesTestMixin, FormView):
             "stdout": "",
         }
 
-    def form_valid(self, form):
+    def form_valid(self, form: AddLinkForm) -> None:
         """The form is valid, so save the link."""
         url = form.cleaned_data["url"]
         info(f"Adding URL: {url} with archivers: {form.cleaned_data['archivers']}")
