@@ -1,4 +1,6 @@
 """Archives any pending or failed Artifacts."""
+from argparse import ArgumentParser
+
 from asgiref.sync import async_to_sync
 from django.core.management.base import BaseCommand
 from django.db.models import Q
@@ -17,13 +19,21 @@ class Command(BaseCommand):
         super().__init__(*args, **kwargs)
         self.archivers = get_archivers_map()
 
+    def add_arguments(self, parser: ArgumentParser) -> None:
+        """Add the command's arguments to the parser."""
+        parser.add_argument("--no-failed", action="store_true", help="Do not attempt failed artifacts.")
+
     def handle(self, *args, **options) -> None:
         """Archives any pending or failed Artifacts."""
         from archeion.logging import info
 
-        artifacts = Artifact.objects.filter(
-            Q(status=ArtifactStatus.FAILED) | Q(status=ArtifactStatus.PENDING)
-        ).select_related("link")
+        if options["no_failed"]:
+            info("Skipping failed artifacts...")
+            filter_query = Q(status=ArtifactStatus.PENDING)
+        else:
+            filter_query = Q(status=ArtifactStatus.FAILED) | Q(status=ArtifactStatus.PENDING)
+        artifacts = Artifact.objects.filter(filter_query).select_related("link")
+
         info(f"Archiving {len(artifacts)} non-successful artifacts...")
         for art in artifacts:
             finished_artifact = self.archive(art)
