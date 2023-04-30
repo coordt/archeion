@@ -206,7 +206,7 @@ LOGGING = {
             "class": "django.utils.log.AdminEmailHandler",
         },
         "console": {
-            "level": "DEBUG",
+            "level": "INFO",
             "class": "rich.logging.RichHandler",
             "formatter": "verbose",
             "show_path": False,
@@ -216,6 +216,7 @@ LOGGING = {
     "root": {"level": "INFO", "handlers": ["console"]},
     "loggers": {
         "WDM": {"handlers": ["console"], "level": "ERROR", "propagate": True},
+        "seleniumwire": {"handlers": ["console"], "level": "ERROR", "propagate": True},
         "django.request": {
             "handlers": ["console"],
             "level": "DEBUG",
@@ -275,22 +276,6 @@ PREVIEW_ORIGINALS = config.server_config.preview_originals
 
 SEARCH_CONFIG = config.search_config
 
-ALLOWED_IN_OUTPUT_DIR = {
-    ".gitignore",
-    "lost+found",
-    ".DS_Store",
-    ".venv",
-    "venv",
-    "virtualenv",
-    ".virtualenv",
-    "node_modules",
-    ARTIFACTS_DIR_NAME,
-    SOURCES_DIR_NAME,
-    CONFIG_FILENAME,
-    "*.sqlite3",
-    "*.sqlite3-wal",
-    "*.sqlite3-shm",
-}
 
 LINK_PARSERS = [
     "archeion.parsers.generic_html.parse_html_links",
