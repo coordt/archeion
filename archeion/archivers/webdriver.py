@@ -100,10 +100,14 @@ class WebDriverArchiver:
 
         artifact.start_ts = timezone.now()
         info(f"{self.plugin_name}: Downloading {artifact.link.url}...", left_indent=4)
-        with self.driver(self.exec_path, options=self.options) as driver:  # pragma: no-cover
-            driver.implicitly_wait(10)  # seconds
-            driver.get(artifact.link.url)
-            artifact = await self.save_artifact(driver, artifact)
+        try:
+            with self.driver(self.exec_path, options=self.options) as driver:  # pragma: no-cover
+                driver.implicitly_wait(10)  # seconds
+                driver.get(artifact.link.url)
+                artifact = await self.save_artifact(driver, artifact)
+        except selenium.common.TimeoutException as e:
+            artifact.status = ArtifactStatus.FAILED
+            error([f"{self.plugin_name} failed:", e])
 
         artifact.end_ts = timezone.now()
         return artifact

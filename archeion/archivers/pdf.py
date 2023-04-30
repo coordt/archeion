@@ -7,6 +7,7 @@ from django.core.files.base import ContentFile
 from selenium.webdriver import Remote
 
 from archeion.archivers.webdriver import WebDriverArchiver
+from archeion.exceptions import ArchiverError
 from archeion.index.models import Artifact, ArtifactStatus
 from archeion.index.storage import get_artifact_storage
 from archeion.logging import error, info, success
@@ -32,17 +33,22 @@ class PDFArchiver(WebDriverArchiver):
 
         Returns:
             The modified Artifact record.
+
+        Raises:
+            ArchiverError: If the PDF could not be saved.
         """
-        info(f"Saving {self.plugin_name}...")
+        info(f"Saving {self.plugin_name}...", left_indent=4)
         artifact.output_path = self.config.get("path", "print.pdf")
         try:
             storage = get_artifact_storage()
             filepath = os.path.join(artifact.link.archive_path, artifact.output_path)
             b64_encoded_pdf = driver.print_page()
+            if not b64_encoded_pdf:
+                raise ArchiverError("Failed to get PDF.")
             storage.save(filepath, ContentFile(base64.b64decode(b64_encoded_pdf)))
             artifact.status = ArtifactStatus.SUCCEEDED
-            success(f"Saved {self.plugin_name} to {filepath}")
-        except SuspiciousFileOperation as e:  # pragma: no coverage
+            success(f"Saved {self.plugin_name} to {filepath}", left_indent=4)
+        except (SuspiciousFileOperation, ArchiverError) as e:  # pragma: no coverage
             artifact.status = ArtifactStatus.FAILED
             error([f"{self.plugin_name} failed:", e])
 

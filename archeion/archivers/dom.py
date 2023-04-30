@@ -29,7 +29,7 @@ class DOMArchiver(WebDriverArchiver):
         Returns:
             The modified Artifact record.
         """
-        info(f"Saving {self.plugin_name}...")
+        info(f"Saving {self.plugin_name}...", left_indent=4)
         artifact.output_path = self.config.get("path", "dom.html")
 
         try:
@@ -37,7 +37,7 @@ class DOMArchiver(WebDriverArchiver):
             filepath = os.path.join(artifact.link.archive_path, artifact.output_path)
             storage.save(filepath, ContentFile(driver.page_source))
             artifact.status = ArtifactStatus.SUCCEEDED
-            success(f"Saved {self.plugin_name} to {filepath}")
+            success(f"Saved {self.plugin_name} to {filepath}", left_indent=4)
         except SuspiciousFileOperation as e:  # pragma: no coverage
             artifact.status = ArtifactStatus.FAILED
             error([f"{self.plugin_name} failed:", e])
