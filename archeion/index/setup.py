@@ -3,7 +3,6 @@ import os
 from pathlib import Path
 
 from click import Abort, UsageError
-from django.conf import settings
 from django.core.management import call_command
 
 from archeion import __version__
@@ -12,19 +11,19 @@ from archeion.logging import error, hint, info, rule, success, warning
 from archeion.utils import temp_cd
 
 
-def log_not_empty(force: bool) -> None:
+def log_not_empty(force: bool, archive_root: Path) -> None:
     """Inform the user that the destination directory is not empty."""
     if force:
         warning(
             [
-                "This folder appears to already have files in it.",
+                f"The archive root ({archive_root}) appears to already have files in it.",
                 "Because --force was passed, Archeion will initialize anyway (which may overwrite existing files).",
             ]
         )
     else:
         error(
             [
-                "This folder appears to already have files in it",
+                f"The archive root ({archive_root}) appears to already have files in it",
                 "You must run init in a completely empty directory, or an existing data folder.",
             ]
         )
@@ -38,10 +37,10 @@ def migrate_database() -> None:
     out = StringIO()
     call_command("migrate", "--plan", stdout=out)
 
-    if "No planned migration operations" not in out.getvalue():
+    if "No planned migration operations" in out.getvalue():
         success("The database is already up to date.")
     else:
-        success(f"Migrating the Archeion {__version__} database index...")
+        info(f"Migrating the Archeion {__version__} database index...")
         call_command("migrate")
 
 
@@ -56,23 +55,23 @@ def init(archive_root: Path, force: bool = False) -> None:
     Raises:
         UsageError: If the archive_root directory doesn't exist.
     """
-    from archeion.config import write_config_file
+    from archeion.config import ALLOWED_IN_OUTPUT_DIR, CONFIG_FILENAME, SOURCES_DIR_NAME, write_config_file
 
     archive_root.mkdir(exist_ok=True)
-    is_empty = not len(set(archive_root.iterdir()) - settings.ALLOWED_IN_OUTPUT_DIR)
+    files_not_allowed = {str(path) for path in archive_root.iterdir()} - ALLOWED_IN_OUTPUT_DIR
 
-    if is_empty:
-        info(f"Initializing the Archeion {__version__} archive...")
+    if len(files_not_allowed) > 0:
+        info(f"Initializing the Archeion {__version__} archive in `{archive_root}`...")
         rule()
     else:
-        log_not_empty(force)
+        log_not_empty(force, archive_root)
         if not force:
             raise UsageError("Exiting...")
 
-    info(f"Setting up the source cache directory ({settings.SOURCES_DIR_NAME})...")
-    archive_root.joinpath(settings.SOURCES_DIR_NAME).mkdir(exist_ok=True)
+    info(f"Setting up the source cache directory ({SOURCES_DIR_NAME})...")
+    archive_root.joinpath(SOURCES_DIR_NAME).mkdir(exist_ok=True)
 
-    info(f"Setting up the configuration file ({settings.CONFIG_FILENAME})...")
+    info(f"Setting up the configuration file ({CONFIG_FILENAME})...")
     write_config_file(archive_root=archive_root)
 
     info("Initializing Django...")
