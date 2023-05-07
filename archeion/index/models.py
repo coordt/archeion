@@ -6,6 +6,7 @@ from urllib.parse import urlparse
 import httpx
 from django.core.cache import cache
 from django.db import models
+from django.db.models import F
 from django.db.models.signals import m2m_changed
 from django.urls import reverse
 from django.utils.functional import cached_property
@@ -243,6 +244,17 @@ class Artifact(models.Model):
         blank=False,
         help_text=_("The link used to archive this artifact."),
     )
+    extracted_from = models.ForeignKey(
+        "self",
+        verbose_name=_("extracted from"),
+        related_name="extractions",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+        limit_choices_to={"link": F("link")},
+        help_text=_("The artifact used to extract this artifact."),
+    )
+
     plugin_name = models.CharField(
         _("plugin name"),
         max_length=32,
