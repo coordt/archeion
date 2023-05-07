@@ -25,6 +25,7 @@ main {
   grid-template-rows: min-content min-content 1fr;
   grid-template-columns: 1fr;
   grid-template-areas: "header" "navigation" "content";
+  overflow-y: auto;
 }
 
 .alert-debug {

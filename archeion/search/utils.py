@@ -1,0 +1,38 @@
+from django.db.models import QuerySet
+
+from archeion.logging import info
+
+
+def log_index_started(url):
+    info(f"Indexing url: {url} in the search index")
+
+
+def get_file_result_content(res, extra_path, use_pwd=False):
+    fpath = f"{res.pwd}/{res.output}" if use_pwd else f"{res.output}"
+    if extra_path:
+        fpath = f"{fpath}/{extra_path}"
+
+    with open(fpath, "r", encoding="utf-8") as file:
+        data = file.read()
+    return [data] if data else []
+
+
+# This should be abstracted by a plugin interface for extractors
+def get_indexable_content(results: QuerySet):
+    if not results:
+        return []
+    # Only use the first method available
+    res, method = results.first(), results.first().extractor
+    if method not in ("readability", "singlefile", "dom", "wget"):
+        return []
+    # This should come from a plugin interface
+
+    # TODO: banish this duplication and get these from the extractor file
+    if method == "readability":
+        return get_file_result_content(res, "content.txt", use_pwd=True)
+    elif method == "singlefile":
+        return get_file_result_content(res, "", use_pwd=True)
+    elif method == "dom":
+        return get_file_result_content(res, "", use_pwd=True)
+    elif method == "wget":
+        return get_file_result_content(res, "", use_pwd=True)
