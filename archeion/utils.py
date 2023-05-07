@@ -76,16 +76,15 @@ def get_dir_size(storage: Storage, path: str, recursive: bool = True, pattern: O
     num_bytes = 0
     if not storage.exists(path):
         return 0
+    dirs, files = storage.listdir(path)
+    for f in files:
+        if pattern and not re.search(pattern, f):
+            continue
+        num_bytes += storage.size(os.path.join(path, f))
 
-    for dirs, files in storage.listdir(path):
-        for f in files:
-            if pattern and not re.search(pattern, f):
-                continue
-            num_bytes += storage.size(os.path.join(path, f))
-
-        if recursive:
-            for d in dirs:
-                num_bytes += get_dir_size(storage, os.path.join(path, d), recursive=recursive, pattern=pattern)
+    if recursive:
+        for d in dirs:
+            num_bytes += get_dir_size(storage, os.path.join(path, d), recursive=recursive, pattern=pattern)
     return num_bytes
 
 
@@ -157,3 +156,20 @@ class IterableEncoder(DjangoJSONEncoder):
 def ensure_list(item: Any) -> list:
     """Ensure that the item is a list by making it one if it isn't."""
     return list(item) if isinstance(item, (list, tuple)) else [item]
+
+
+def extract_webloc_url(filepath: Union[str, Path]) -> str:
+    """
+    Extract a URL from a ``.webloc`` file.
+
+    Args:
+        filepath: The path to the .webloc file
+
+    Returns:
+        The extracted URL
+    """
+    import plistlib
+
+    with open(filepath, "rb") as f:  # pragma: no-cover
+        webloc = plistlib.load(f)
+        return webloc.get("URL", "")
