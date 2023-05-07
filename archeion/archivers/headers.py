@@ -31,7 +31,7 @@ class HeadersArchiver(WebDriverArchiver):
         Returns:
             The modified Artifact record.
         """
-        info(f"Saving {self.plugin_name}...")
+        info(f"Saving {self.plugin_name}...", left_indent=4)
         artifact.output_path = self.config.get("path", "headers.json")
         try:
             storage = get_artifact_storage()
@@ -42,15 +42,17 @@ class HeadersArchiver(WebDriverArchiver):
                 if request.url != url:
                     continue
                 headers["request_headers"].update(request.headers)
-                headers["response_headers"]["status-code"] = request.response.status_code
-                headers["response_headers"].update(request.response.headers)
+                if hasattr(request.response, "status_code"):
+                    headers["response_headers"]["status-code"] = request.response.status_code
+                if hasattr(request.response, "headers"):
+                    headers["response_headers"].update(request.response.headers)
 
             filepath = os.path.join(artifact.link.archive_path, artifact.output_path)
             storage.save(filepath, ContentFile(json.dumps(headers, indent=2)))
             artifact.status = ArtifactStatus.SUCCEEDED
-            success(f"Saved {self.plugin_name} to {filepath}")
+            success(f"Saved {self.plugin_name} to {filepath}", left_indent=4)
         except SuspiciousFileOperation as e:  # pragma: no coverage
             artifact.status = ArtifactStatus.FAILED
-            error([f"{self.plugin_name} failed:", e])
+            error([f"{self.plugin_name} failed:", e], left_indent=4)
 
         return artifact
