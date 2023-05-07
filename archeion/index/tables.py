@@ -19,7 +19,9 @@ class FilterFormHelper(FormHelper):
 class LinkFilter(django_filters.FilterSet):
     """Filters for the Link table."""
 
-    created_at = django_filters.DateFromToRangeFilter()
+    content_type = django_filters.AllValuesFilter(field_name="content_type")
+    ld_type = django_filters.AllValuesFilter(field_name="ld_type")
+    created_at = django_filters.DateRangeFilter()
 
     class Meta:
         model = Link
@@ -40,6 +42,6 @@ class LinkTable(tables.Table):
             # "thead": {"class": "table-light"},
         }
 
-    def render_url(self, value: Any, record: dict) -> str:
+    def render_url(self, value: Any, record: Link) -> str:
         """Return the value to render for the URL column."""
-        return record.get("title", str(value))
+        return record.title or str(value)
