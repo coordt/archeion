@@ -1,14 +1,34 @@
 """Configuration setup for Archeion."""
 from copy import deepcopy
-from pathlib import Path
+from pathlib import Path, PosixPath, WindowsPath
 from typing import Any, Dict, List, Optional, Pattern
 
+import yaml
 from pydantic import BaseSettings, Field
+
+from archeion.index import setup
 
 SETTINGS = None
 
 CONFIG_FILENAME = "config.yaml"
 ARTIFACTS_DIR_NAME = "artifacts"
+SOURCES_DIR_NAME = "sources"
+ALLOWED_IN_OUTPUT_DIR = {
+    ".gitignore",
+    "lost+found",
+    ".DS_Store",
+    ".venv",
+    "venv",
+    "virtualenv",
+    ".virtualenv",
+    "node_modules",
+    ARTIFACTS_DIR_NAME,
+    CONFIG_FILENAME,
+    SOURCES_DIR_NAME,
+    "*.sqlite3",
+    "*.sqlite3-wal",
+    "*.sqlite3-shm",
+}
 
 DEFAULT_SETTINGS: Dict[str, Any] = {
     "artifact_storage": "django.core.files.storage.FileSystemStorage",
@@ -77,16 +97,6 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
         },
         {
             "enabled": False,
-            "path": "readability/",
-            "class_path": "archeion.archivers.readability.ReadabilityArchiver",
-        },
-        {
-            "enabled": False,
-            "path": "mercury/",
-            "class_path": "archeion.archivers.mercury.MercuryArchiver",
-        },
-        {
-            "enabled": False,
             "path": "git/",
             "class_path": "archeion.archivers.git.GitArchiver",
             "domains": ["github.com", "bitbucket.org", "gitlab.com", "gist.github.com"],
@@ -116,6 +126,7 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
             ],
         },
     ],
+    "post_processors": [],
 }
 
 
@@ -242,16 +253,23 @@ def get_default_settings(archive_root: Optional[Path] = None) -> Settings:
     Returns:
         The default settings.
     """
+    import os
+
     from django.core.management.utils import get_random_secret_key
 
     from archeion.utils import temp_cd
 
+    if not archive_root:
+        archive_root = Path(os.environ.get("ARCHEION_ARCHIVE_ROOT")) or Path.cwd()
+
     defaults = deepcopy(DEFAULT_SETTINGS)
-    archive_root = archive_root or Path(__file__).resolve(strict=True).parent.parent.joinpath("archives")
     defaults["archive_root"] = archive_root
     defaults["secret_key"] = get_random_secret_key()
     defaults["artifact_storage_options"]["location"] = archive_root / ARTIFACTS_DIR_NAME
     defaults["database_url"] = f"sqlite:///{archive_root}/index.sqlite3?timeout=60&check_same_thread=false"
+
+    if not archive_root.exists():
+        setup.init(archive_root)
 
     with temp_cd(archive_root):
         # This allows Pydantic to recognize any .env or config.yaml files in the
@@ -259,10 +277,16 @@ def get_default_settings(archive_root: Optional[Path] = None) -> Settings:
         return Settings(**defaults)
 
 
+def path_representer(dumper: yaml.SafeDumper, data: Any):
+    return dumper.represent_scalar("tag:yaml.org,2002:str", str(data))
+
+
+yaml.add_representer(PosixPath, path_representer, Dumper=yaml.SafeDumper)
+yaml.add_representer(WindowsPath, path_representer, Dumper=yaml.SafeDumper)
+
+
 def write_config_file(archive_root: Path, default_overrides: Optional[Dict[str, Any]] = None) -> None:
     """Write the config file to disk."""
-    import yaml
-
     settings = get_default_settings(archive_root).dict()
 
     config_path = Path(archive_root) / CONFIG_FILENAME
