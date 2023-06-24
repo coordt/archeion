@@ -4,7 +4,7 @@ from pathlib import Path
 import pytest
 from pytest import param
 
-from archeion.parsers.generic_text import parse_txt_file
+from archeion.parsers.generic_text import parse_links_from_path
 
 
 @pytest.mark.parametrize(
@@ -29,7 +29,7 @@ from archeion.parsers.generic_text import parse_txt_file
 def test_parse_txt_file(file_path: str, expected_links: list, fixture_dir: Path):
     """The parse_url_list function should return a list of URLs."""
     urltext = fixture_dir.joinpath(file_path).read_text()
-    urls = parse_txt_file(urltext)
+    urls = parse_links_from_path(urltext)
     assert isinstance(urls, list)
     assert set(urls) == set(expected_links)
 
@@ -56,6 +56,6 @@ def test_parse_txt_file(file_path: str, expected_links: list, fixture_dir: Path)
 def test_parse_txt_file_filepath(file_path: str, expected_links: list, fixture_dir: Path):
     """If a file path is passed as the string, it should read it and parse it."""
     fullpath = fixture_dir.joinpath(file_path)
-    urls = parse_txt_file(str(fullpath))
+    urls = parse_links_from_path(str(fullpath))
     assert isinstance(urls, list)
     assert set(urls) == set(expected_links)
