@@ -63,6 +63,11 @@ class CustomEncoder(JSONEncoder):
             HTML_METADATA / "uxcollective.json",
             id="uxcollective",
         ),
+        pytest.param(
+            HTML_METADATA / "yoast.html",
+            HTML_METADATA / "yoast.json",
+            id="yoast",
+        ),
     ],
 )
 def test_extract_metadata(page_source: Path, expected: Path):

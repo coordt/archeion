@@ -1,0 +1,246 @@
+{
+  "dublincore": [
+    {
+      "elements": [
+        {
+          "URI": "http://purl.org/dc/elements/1.1/description",
+          "content": "A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns used by AI startups and tech companies.",
+          "name": "description"
+        }
+      ],
+      "namespaces": {},
+      "terms": []
+    }
+  ],
+  "rdfa": [],
+  "github": {
+    "keywords": []
+  },
+  "html": [
+    {
+      "author": "Matt Bornstein, Rajko Radovanovic",
+      "description": "A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns used by AI startups and tech companies.",
+      "google-site-verification": "P0GXb2pbBqt8KUgYlOlJ1WQIEIKCcv82t4HIeTqinPk",
+      "msapplication-TileImage": "https://a16z.com/wp-content/uploads/2023/02/cropped-favicon-512-270x270.png",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "title": "Emerging Architectures for LLM Applications | Andreessen Horowitz",
+      "viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
+      "wp-parsely_version": "1.14"
+    }
+  ],
+  "json-ld": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@id": "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/",
+          "@type": "WebPage",
+          "author": {
+            "@id": "https://a16z.com/#/schema/person/919c5e090d740be0076090817db58591"
+          },
+          "breadcrumb": {
+            "@id": "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#breadcrumb"
+          },
+          "dateModified": "2023-06-21T15:40:52+00:00",
+          "datePublished": "2023-06-20T19:23:48+00:00",
+          "description": "A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns used by AI startups and tech companies.",
+          "image": {
+            "@id": "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#primaryimage"
+          },
+          "inLanguage": "en-US",
+          "isPartOf": {
+            "@id": "https://a16z.com/#website"
+          },
+          "name": "Emerging Architectures for LLM Applications | Andreessen Horowitz",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/"
+              ]
+            }
+          ],
+          "primaryImageOfPage": {
+            "@id": "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#primaryimage"
+          },
+          "thumbnailUrl": "https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png",
+          "url": "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/"
+        },
+        {
+          "@id": "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#primaryimage",
+          "@type": "ImageObject",
+          "contentUrl": "https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png",
+          "height": 630,
+          "inLanguage": "en-US",
+          "url": "https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png",
+          "width": 1200
+        },
+        {
+          "@id": "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#breadcrumb",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "item": "https://a16z.com/",
+              "name": "Home",
+              "position": 1
+            },
+            {
+              "@type": "ListItem",
+              "name": "Emerging Architectures for LLM Applications",
+              "position": 2
+            }
+          ]
+        },
+        {
+          "@id": "https://a16z.com/#website",
+          "@type": "WebSite",
+          "description": "Software Is Eating the World",
+          "inLanguage": "en-US",
+          "name": "Andreessen Horowitz",
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "query-input": "required name=search_term_string",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://a16z.com/?s={search_term_string}"
+              }
+            }
+          ],
+          "url": "https://a16z.com/"
+        },
+        {
+          "@id": "https://a16z.com/#/schema/person/919c5e090d740be0076090817db58591",
+          "@type": "Person",
+          "image": {
+            "@id": "https://a16z.com/#/schema/person/image/6c0183d836b70fb6abbca31a12615882",
+            "@type": "ImageObject",
+            "caption": "dharris",
+            "contentUrl": "https://secure.gravatar.com/avatar/37b22968271038e7833f6768c3ce09cd?s=96&d=identicon&r=g",
+            "inLanguage": "en-US",
+            "url": "https://secure.gravatar.com/avatar/37b22968271038e7833f6768c3ce09cd?s=96&d=identicon&r=g"
+          },
+          "name": "dharris",
+          "url": "https://a16z.com/author/dharris/"
+        }
+      ]
+    },
+    {
+      "@context": "http://schema.org",
+      "@type": "NewsArticle",
+      "articleSection": "enterprise",
+      "author": [
+        {
+          "@type": "Person",
+          "name": "Matt Bornstein"
+        },
+        {
+          "@type": "Person",
+          "name": "Rajko Radovanovic"
+        }
+      ],
+      "creator": [
+        "Matt Bornstein",
+        "Rajko Radovanovic"
+      ],
+      "dateCreated": "2023-06-20T19:23:48Z",
+      "dateModified": "2023-06-20T19:23:48Z",
+      "datePublished": "2023-06-20T19:23:48Z",
+      "headline": "Emerging Architectures for LLM Applications",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1-150x150.png"
+      },
+      "keywords": [
+        "ai",
+        "generative ai",
+        "machine learning"
+      ],
+      "mainEntityOfPage": {
+        "@id": "http://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/",
+        "@type": "WebPage"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://a16z.com/wp-content/uploads/2017/12/cropped-a16z-favicon.png"
+        },
+        "name": "Andreessen Horowitz"
+      },
+      "thumbnailUrl": "https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1-150x150.png",
+      "url": "http://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/"
+    }
+  ],
+  "microdata": [],
+  "microformat": [],
+  "opengraph": [
+    {
+      "namespace": {
+        "article": "http://ogp.me/ns/article#",
+        "og": "http://ogp.me/ns#"
+      },
+      "properties": [
+        [
+          "og:locale",
+          "en_US"
+        ],
+        [
+          "og:type",
+          "article"
+        ],
+        [
+          "og:title",
+          "Emerging Architectures for LLM Applications | Andreessen Horowitz"
+        ],
+        [
+          "og:description",
+          "A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns used by AI startups and tech companies."
+        ],
+        [
+          "og:url",
+          "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/"
+        ],
+        [
+          "og:site_name",
+          "Andreessen Horowitz"
+        ],
+        [
+          "article:published_time",
+          "2023-06-20T19:23:48+00:00"
+        ],
+        [
+          "article:modified_time",
+          "2023-06-21T15:40:52+00:00"
+        ],
+        [
+          "og:image",
+          "https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png"
+        ],
+        [
+          "og:image:width",
+          "1200"
+        ],
+        [
+          "og:image:height",
+          "630"
+        ],
+        [
+          "og:image:type",
+          "image/png"
+        ]
+      ]
+    }
+  ],
+  "twitter": [
+    {
+      "card": "summary_large_image",
+      "data1": "Matt Bornstein and Rajko Radovanovic",
+      "data2": "16 minutes",
+      "image": "https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1024x512-1.png",
+      "label1": "Written by",
+      "label2": "Est. reading time"
+    }
+  ]
+}

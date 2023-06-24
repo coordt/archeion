@@ -8,7 +8,7 @@ import pytest
 
 from archeion.post_processors.html_metadata import Normalizer
 
-from .normalized_data import github_jsonld, medium_jsonld, missing_data_jsonld
+from .normalized_data import github_jsonld, medium_jsonld, missing_data_jsonld, yoast_jsonld
 
 METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
 
@@ -16,6 +16,11 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
 @pytest.mark.parametrize(
     ["src_file", "expected"],
     [
+        pytest.param(
+            METADATA_DIR / "yoast.json",
+            yoast_jsonld,
+            id="yoast",
+        ),
         pytest.param(
             METADATA_DIR / "missing-data.json",
             missing_data_jsonld,
@@ -79,7 +84,7 @@ def test_normalize_jsonld(freezer, src_file: Path, expected: dict):
     freezer.move_to(datetime.datetime.now())  # Fix the time
     expected["dateArchived"] = datetime.datetime.now()
 
-    if expected["datePublished"] is None:
+    if expected.get("datePublished") is None:
         expected["datePublished"] = datetime.datetime.now(tz=datetime.timezone.utc)
 
     raw_data = json.loads(src_file.read_text())

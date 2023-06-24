@@ -205,6 +205,7 @@ class Settings(BaseSettings):
     url_whitelist: Optional[Pattern]
     check_ssl_validity: bool
     archivers: List[ArchiverSettings]
+    post_processors: List[ArchiverSettings]
     cache_url: str
     database_url: str
     config_filename: str = CONFIG_FILENAME
@@ -277,7 +278,8 @@ def get_default_settings(archive_root: Optional[Path] = None) -> Settings:
         return Settings(**defaults)
 
 
-def path_representer(dumper: yaml.SafeDumper, data: Any):
+def path_representer(dumper: yaml.SafeDumper, data: Any) -> yaml.ScalarNode:
+    """Representer for Path objects."""
     return dumper.represent_scalar("tag:yaml.org,2002:str", str(data))
 
 

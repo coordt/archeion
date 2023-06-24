@@ -20,7 +20,7 @@ def get_links_with_dom() -> QuerySet:
 
 
 def post_process_links(links: Optional[List[Link]] = None, overwrite: bool = False) -> None:
-    """Post process archived links."""
+    """Post-process archived links."""
     if links is None:
         links = get_links_with_dom()
         info("Post-processing links with DOM artifacts...")

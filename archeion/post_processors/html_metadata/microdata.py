@@ -15,8 +15,8 @@ def process_microdata_data(data: dict) -> dict:
     """
     output = {
         "type": data.get("type"),
-        "headline": data["properties"].get("name"),
-        "description": data["properties"].get("description"),
+        "headline": data.get("properties", {}).get("name"),
+        "description": data.get("properties", {}).get("description"),
         "author": [],
         "publisher": [],
         "keywords": set(),

@@ -280,10 +280,11 @@ SEARCH_CONFIG = config.search_config
 LINK_PARSERS = [
     "archeion.parsers.generic_html.parse_html_links",
     "archeion.parsers.generic_feed.parse_generic_feed",
-    "archeion.parsers.generic_text.parse_txt_file",
+    "archeion.parsers.generic_text.parse_text",
 ]
 
 ARCHIVERS = config.archivers
+POST_PROCESSORS = config.post_processors
 
 # Based on https://github.com/mpchadwick/tracking-query-params-registry with additions
 STRIPPABLE_QUERY_PARAMS = {

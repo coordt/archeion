@@ -1,0 +1,966 @@
+<html lang="en-US" style="" class="async-hide js"><head><script async="" src="https://snap.licdn.com/li.lms-analytics/insight.beta.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="//munchkin.marketo.net/163/munchkin.js"></script><script src="https://connect.facebook.net/signals/config/1043281702814709?v=2.9.109&amp;r=stable" async=""></script><script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script type="text/javascript" async="" src="https://script.crazyegg.com/pages/scripts/0105/9764.js"></script><script type="text/javascript" async="" src="https://snap.licdn.com/li.lms-analytics/insight.min.js"></script><script gtm="GTM-WHMSDPX" type="text/javascript" async="" src="https://www.google-analytics.com/gtm/optimize.js?id=GTM-WS5QVMJ"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="google-site-verification" content="P0GXb2pbBqt8KUgYlOlJ1WQIEIKCcv82t4HIeTqinPk">
+<link rel="stylesheet" href="https://use.typekit.net/kie2zie.css">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://a16z.com/xmlrpc.php">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.11 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Emerging Architectures for LLM Applications | Andreessen Horowitz</title>
+	<meta name="description" content="A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns used by AI startups and tech companies.">
+	<link rel="canonical" href="https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+	<meta property="og:title" content="Emerging Architectures for LLM Applications | Andreessen Horowitz">
+	<meta property="og:description" content="A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns used by AI startups and tech companies.">
+	<meta property="og:url" content="https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/">
+	<meta property="og:site_name" content="Andreessen Horowitz">
+	<meta property="article:published_time" content="2023-06-20T19:23:48+00:00">
+	<meta property="article:modified_time" content="2023-06-21T15:40:52+00:00">
+	<meta property="og:image" content="https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:type" content="image/png">
+	<meta name="author" content="Matt Bornstein, Rajko Radovanovic">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:image" content="https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1024x512-1.png">
+	<meta name="twitter:label1" content="Written by">
+	<meta name="twitter:data1" content="Matt Bornstein and Rajko Radovanovic">
+	<meta name="twitter:label2" content="Est. reading time">
+	<meta name="twitter:data2" content="16 minutes">
+	<script src="https://ext.chtbl.com/trackable.js"></script><script type="text/javascript" id="www-widgetapi-script" src="https://www.youtube.com/s/player/b7910ca8/www-widgetapi.vflset/www-widgetapi.js" async=""></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-WHMSDPX"></script><script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/","url":"https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/","name":"Emerging Architectures for LLM Applications | Andreessen Horowitz","isPartOf":{"@id":"https://a16z.com/#website"},"primaryImageOfPage":{"@id":"https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#primaryimage"},"image":{"@id":"https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#primaryimage"},"thumbnailUrl":"https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png","datePublished":"2023-06-20T19:23:48+00:00","dateModified":"2023-06-21T15:40:52+00:00","author":{"@id":"https://a16z.com/#/schema/person/919c5e090d740be0076090817db58591"},"description":"A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns used by AI startups and tech companies.","breadcrumb":{"@id":"https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#primaryimage","url":"https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png","contentUrl":"https://a16z.com/wp-content/uploads/2023/06/2657_-LLM-Architecture-Yoast-1200x630-1.png","width":1200,"height":630},{"@type":"BreadcrumbList","@id":"https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://a16z.com/"},{"@type":"ListItem","position":2,"name":"Emerging Architectures for LLM Applications"}]},{"@type":"WebSite","@id":"https://a16z.com/#website","url":"https://a16z.com/","name":"Andreessen Horowitz","description":"Software Is Eating the World","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://a16z.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://a16z.com/#/schema/person/919c5e090d740be0076090817db58591","name":"dharris","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://a16z.com/#/schema/person/image/6c0183d836b70fb6abbca31a12615882","url":"https://secure.gravatar.com/avatar/37b22968271038e7833f6768c3ce09cd?s=96&d=identicon&r=g","contentUrl":"https://secure.gravatar.com/avatar/37b22968271038e7833f6768c3ce09cd?s=96&d=identicon&r=g","caption":"dharris"},"url":"https://a16z.com/author/dharris/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//secure.gravatar.com">
+<link rel="dns-prefetch" href="//cdn.optimizely.com">
+<link rel="dns-prefetch" href="//maps.googleapis.com">
+<link rel="dns-prefetch" href="//munchkin.marketo.net">
+<link rel="dns-prefetch" href="//info.a16z.com">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/a16z.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="https://a16z.com/wp-includes/js/wp-emoji-release.min.js?ver=6.1.1" type="text/javascript" defer=""></script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel="stylesheet" id="wp-block-library-css" href="https://c0.wp.com/c/6.1.1/wp-includes/css/dist/block-library/style.min.css" type="text/css" media="all">
+<style id="wp-block-library-inline-css" type="text/css">
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel="stylesheet" id="classic-theme-styles-css" href="https://c0.wp.com/c/6.1.1/wp-includes/css/classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="bcct_style-css" href="https://a16z.com/wp-content/plugins/better-click-to-tweet/assets/css/styles.css?ver=3.0" type="text/css" media="all">
+<link rel="stylesheet" id="wp-parsely-style-css" href="https://a16z.com/wp-content/plugins/wp-parsely/wp-parsely.css?ver=1685714873" type="text/css" media="all">
+<link rel="stylesheet" id="a16z-global-css" href="https://a16z.com/wp-content/themes/a16z-2015/client/build/css/global.38adf37f872be4f29149.min.css?ver=1.03" type="text/css" media="all">
+<link rel="stylesheet" id="a16z-single-css-css" href="https://a16z.com/wp-content/themes/a16z-2015/client/build/css/single.28b69f9515ab6b9d0f1e.min.css?ver=1.03" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="https://c0.wp.com/p/jetpack/8.6/css/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="https://c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="jetpack_related-posts-js-extra">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://c0.wp.com/p/jetpack/8.6/_inc/build/related-posts/related-posts.min.js" id="jetpack_related-posts-js"></script>
+<script type="text/javascript" src="https://cdn.optimizely.com/js/15432930010.js?ver=1.01" id="optimizely-js"></script>
+<script type="text/javascript" src="//info.a16z.com/js/forms2/js/forms2.min.js?ver=1.0" id="marketo-newsletter-js"></script>
+<link rel="https://api.w.org/" href="https://a16z.com/wp-json/"><link rel="alternate" type="application/json" href="https://a16z.com/wp-json/wp/v2/posts/323509"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://a16z.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://a16z.com/wp-includes/wlwmanifest.xml">
+<link rel="shortlink" href="https://wp.me/pa0Syt-1m9T">
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+<!-- BEGIN wp-parsely Plugin Version 1.14 -->
+<meta name="wp-parsely_version" id="wp-parsely_version" content="1.14">
+			<script type="application/ld+json">
+		{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/a16z.com\/2023\/06\/20\/emerging-architectures-for-llm-applications\/"},"headline":"Emerging Architectures for LLM Applications","url":"http:\/\/a16z.com\/2023\/06\/20\/emerging-architectures-for-llm-applications\/","thumbnailUrl":"https:\/\/a16z.com\/wp-content\/uploads\/2023\/06\/2657_-LLM-Architecture-Yoast-1200x630-1-150x150.png","image":{"@type":"ImageObject","url":"https:\/\/a16z.com\/wp-content\/uploads\/2023\/06\/2657_-LLM-Architecture-Yoast-1200x630-1-150x150.png"},"dateCreated":"2023-06-20T19:23:48Z","datePublished":"2023-06-20T19:23:48Z","dateModified":"2023-06-20T19:23:48Z","articleSection":"enterprise","author":[{"@type":"Person","name":"Matt Bornstein"},{"@type":"Person","name":"Rajko Radovanovic"}],"creator":["Matt Bornstein","Rajko Radovanovic"],"keywords":["ai","generative ai","machine learning"],"publisher":{"@type":"Organization","name":"Andreessen Horowitz","logo":{"@type":"ImageObject","url":"https:\/\/a16z.com\/wp-content\/uploads\/2017\/12\/cropped-a16z-favicon.png"}}}
+		</script>
+
+			<!-- END wp-parsely Plugin Version 1.14 -->
+
+<link rel="dns-prefetch" href="//v0.wordpress.com">
+<link rel="dns-prefetch" href="//i0.wp.com">
+<link rel="dns-prefetch" href="//i1.wp.com">
+<link rel="dns-prefetch" href="//i2.wp.com">
+<link rel="dns-prefetch" href="//c0.wp.com">
+<style type="text/css">img#wpstats{display:none}</style><link rel="alternate" type="application/rss+xml" title="Andreessen Horowitz » Feed" href="https://a16z.com/feed/">			<script>
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push(
+					{"segment":"Enterprise","author":["Matt Bornstein","Rajko Radovanovic"],"type":"post","Tag":["AI, machine &amp; deep learning","enterprise &amp; SaaS","AI","Generative AI","machine learning"]}				);
+			</script>
+		<!-- Google Optimize Anti-flicker Snippet -->
+			<script>(function(a,s,y,n,c,h,i,d,e){s.className+=" "+y;h.start=1*new Date;
+			h.end=i=function(){s.className=s.className.replace(RegExp(" ? "+y),"")};
+			(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+			})(window,document.documentElement,"async-hide","dataLayer",4000,
+			{"GTM-WHMSDPX":true});</script>
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+			new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!="dataLayer"?"&amp;l="+l:"";j.async=true;j.src=
+			"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,"script","dataLayer","GTM-WHMSDPX");</script>    <script type="text/javascript">
+        !function(t,e,c,n,o,r){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},setTimeout(function(){o=e.createElement("script"),r=e.getElementsByTagName("script")[0],o.src=c,r.parentNode.insertBefore(o,r)},0)}(window,document,"https://ext.chtbl.com/trackable.js","trackable");
+
+        // Initialize with your Trackable API key
+        trackable('init', 'b44008f3b116fc2e557d345d36a459ad');
+    </script>
+    <link rel="icon" href="https://a16z.com/wp-content/uploads/2023/02/cropped-favicon-512-48x48.png" sizes="48x48">
+<link rel="icon" href="https://a16z.com/wp-content/uploads/2023/02/cropped-favicon-512-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="https://a16z.com/wp-content/uploads/2023/02/cropped-favicon-512-180x180.png">
+<meta name="msapplication-TileImage" content="https://a16z.com/wp-content/uploads/2023/02/cropped-favicon-512-270x270.png">
+			<style type="text/css" id="wp-custom-css">
+				#wpstats {
+	display: none;
+}
+
+.wp-content iframe.youtube-player {
+	height: 360px !important;
+}
+
+.wp-video-shortcode div {
+	display: flex;
+	font-size: .938rem;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.wp-video-shortcode .mejs-time {
+	font-size: 11px;
+}
+
+#post-314416 + .bio-lp-newsletter {
+	display: none;
+}			</style>
+		    <style>
+	    .ab-test-b {
+		    display: none !important;
+	    }
+
+	    .ab-test .ab-test-a {
+		    display: none !important;
+	    }
+
+	    .ab-test .ab-test-b {
+		    display: block !important;
+	    }
+    </style>
+    <!-- Google tag (gtag.js) --> <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-TDNC6XM13M"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-TDNC6XM13M'); </script>
+    <script defer="" data-domain="a16z.com" src="https://plausible.io/js/script.js"></script>
+    <script type="text/javascript" id="base-theme-script-js-extra">
+        /* <![CDATA[ */
+        var wp_ajax = {"ajaxurl":"https://a16z.com/wp-admin/admin-ajax.php"};
+        /* ]]> */
+    </script>
+		<script src="//www.youtube.com/iframe_api"></script>
+    <script src="//player.vimeo.com/api/player.js"></script>
+    <script src="//fast.wistia.com/assets/external/E-v1.js" async=""></script>
+<script type="text/javascript" async="" src="//munchkin.marketo.net/munchkin-beta.js"></script><link id="mktoForms2BaseStyle" rel="stylesheet" type="text/css" href="https://info.a16z.com/js/forms2/css/forms2.css"><link id="mktoForms2ThemeStyle" rel="stylesheet" type="text/css" href="https://info.a16z.com/js/forms2/css/forms2-theme-simple.css"><style>/* Add your custom CSS below */
+/*CG CSS Normalize Marketo Form CSS*/
+.mktoForm, .mktoForm .mktoFieldWrap, .mktoForm .mktoHtmlText, .mktoForm input, .mktoLogicalField .mktoCheckboxList {width:100% !important;}
+@media only screen and (min-width:480px) {
+.mktoFormCol:first-child:nth-last-child(2), .mktoFormCol:first-child:nth-last-child(2) ~ .mktoFormCol {width: 100% !important;}
+.mktoFormCol:first-child:nth-last-child(3), .mktoFormCol:first-child:nth-last-child(3) ~ .mktoFormCol {width: 50% !important;}
+.mktoFormCol:first-child:nth-last-child(4), .mktoFormCol:first-child:nth-last-child(4) ~ .mktoFormCol {width: 33.3333% !important;}
+.mktoFormCol:first-child:nth-last-child(3) ~ .mktoFormCol {padding-left: 0.3em !important;}
+}
+@media only screen and (max-width:480px) {.mktoFormCol {width:100% !important;}}
+.mktoAsterix{display:none !important;}
+.mktoForm .mktoGutter {display:none !important;}
+.mktoButtonWrap {margin-left:0 !important;}
+.mktoForm input[type=text], .mktoForm input[type=url], .mktoForm input[type=email], .mktoForm input[type=tel], .mktoForm input[type=number], .mktoForm input[type=date], .mktoForm textarea.mktoField, .mktoForm select.mktoField {padding: 0.3em; width: 100% !important;}
+.mktoForm {clear: both; margin-bottom: 0.3em;}
+.mktoForm .mktoRadioList, .mktoForm .mktoCheckboxList {float: left !important; width: auto !important;}
+.mktoForm .mktoRadioList > label, .mktoForm .mktoCheckboxList > label {display: inherit !important;}
+.mktoForm input[type="radio"], .mktoForm input[type="checkbox"] {width: auto !important;}
+.mktoForm fieldset legend {margin: inherit !important;}
+
+/*Override Marketo Form CSS for Alignment*/
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px), only screen and (max-device-height:480px){
+.mktoForm,.mktoForm *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-moz-box-sizing:border-box;padding:auto}
+/* Yes, I know padding:auto isn't a real property*/
+.mktoLabel.mktoHasWidth {height: inherit !important;}
+.mktoForm .mktoGutter,.mktoForm .mktoOffset{display:initial !important}
+.mktoForm .mktoFormCol .mktoLabel{text-align:left;width:initial !important}
+.mktoForm .mktoFormCol{float:initial !important}
+.mktoForm .mktoFieldWrap{float:initial !important}
+.mktoForm fieldset{padding:initial !important}
+.mktoForm input[type=url],.mktoForm input[type=text],.mktoForm input[type=date],.mktoForm input[type=tel],.mktoForm input[type=email],.mktoForm input[type=number],.mktoForm textarea.mktoField,.mktoForm select.mktoField{width:100% !important;height:initial !important;line-height:initial !important;font-size:initial !important}
+.mktoForm select.mktoField{height:auto}
+.mktoForm .mktoFormRow .mktoField{clear:left}
+.mktoForm .mktoFormRow .mktoFormCol{clear:both}
+.mktoForm .mktoRadioList,.mktoForm .mktoCheckboxList{width:initial !important}
+.mktoForm .mktoFormRow .mktoRequiredField .mktoAsterix{float:left;padding-left:initial !important;padding-right:5px}
+.mktoModal .mktoModalContent{padding:initial !important}
+.mktoModal .mktoModalClose{right:initial !important}
+.mktoButtonRow {width:100%; margin-top:0.35rem !important;}
+.mktoButtonWrap {margin-left:0px; float:right;}
+.mktoForm .mktoButton {margin-left: 0 !important;}
+.mktoButton {padding:0.5rem !important;}
+
+
+/*
+.mktoRadioList > label, .mktoForm .mktoCheckboxList > label {
+    margin-left: none !important;
+}
+
+  .mktoForm .mktoCheckboxList > label{
+    margin-left:none !important;
+  }
+
+   .mktoForm input[type=checkbox] + label:before, .mktoForm input[type=radio] + label:before {
+
+     background-color: #FFFFFF !important;
+
+     }
+
+  .mktoForm input[type=checkbox] + label:after, .mktoForm input[type=radio] + label:after {
+     background-color: lightgray !important;
+     }
+    .mktoForm input[type=checkbox] + label:checked, .mktoForm input[type=radio] + label:checked {
+     background-color: lightgray !important;
+     }
+
+  */</style></head>
+<body class="post-template-default single single-post postid-323509 single-format-standard">
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+
+		<!-- Vertical Pages Rebranded Header -->
+
+        <!-- Rebranded Header -->
+                <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            body > .site {
+                max-width: none;
+                background: transparent;
+            }
+
+            body .site-content {
+                margin-bottom: 0;
+                padding: 0;
+            }
+        </style>
+
+                        <header id="header" class="header-new">
+                                    <div class="bg-header" style=""></div>
+                        <div class="container">
+                <div class="header-holder">
+                    <div class="logo-wrap">
+                        <a class="logo" href="/">
+                                                            <svg width="210" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 48"><path class="lr0" d="M110.6,29c-5.3,0-9.5,4.1-9.5,9.5s4.3,9.5,9.5,9.5c5.3,0,9.5-4.2,9.5-9.5C120.1,33.1,115.9,29,110.6,29z M110.6,32.8c3.2,0,5.6,2.4,5.6,5.7s-2.5,5.7-5.6,5.7c-3.2,0-5.6-2.4-5.6-5.7C104.9,35.2,107.4,32.8,110.6,32.8z"></path><path d="M189.7,41.9v-8.7h4.5v-3.8h-4.5v-5.1l-3.9,1.2v3.9h-3.3v3.8h3.3v8.7c0,4.7,2.4,6.4,8.4,5.6V44C191.2,44.2,189.7,44.2,189.7,41.9z"></path><path d="M209.9,43.9H201l8.9-10.7l0,0v-3.6h-13.8v3.6h8.9l-8.9,10.7l0,0v3.7h13.8V43.9z"></path><path d="M52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2z"></path><path class="lr0" d="M54.2,1.2l4-1.2v25.3h-4v-1.4c-1.8,1.3-4.1,2-6.6,1.8c-4.4-0.4-8.1-4-8.5-8.5c0-0.4-0.1-0.7-0.1-1.1l0,0l0,0l0,0l0,0l0,0l0,0c0-0.3,0-0.6,0.1-0.9c0-0.1,0-0.1,0-0.2l0,0l0,0v-0.1v-0.1c0-0.2,0.1-0.4,0.1-0.6c0-0.1,0-0.2,0.1-0.2v-0.1v-0.1c0-0.2,0.1-0.3,0.1-0.5c0-0.1,0.1-0.2,0.1-0.3l0,0v-0.1l0,0c0.1-0.2,0.1-0.3,0.2-0.5c0-0.1,0.1-0.2,0.1-0.3c0,0,0,0,0-0.1c0.1-0.2,0.2-0.3,0.2-0.5c0.1-0.1,0.1-0.2,0.2-0.3l0,0c0.1-0.1,0.2-0.3,0.3-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.2-0.3,0.3-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.2-0.2,0.4-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.3-0.2,0.4-0.3c0.4-0.2,0.5-0.3,0.6-0.4c0.1-0.1,0.3-0.2,0.4-0.3h0.1C43.7,8,43.8,8,43.9,7.9c0.2-0.1,0.3-0.2,0.5-0.2h0.1l0,0c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.3-0.1,0.5-0.2l0,0l0,0h0.1l0,0c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.3-0.1,0.5-0.1l0,0h0.1h0.1c0.1,0,0.2,0,0.3-0.1c0.2,0,0.4-0.1,0.6-0.1l0,0h0.1c0.1,0,0.1,0,0.2,0c0.3,0,0.7-0.1,1-0.1c2.1,0,4,0.7,5.6,1.8L54.2,1.2L54.2,1.2z M47.4,21.7c3.6,0.8,6.8-2,6.8-5.4v-0.1c0-3.1-2.5-5.6-5.6-5.6c-0.2,0-0.4,0-0.6,0h-0.1l0,0c0,0,0,0-0.1,0s-0.3,0-0.4,0.1h-0.1l0,0l0,0c-0.1,0-0.2,0.1-0.3,0.1s-0.2,0.1-0.2,0.1c-0.1,0-0.2,0.1-0.3,0.1s-0.1,0.1-0.2,0.1c-0.1,0.1-0.2,0.1-0.3,0.2c-0.1,0-0.1,0.1-0.2,0.1c-0.1,0.1-0.2,0.1-0.3,0.2c0,0,0,0-0.1,0l-0.1,0.1c-0.1,0.1-0.2,0.2-0.3,0.3l0,0l0,0l0,0l0,0c0,0,0,0-0.1,0.1s-0.3,0.3-0.4,0.4l0,0l0,0c-0.1,0.1-0.2,0.3-0.3,0.4c0,0,0,0.1-0.1,0.1c0,0,0,0,0,0.1c-0.1,0.1-0.1,0.2-0.2,0.3c0,0.1-0.1,0.1-0.1,0.2l0,0c-0.1,0.1-0.1,0.2-0.1,0.3s-0.1,0.1-0.1,0.2l0,0c0,0.1-0.1,0.2-0.1,0.3s0,0.2-0.1,0.2c0,0.1,0,0.2-0.1,0.4c0,0.1,0,0.2,0,0.2c0,0.1,0,0.3,0,0.4v0.1c0,0.1,0,0.1,0,0.2c0,0.4,0,0.8,0.1,1.3C43.6,19.6,45.3,21.3,47.4,21.7z"></path><path d="M14.5,16.2L14.5,16.2L14.5,16.2L14.5,16.2C14.5,16.3,14.5,16.3,14.5,16.2C14.5,16.3,14.5,16.3,14.5,16.2z"></path><path class="lr0" d="M15.5,7.3v1.2C14,7.4,12,6.7,10,6.7c-5.6,0-10.1,4.9-9.5,10.6c0.5,4.4,4.1,8,8.5,8.5c2.5,0.2,4.8-0.5,6.6-1.8v1.4h4V7.3H15.5z M15.5,16.3c0,3.5-3.2,6.2-6.8,5.4c-2.1-0.4-3.8-2.1-4.3-4.3c-0.7-3.6,2.1-6.8,5.6-6.8C13,10.6,15.5,13.1,15.5,16.3L15.5,16.3z"></path><path d="M131.1,29.2v4.2c-2.6-0.2-5.6,1-5.6,5.1v9.1h-3.9V29.5h3.9v3C126.6,30.1,128.8,29.2,131.1,29.2z"></path><path class="lr0" d="M140.5,29c-5.3,0-9.5,4.1-9.5,9.5s4.3,9.5,9.5,9.5c5.3,0,9.5-4.2,9.5-9.5C150.1,33.1,145.9,29,140.5,29z M140.5,32.8c3.2,0,5.6,2.4,5.6,5.7s-2.5,5.7-5.6,5.7c-3.2,0-5.6-2.4-5.6-5.7C134.9,35.2,137.4,32.8,140.5,32.8z"></path><path d="M175.8,29.5l-5.7,18.1h-3.8l-3.8-12.2l-3.8,12.2h-3.8l-5.7-18.1h4.1l3.5,12.5l3.8-12.5h3.7l3.8,12.5l3.5-12.5C171.6,29.5,175.8,29.5,175.8,29.5z"></path><path d="M181,29.5h-3.9v18.1h3.9V29.5z"></path><path d="M69.2,7v4.2c-2.6-0.2-5.6,1-5.6,5.1v9.1h-3.9V7.3h3.9v3C64.7,7.9,66.9,7,69.2,7z"></path><path class="lr0" d="M87.1,21.9L87.1,21.9L87.1,21.9L87.1,21.9L87.1,21.9v9.9c1.2-1.9,3.1-2.8,5.6-2.8c4,0,6.9,2.7,6.9,7.4v11.2h-3.9V36.9c0-2.7-1.6-4.2-4-4.2c-2.6,0-4.6,1.5-4.6,5.2v9.7h-3.9V25.1c-1.2,0.5-2.5,0.8-4,0.8c-6,0-9.8-4.1-9.8-9.5s3.9-9.5,9.5-9.5c5.4,0,9.1,4.3,9.1,9.5c0,0.5-0.1,1.1-0.1,1.6H73.4c0.6,2.8,2.9,4.3,5.8,4.3c1.7,0,3-0.6,4-1.4c0.3-0.2,0.5-0.5,0.7-0.8L87.1,21.9z M78.8,10.4c2.4,0,4.6,1.3,5.2,4.4H73.4C73.9,12.1,75.9,10.4,78.8,10.4z"></path><path class="lr0" d="M103.3,20c-0.9,1.3-2.5,2.2-4.7,2.2c-2.9,0-5.2-1.4-5.8-4.3h14.4c0.1-0.5,0.1-1.1,0.1-1.6c0-5.2-3.7-9.5-9.1-9.5c-5.7,0-9.5,4.2-9.5,9.5c0,5.4,3.9,9.5,9.8,9.5c3.5,0,6.3-1.5,7.9-3.9L103.3,20z M98.3,10.4c2.4,0,4.6,1.3,5.2,4.4H92.8C93.4,12.1,95.4,10.4,98.3,10.4z"></path><path class="lr0" d="M148,22.3c2.2,0,3.8-1,4.7-2.2l3.2,1.9c-1.7,2.5-4.4,3.9-7.9,3.9c-6,0-9.8-4.1-9.8-9.5s3.9-9.5,9.5-9.5c5.4,0,9.1,4.3,9.1,9.5c0,0.5-0.1,1.1-0.1,1.6h-14.4C142.8,20.8,145.1,22.3,148,22.3z M152.8,14.8c-0.5-3.1-2.8-4.4-5.2-4.4c-2.9,0-4.9,1.7-5.5,4.4C142.1,14.8,152.8,14.8,152.8,14.8z"></path><path d="M177.1,25.4h3.9v-3.5h-3.9V25.4z"></path><path d="M30.6,6.8c-2.5,0-4.4,0.9-5.6,2.8V7.5l0,0V7.2h-3.9v1.5l0,0v16.6H25v-9.7c0-3.7,2-5.2,4.6-5.2c2.5,0,4,1.4,4,4.2v10.7h3.9v-11C37.6,9.6,34.7,6.8,30.6,6.8z"></path><path d="M162.6,25.4h-3.9V7.3h3.9v2.3c1.2-1.9,3.1-2.8,5.6-2.8c4,0,6.9,2.7,6.9,7.4v11.1h-3.9V14.7c0-2.7-1.6-4.2-4-4.2c-2.6,0-4.6,1.5-4.6,5.2V25.4z"></path><path d="M112.5,12.3c0-1.3,1.2-1.9,2.6-1.9s2.6,0.6,3.3,1.8l3.4-1.7c-1.3-2.3-3.7-3.7-6.7-3.7c-3.7,0-6.6,2.1-6.6,5.5c0,3.8,3.3,4.7,6.1,5.5c2,0.6,3.6,1,3.6,2.4s-1.3,2-3.1,2c-1.7,0-3.1-0.7-3.8-2l-3.5,1.7c1.2,2.4,3.8,3.9,7.2,3.9c3.9,0,7.1-2,7.1-5.6c0-3.9-3.4-4.9-6.1-5.6C114.2,14.1,112.5,13.6,112.5,12.3z"></path><path d="M130.2,10.4c-1.4,0-2.6,0.6-2.6,1.9c0,1.4,1.7,1.8,3.6,2.4c2.8,0.8,6.1,1.7,6.1,5.6c0,3.6-3.1,5.6-7.1,5.6c-3.5,0-6-1.5-7.2-3.9l3.5-1.7c0.7,1.3,2,2,3.8,2c1.7,0,3.1-0.6,3.1-2c0-1.3-1.7-1.8-3.6-2.4c-2.8-0.8-6.1-1.7-6.1-5.5c0-3.4,2.9-5.5,6.6-5.5c2.9,0,5.4,1.4,6.7,3.7l-3.4,1.7C132.8,11,131.6,10.4,130.2,10.4z"></path></svg>                                                    </a>
+                                                <span class="tagline">It's time to build</span>
+                    </div>
+                                        <a href="#" class="nav-opener"><span><span class="sr-only">Nav Opener</span></span></a>
+                    <nav id="nav">
+                        <ul>
+	                        	                        	                                                    <li class="">
+                                <a href="/portfolio/">Portfolio</a>
+                                                            </li>
+                            	                        	                                                    <li class=" is-single">
+                                <a href="/team/">Team</a>
+                                                            </li>
+                            	                        	                                                    <li class="has-drop is-single">
+                                <a href="#">Focus Areas</a>
+                                                                    <div class="nav-drop">
+                                        <div class="holder">
+                                            <div class="two-cols">
+                                                                                                <div class="col">
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/american-dynamism/">American Dynamism</a></li>
+	                                                                                                            <li><a href="/bio/">Bio + Health</a></li>
+	                                                                                                            <li><a href="/cultural-leadership-fund/">Cultural Leadership Fund</a></li>
+	                                                                                                            <li><a href="/consumer/">Consumer</a></li>
+	                                                                                                            <li><a href="https://a16zcrypto.com">Crypto</a></li>
+	                                                                                                            <li><a href="/enterprise/">Enterprise</a></li>
+	                                                                                                            <li><a href="/fintech/">Fintech</a></li>
+	                                                                                                            <li><a href="/games/">Games</a></li>
+	                                                                                                            <li><a href="/growth/">Growth</a></li>
+	                                                                                                            <li><a href="/talent-x-opportunity/">Talent x Opportunity</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                                            </li>
+                            	                        	                                                    <li class="has-drop">
+                                <a href="#">Content</a>
+                                                                    <div class="nav-drop">
+                                        <div class="holder">
+                                            <div class="two-cols">
+                                                                                                <div class="col">
+	                                                                                                        <a href="/content/" class="title">Topics</a>
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/category/bio-health/">Bio + Health</a></li>
+	                                                                                                            <li><a href="/category/consumer/">Consumer</a></li>
+	                                                                                                            <li><a href="/category/the-creator-economy/">Creator Economy</a></li>
+	                                                                                                            <li><a href="/category/marketplaces/">Marketplaces</a></li>
+	                                                                                                            <li><a href="/category/gaming/">Gaming &amp; Social</a></li>
+	                                                                                                            <li><a href="/tag/generative-ai/">Generative AI</a></li>
+	                                                                                                            <li><a href="/category/fintech/">Fintech</a></li>
+	                                                                                                            <li><a href="/category/enterprise-b2b-saas/">Enterprise &amp; SaaS</a></li>
+	                                                                                                            <li><a href="/category/security-privacy/">Security &amp; Privacy</a></li>
+	                                                                                                            <li><a href="/category/blockchain-cryptocurrencies/">Cryptocurrencies &amp; Blockchains</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                                <div class="col">
+	                                                                                                        <a href="/content/" class="title">Type</a>
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/articles/">Articles</a></li>
+	                                                                                                            <li><a href="/videos/">Video</a></li>
+	                                                                                                            <li><a href="https://future.com/podcast-network/">Podcasts</a></li>
+	                                                                                                            <li><a href="https://info.a16z.com/newsletters.html">Newsletters</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                                            </li>
+                            	                        	                                                    <li class="">
+                                <a href="/about/">About</a>
+                                                            </li>
+                            	                        	                                                    <li class="">
+                                <a href="/about/jobs/">Jobs</a>
+                                                            </li>
+                                                                                        <li>
+                                    <a href="https://info.a16z.com/newsletters.html" target="" class="btn btn-orange">
+                                        Newsletters                                    </a>
+                                </li>
+                                                    </ul>
+                    </nav>
+                                        <div class="search style-1">
+                        <div class="search-opener-wrap">
+                            <a href="#" class="icon-search search-opener"></a>
+                        </div>
+                        <div class="search-box">
+                            <form role="search" method="get" action="/">
+                                <button for="search">
+                                    <span class="sr-only">search</span>
+                                </button>
+                                <input type="search" id="search" placeholder="Search" name="s" aria-label="search" autocomplete="false">
+                            </form>
+                            <a href="#" class="close search-opener"><span class="sr-only">Close</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+                <!-- Rebranded Header End -->
+
+		<div id="content" class="site-content sidebar--none">
+			<main id="primary" class="content-area site-content__primary" role="main">
+                                    <div class="content-new">
+                        <div class="container">
+
+<article id="post-323509">
+        <main id="main">
+        <div class="blog-section">
+            <header class="blog-header">
+                <h1>Emerging Architectures for LLM Applications</h1>
+
+<div class="byline byline--entry-header">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/matt-bornstein/" target="" class="author">Matt Bornstein</a> and
+			<a href="https://a16z.com/author/rajko-radovanovic/" target="" class="author">Rajko Radovanovic</a>		</span>
+</div>
+            </header>
+            <div class="blog-content-area">
+                <aside class="blog-aside">
+                    <div class="blog-aside__inner">
+
+<ul class="post-terms post-terms--single">
+
+		<li>
+			<a rel="tag" href="https://a16z.com/category/machine-learning/">
+			AI, machine &amp; deep learning			</a>
+		</li>
+
+		<li>
+			<a rel="tag" href="https://a16z.com/category/enterprise-b2b-saas/">
+			enterprise &amp; SaaS			</a>
+		</li>
+
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/ai/">
+			AI			</a>
+		</li>
+
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/generative-ai/">
+			Generative AI			</a>
+		</li>
+
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/machine-learning/">
+			machine learning			</a>
+		</li>
+	</ul>
+	                    <ul class="blog-social-networks">
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/" target="_blank" data-url="https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/">
+			Facebook
+		</a>
+	</li>
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/" target="_blank" data-url="https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/" data-title="Emerging Architectures for LLM Applications">
+			LinkedIn
+		</a>
+	</li>
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-twitter" href="https://twitter.com/intent/tweet/?text=Emerging%20Architectures%20for%20LLM%20Applications&amp;url=https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/&amp;via=a16z" data-url="https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/" data-via="a16z" data-text="Emerging Architectures for LLM Applications">
+			Twitter
+		</a>
+	</li>
+</ul>
+                                                                            <div class="toc-wrapper">
+                                <div class="toc ">
+                                                                            <strong class="title">Table of contents</strong>
+                                        <ul class="toc-list"><li><a href="#section--1" class="active">The stack</a></li><li><a href="#section--2">Design pattern: In-context learning</a></li><li><a href="#section--3">Data preprocessing / embedding</a></li><li><a href="#section--4">Prompt construction/ retrieval</a></li><li><a href="#section--5">Prompt execution / inference</a></li><li><a href="#section--6">What about agents?</a></li><li><a href="#section--7">Looking ahead</a></li></ul>
+                                                                                    <div class="toc-footer">
+                                                <a href="https://a16z.com/ai/" target="">Explore more: AI + a16z</a>
+                                            </div>
+                                                                                                                                                </div>
+                            </div>
+	                                        </div>
+                </aside>
+                <div class="blog-content entry-content__primary">
+                    <div class="wp-content">
+	                    <p><span style="font-weight: 400">Large language models are a powerful new primitive for building software. But since they are so new—and behave so differently from normal computing resources—it’s not always obvious how to use them.</span></p>
+<p><span style="font-weight: 400">In this post, we’re sharing a reference architecture for the emerging LLM app stack. It shows the most common systems, tools, and design patterns we’ve seen used by AI startups and sophisticated tech companies. This stack is still very early and may change substantially as the underlying technology advances, but we hope it will be a useful reference for developers working with LLMs now.</span></p>
+<p><i><span style="font-weight: 400">This work is based on conversations with AI startup founders and engineers. We relied especially on input from: Ted Benson, Harrison Chase, Ben Firshman, Ali Ghodsi, Raza Habib, Andrej Karpathy, Greg Kogan, Jerry Liu, Moin Nadeem, Diego Oppenheimer, Shreya Rajpal, Ion Stoica, Dennis Xu, Matei Zaharia, and Jared Zoneraich. Thank you for your help!</span></i></p>
+<h2><span style="font-weight: 400"><div id="section--1" data-toc-header="The stack"></div>The stack</span></h2>
+<p><span style="font-weight: 400">Here’s our current view of the LLM app stack (click to enlarge):</span></p>
+<p><a href="https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?ssl=1"><img decoding="async" class="alignnone size-large wp-image-323634" src="https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=1024%2C717&amp;ssl=1" alt="" width="534" height="373" srcset="https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=1024%2C717&amp;ssl=1 1024w, https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=300%2C210&amp;ssl=1 300w, https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=768%2C538&amp;ssl=1 768w, https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=1536%2C1075&amp;ssl=1 1536w, https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=125%2C88&amp;ssl=1 125w, https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=471%2C330&amp;ssl=1 471w, https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?resize=900%2C630&amp;ssl=1 900w, https://i0.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-1-of-4-2.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px"></a></p>
+<p><span style="font-weight: 400">And here’s a list of links to each project for quick reference:</span></p>
+<div class="table-wrap"><table class="table--style-enterprise" style="height: 110px;width: 100%;border-collapse: collapse;border-style: solid;border-color: #000000;background-color: #dce9f5">
+<tbody>
+<tr style="height: 22px">
+<td style="width: 8.68484%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Data pipelines&quot;}"><strong>Data pipelines</strong></td>
+<td style="width: 10.918%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Embedding Model&quot;}"><strong>Embedding model</strong></td>
+<td style="width: 10.7196%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;VectorDB&quot;}"><strong>Vector database</strong></td>
+<td style="width: 8.98261%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Playground&quot;}"><strong>Playground</strong></td>
+<td style="width: 9.42923%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Orchestration&quot;}"><strong>Orchestration</strong></td>
+<td style="width: 11.067%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;APIs/Plugins&quot;}"><strong>APIs/plugins</strong></td>
+<td style="width: 8.53594%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;LLM Cache&quot;}"><strong>LLM cache</strong></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 8.68484%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Databricks&quot;}"><a href="https://www.databricks.com/product/machine-learning/large-language-models" target="_blank" rel="noopener">Databricks</a></td>
+<td style="width: 10.918%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Open AI&quot;}"><a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a></td>
+<td style="width: 10.7196%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Pinecone&quot;}"><a href="https://www.pinecone.io/" target="_blank" rel="noopener">Pinecone</a></td>
+<td style="width: 8.98261%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OpenAI&quot;}"><a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a></td>
+<td style="width: 9.42923%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Langchain&quot;}"><a href="https://github.com/hwchase17/langchain" target="_blank" rel="noopener">Langchain</a></td>
+<td style="width: 11.067%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Serp&quot;}"><a href="https://serpapi.com/" target="_blank" rel="noopener">Serp</a></td>
+<td style="width: 8.53594%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Redis&quot;}"><a href="https://redis.io/" target="_blank" rel="noopener">Redis</a></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 8.68484%;height: 22px"><a href="https://airflow.apache.org/" target="_blank" rel="noopener">Airflow</a></td>
+<td style="width: 10.918%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Cohere AI&quot;}"><a href="https://cohere.com/" target="_blank" rel="noopener">Cohere</a></td>
+<td style="width: 10.7196%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;ChromaDB&quot;}"><a href="https://weaviate.io/" target="_blank" rel="noopener">Weaviate</a></td>
+<td style="width: 8.98261%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;nat.dev&quot;}"><a href="https://nat.dev/" target="_blank" rel="noopener">nat.dev</a></td>
+<td style="width: 9.42923%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Llamaindex&quot;}"><a href="https://github.com/jerryjliu/llama_index" target="_blank" rel="noopener">LlamaIndex</a></td>
+<td style="width: 11.067%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Wolfram&quot;}"><a href="https://www.wolfram.com/wolfram-plugin-chatgpt/" target="_blank" rel="noopener">Wolfram</a></td>
+<td style="width: 8.53594%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;SQLite&quot;}"><a href="https://www.sqlite.org/" target="_blank" rel="noopener">SQLite</a></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 8.68484%;height: 22px"><a href="https://www.unstructured.io/" target="_blank" rel="noopener">Unstructured</a></td>
+<td style="width: 10.918%;height: 22px"><a href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a></td>
+<td style="width: 10.7196%;height: 22px"><a href="https://www.trychroma.com/" target="_blank" rel="noopener">ChromaDB</a></td>
+<td style="width: 8.98261%;height: 22px"><a href="https://humanloop.com/" target="_blank" rel="noopener">Humanloop</a></td>
+<td style="width: 9.42923%;height: 22px"><a href="https://chat.openai.com" target="_blank" rel="noopener">ChatGPT</a></td>
+<td style="width: 11.067%;height: 22px"><a href="https://zapier.com/blog/announcing-zapier-chatgpt-plugin/" target="_blank" rel="noopener">Zapier</a></td>
+<td style="width: 8.53594%;height: 22px"><a href="https://github.com/zilliztech/GPTCache" target="_blank" rel="noopener">GPTCache</a></td>
+</tr>
+<tr>
+<td style="width: 8.68484%"></td>
+<td style="width: 10.918%"></td>
+<td style="width: 10.7196%"><a href="https://github.com/pgvector/pgvector" target="_blank" rel="noopener">pgvector</a></td>
+<td style="width: 8.98261%"></td>
+<td style="width: 9.42923%"></td>
+<td style="width: 11.067%"></td>
+<td style="width: 8.53594%"></td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-wrap"><table class="table--style-enterprise" style="height: 132px;width: 100%;border-collapse: collapse;border-style: solid;border-color: #000000;background-color: #dce9f5">
+<tbody>
+<tr style="height: 22px">
+<td style="width: 13.052%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Observability&quot;}"><strong>Logging / LLMops</strong></td>
+<td style="width: 16.9231%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Parsing &amp; Validation&quot;}"><strong>Validation</strong></td>
+<td style="width: 15.8311%;height: 22px;text-align: left" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;App Hosting&quot;}"><strong>App hosting</strong></td>
+<td style="width: 14.0881%;height: 22px;text-align: left"><strong>LLM APIs (proprietary)</strong></td>
+<td style="width: 15.3226%;height: 22px;text-align: left"><strong>LLM APIs (open)</strong></td>
+<td style="width: 13.536%;height: 22px;text-align: left"><strong>Cloud providers</strong></td>
+<td style="width: 40.3846%;height: 22px;text-align: left"><strong>Opinionated clouds</strong></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 13.052%;height: 22px"><a href="https://wandb.ai/site/solutions/llmops" target="_blank" rel="noopener">Weights &amp; Biases</a></td>
+<td style="width: 16.9231%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Guardrails&quot;}"><a href="https://shreyar.github.io/guardrails/" target="_blank" rel="noopener">Guardrails</a></td>
+<td style="width: 15.8311%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Vercel&quot;}"><a href="https://vercel.com/" target="_blank" rel="noopener">Vercel</a></td>
+<td style="width: 14.0881%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;OpenAI&quot;}"><a href="https://openai.com/" target="_blank" rel="noopener">OpenAI</a></td>
+<td style="width: 15.3226%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;HuggingFace&quot;}"><a href="https://huggingface.co/" target="_blank" rel="noopener">Hugging Face</a></td>
+<td style="width: 13.536%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;AWS&quot;}"><a href="https://aws.amazon.com/" target="_blank" rel="noopener">AWS</a></td>
+<td style="width: 40.3846%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Anyscale&quot;}"><a href="https://www.databricks.com/product/machine-learning" target="_blank" rel="noopener">Databricks</a></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 13.052%;height: 22px"><a href="https://mlflow.org/docs/latest/llm-tracking.html" target="_blank" rel="noopener">MLflow</a></td>
+<td style="width: 16.9231%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Microsoft Guidance&quot;}"><a href="https://github.com/woop/rebuff" target="_blank" rel="noopener">Rebuff</a></td>
+<td style="width: 15.8311%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Steamship&quot;}"><a href="https://www.steamship.com/" target="_blank" rel="noopener">Steamship</a></td>
+<td style="width: 14.0881%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Anthropic&quot;}"><a href="https://www.anthropic.com/" target="_blank" rel="noopener">Anthropic</a></td>
+<td style="width: 15.3226%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Replicate&quot;}"><a href="https://replicate.com/" target="_blank" rel="noopener">Replicate</a></td>
+<td style="width: 13.536%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;GCP&quot;}"><a href="https://cloud.google.com/" target="_blank" rel="noopener">GCP</a></td>
+<td style="width: 40.3846%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Anyscale&quot;}"><a href="https://www.anyscale.com/" target="_blank" rel="noopener">Anyscale</a></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 13.052%;height: 22px"><a href="https://promptlayer.com/" target="_blank" rel="noopener">PromptLayer</a></td>
+<td style="width: 16.9231%;height: 22px"><a href="https://github.com/microsoft/guidance" target="_blank" rel="noopener">Microsoft Guidance</a></td>
+<td style="width: 15.8311%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Streamlit&quot;}"><a href="https://streamlit.io/" target="_blank" rel="noopener">Streamlit</a></td>
+<td style="width: 14.0881%;height: 22px"></td>
+<td style="width: 15.3226%;height: 22px"></td>
+<td style="width: 13.536%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Azure&quot;}"><a href="https://azure.microsoft.com/en-us" target="_blank" rel="noopener">Azure</a></td>
+<td style="width: 40.3846%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Mosaic&quot;}"><a href="https://www.mosaicml.com/" target="_blank" rel="noopener">Mosaic</a></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 13.052%;height: 22px"><a href="https://www.helicone.ai/" target="_blank" rel="noopener">Helicone</a></td>
+<td style="width: 16.9231%;height: 22px"><a href="https://lmql.ai/" target="_blank" rel="noopener">LMQL</a></td>
+<td style="width: 15.8311%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Modal&quot;}"><a href="https://modal.com/" target="_blank" rel="noopener">Modal</a></td>
+<td style="width: 14.0881%;height: 22px"></td>
+<td style="width: 15.3226%;height: 22px"></td>
+<td style="width: 13.536%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Coreweave&quot;}"><a href="https://www.coreweave.com/" target="_blank" rel="noopener">CoreWeave</a></td>
+<td style="width: 40.3846%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Modal&quot;}"><a href="https://modal.com/" target="_blank" rel="noopener">Modal</a></td>
+</tr>
+<tr style="height: 22px">
+<td style="width: 13.052%;height: 22px"></td>
+<td style="width: 16.9231%;height: 22px"></td>
+<td style="width: 15.8311%;height: 22px"></td>
+<td style="width: 14.0881%;height: 22px"></td>
+<td style="width: 15.3226%;height: 22px"></td>
+<td style="width: 13.536%;height: 22px"></td>
+<td style="width: 40.3846%;height: 22px" data-sheets-value="{&quot;1&quot;:2,&quot;2&quot;:&quot;Runpod&quot;}"><a href="https://www.runpod.io/" target="_blank" rel="noopener">RunPod</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><span style="font-weight: 400">There are many different ways to build with LLMs, including training models from scratch, fine-tuning open-source models, or using hosted APIs. The stack we’re showing here is based on </span><a href="https://en.wikipedia.org/wiki/In-context_learning_(natural_language_processing)"><span style="font-weight: 400">in-context learning</span></a><span style="font-weight: 400">, which is the design pattern we’ve seen the majority of developers start with (and is only possible now with foundation models).</span></p>
+<p><span style="font-weight: 400">The next section gives a brief explanation of this pattern; experienced LLM developers can skip this section.</span></p>
+<h2><span style="font-weight: 400"><div id="section--2" data-toc-header="Design pattern: In-context learning"></div>Design pattern: In-context learning</span></h2>
+<p><span style="font-weight: 400">The core idea of in-context learning is to use LLMs off the shelf (i.e., without any fine-tuning), then control their behavior through clever prompting and conditioning on private “contextual” data.</span></p>
+<p><span style="font-weight: 400">For example, say you’re building a chatbot to answer questions about a set of legal documents. Taking a naive approach, you could paste all the documents into a ChatGPT or GPT-4 prompt, then ask a question about them at the end. This may work for very small datasets, but it doesn’t scale. The biggest GPT-4 model can only process ~50 pages of input text, and performance (measured by inference time and accuracy) degrades badly as you approach this limit, called a context window.</span></p>
+<p><span style="font-weight: 400">In-context learning solves this problem with a clever trick: instead of sending all the documents with each LLM prompt, it sends only a handful of the most relevant documents. And the most relevant documents are determined with the help of . . . you guessed it . . . LLMs.</span></p>
+<p><span style="font-weight: 400">At a very high level, the workflow can be divided into three stages:</span></p>
+<ul>
+<li><b>Data preprocessing / embedding: </b><span style="font-weight: 400">This stage involves storing private data (legal documents, in our example) to be retrieved later. Typically, the documents are broken into chunks, passed through an embedding model, then stored in a specialized database called a vector database.</span></li>
+<li><b>Prompt construction / retrieval:</b><span style="font-weight: 400"> When a user submits a query (a legal question, in this case), the application constructs a series of prompts to submit to the language model. A compiled prompt typically combines a prompt template hard-coded by the developer; examples of valid outputs called few-shot examples; any necessary information retrieved from external APIs; and a set of relevant documents retrieved from the vector database.</span></li>
+<li><b>Prompt execution / inference:</b><span style="font-weight: 400"> Once the prompts have been compiled, they are submitted to a pre-trained LLM for inference—including both proprietary model APIs and open-source or self-trained models. Some developers also add operational systems like logging, caching, and validation at this stage.</span></li>
+</ul>
+<p><span style="font-weight: 400">This looks like a lot of work, but it’s usually easier than the alternative: training or fine-tuning the LLM itself. You don’t need a specialized team of ML engineers to do in-context learning. You also don’t need to host your own infrastructure or buy an expensive dedicated instance from OpenAI. This pattern effectively reduces an AI problem to a data engineering problem that most startups and big companies already know how to solve. It also tends to outperform fine-tuning for relatively small datasets—since a specific piece of information needs to occur at least ~10 times in the training set before an LLM will remember it through fine-tuning—and can incorporate new data in near real time.</span></p>
+<p><span style="font-weight: 400">One of the biggest questions around in-context learning is: What happens if we just change the underlying model to increase the context window? This is indeed possible, and it is an active area of research (e.g., see the </span><a href="https://arxiv.org/abs/2302.10866"><span style="font-weight: 400">Hyena paper</span></a><span style="font-weight: 400"> or this </span><a href="https://blog.gopenai.com/how-to-speed-up-llms-and-use-100k-context-window-all-tricks-in-one-place-ffd40577b4c"><span style="font-weight: 400">recent post</span></a><span style="font-weight: 400">). But this comes with a number of tradeoffs—primarily that cost and time of inference scale quadratically with the length of the prompt. Today, even linear scaling (the best theoretical outcome) would be cost-prohibitive for many applications. A single GPT-4 query over 10,000 pages would cost hundreds of dollars at current API rates. So, we don’t expect wholesale changes to the stack based on expanded context windows, but we’ll comment on this more in the body of the post.</span></p>
+<p><span style="font-weight: 400">If you’d like to go deeper on in-context learning, there are a number of great resources in the </span><a href="https://a16z.com/2023/05/25/ai-canon/"><span style="font-weight: 400">AI canon</span></a><span style="font-weight: 400"> (especially the “Practical guides to building with LLMs” section). In the remainder of this post, we’ll walk through the reference stack, using the workflow above as a guide.</span></p>
+<h2><span style="font-weight: 400"><div id="section--3" data-toc-header="Data preprocessing / embedding"></div></span></h2>
+<p><a href="https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?ssl=1"><img decoding="async" loading="lazy" class="alignnone size-large wp-image-323635" src="https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=1024%2C717&amp;ssl=1" alt="" width="1024" height="717" srcset="https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=1024%2C717&amp;ssl=1 1024w, https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=300%2C210&amp;ssl=1 300w, https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=768%2C538&amp;ssl=1 768w, https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=1536%2C1075&amp;ssl=1 1536w, https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=125%2C88&amp;ssl=1 125w, https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=471%2C330&amp;ssl=1 471w, https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?resize=900%2C630&amp;ssl=1 900w, https://i2.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-2-of-4-2.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p><b>Contextual data</b><span style="font-weight: 400"> for LLM apps includes text documents, PDFs, and even structured formats like CSV or SQL tables. Data-loading and transformation solutions for this data vary widely across developers we spoke with. Most use traditional ETL tools like Databricks or Airflow. Some also use document loaders built into orchestration frameworks like LangChain (powered by Unstructured) and LlamaIndex (powered by Llama Hub). We believe this piece of the stack is relatively underdeveloped, though, and there’s an opportunity for data-replication solutions purpose-built for LLM apps.</span></p>
+<p><span style="font-weight: 400">For </span><b>embeddings</b><span style="font-weight: 400">, most developers use the OpenAI API, specifically with the <em>text-embedding-ada-002</em> model</span><span style="font-weight: 400">. It’s easy to use (especially if you’re already already using other OpenAI APIs), gives reasonably good results, and is becoming increasingly cheap. Some larger enterprises are also exploring Cohere, which focuses their product efforts more narrowly on embeddings and has better performance in certain scenarios. For developers who prefer open-source, the Sentence Transformers library from Hugging Face is a standard. It’s also possible to <a href="https://github.com/openai/openai-cookbook/blob/main/examples/Customizing_embeddings.ipynb" target="_blank" rel="noopener">create different types of embeddings</a> tailored to different use cases; this is a niche practice today but a promising area of research.</span></p>
+<p><span style="font-weight: 400">The most important piece of the preprocessing pipeline, from a systems standpoint, is the </span><b>vector database</b><span style="font-weight: 400">. It’s responsible for efficiently storing, comparing, and retrieving up to billions of embeddings (i.e., vectors). The most common choice we’ve seen in the market is Pinecone. It’s the default because it’s fully cloud-hosted—so it’s easy to get started with—and has many of the features larger enterprises need in production (e.g., good performance at scale, SSO, and uptime SLAs).</span></p>
+<p><span style="font-weight: 400">There’s a huge range of vector databases available, though. Notably:</span></p>
+<ul>
+<li style="font-weight: 400"><b>Open source systems like Weaviate, Vespa, and Qdrant:</b><span style="font-weight: 400"> They generally give excellent single-node performance and can be tailored for specific applications, so they are popular with experienced AI teams who prefer to build bespoke platforms.</span></li>
+<li style="font-weight: 400"><b>Local vector management libraries like Chroma and Faiss:</b><span style="font-weight: 400"> They have great developer experience and are easy to spin up for small apps and dev experiments. They don’t necessarily substitute for a full database at scale.</span></li>
+<li style="font-weight: 400"><b>OLTP extensions like pgvector:</b><span style="font-weight: 400"> For devs who see every database-shaped hole and try to insert Postgres—or enterprises who buy most of their data infrastructure from a single cloud provider—this is a good solution for vector support. It’s not clear, in the long run, if it makes sense to tightly couple vector and scalar workloads.</span></li>
+</ul>
+<p><span style="font-weight: 400">Looking ahead, most of the open source vector database companies are developing cloud offerings. Our research suggests achieving strong performance in the cloud, across a broad design space of possible use cases, is a very hard problem. Therefore, the option set may not change massively in the near term, but it likely will change in the long term. The key question is whether vector databases will resemble their OLTP and OLAP counterparts, consolidating around one or two popular systems.</span></p>
+<p><span style="font-weight: 400">Another open question is how embeddings and vector databases will evolve as the usable context window grows for most models. It’s tempting to say embeddings will become less relevant, because contextual data can just be dropped into the prompt directly. However, feedback from experts on this topic suggests the opposite—that the embedding pipeline may become </span><i><span style="font-weight: 400">more</span></i><span style="font-weight: 400"> important over time. Large context windows are a powerful tool, but they also entail significant computational cost. So making efficient use of them becomes a priority. We may start to see different types of embedding models become popular, trained directly for model relevancy, and vector databases designed to enable and take advantage of this.</span></p>
+<h2><span style="font-weight: 400"><div id="section--4" data-toc-header="Prompt construction/ retrieval"></div></span></h2>
+<p><a href="https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?ssl=1"><img decoding="async" loading="lazy" class="alignnone size-large wp-image-323636" src="https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=1024%2C717&amp;ssl=1" alt="" width="1024" height="717" srcset="https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=1024%2C717&amp;ssl=1 1024w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=300%2C210&amp;ssl=1 300w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=768%2C538&amp;ssl=1 768w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=1536%2C1075&amp;ssl=1 1536w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=125%2C88&amp;ssl=1 125w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=471%2C330&amp;ssl=1 471w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?resize=900%2C630&amp;ssl=1 900w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-3-of-4-2.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p><span style="font-weight: 400">Strategies for prompting LLMs and incorporating contextual data are becoming increasingly complex—and increasingly important as a source of product differentiation. Most developers start new projects by experimenting with simple prompts, consisting of direct instructions (zero-shot prompting) or possibly some example outputs (few-shot prompting). These prompts often give good results but fall short of accuracy levels required for production deployments.</span></p>
+<p><span style="font-weight: 400">The next level of prompting jiu jitsu is designed to ground model responses in some source of truth and provide external context the model wasn’t trained on. The </span><a href="https://www.promptingguide.ai/techniques"><span style="font-weight: 400">Prompt Engineering Guide</span></a><span style="font-weight: 400"> catalogs no fewer than 12 (!) more advanced prompting strategies, including chain-of-thought, self-consistency, generated knowledge, tree of thoughts, directional stimulus, and many others. These strategies can also be used in conjunction to support different LLM use cases like document question answering, chatbots, etc.</span></p>
+<p><span style="font-weight: 400">This is where </span><b>orchestration </b><span style="font-weight: 400">frameworks like LangChain and LlamaIndex shine. They abstract away many of the details of prompt chaining; interfacing with external APIs (including determining when an API call is needed); retrieving contextual data from vector databases; and maintaining memory across multiple LLM calls. They also provide templates for many of the common applications mentioned above. Their output is a prompt, or series of prompts, to submit to a language model. These frameworks are widely used among hobbyists and startups looking to get an app off the ground, with LangChain the leader.</span></p>
+<p><span style="font-weight: 400">LangChain is still a relatively new project (currently on version 0.0.201), but we’re already starting to see apps built with it moving into production. Some developers, especially early adopters of LLMs, prefer to switch to raw Python in production to eliminate an added dependency. But we expect this DIY approach to decline over time for most use cases, in a similar way to the traditional web app stack.</span></p>
+<p><span style="font-weight: 400">Sharp-eyed readers will notice a seemingly weird entry in the orchestration box: ChatGPT. In its normal incarnation, ChatGPT is an app, not a developer tool. But it can also be accessed as an API. And, if you squint, it performs some of the same functions as other orchestration frameworks, such as: abstracting away the need for bespoke prompts; maintaining state; and retrieving contextual data via plugins, APIs, or </span><a href="https://github.com/openai/chatgpt-retrieval-plugin"><span style="font-weight: 400">other sources</span></a><span style="font-weight: 400">. While not a direct competitor to the other tools listed here, ChatGPT can be considered a substitute solution, and it may eventually become a viable, simple alternative to prompt construction.</span></p>
+<h2><span style="font-weight: 400"><div id="section--5" data-toc-header="Prompt execution / inference"></div></span></h2>
+<p><a href="https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?ssl=1"><img decoding="async" loading="lazy" class="alignnone size-large wp-image-323637" src="https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=1024%2C717&amp;ssl=1" alt="" width="1024" height="717" srcset="https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=1024%2C717&amp;ssl=1 1024w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=300%2C210&amp;ssl=1 300w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=768%2C538&amp;ssl=1 768w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=1536%2C1075&amp;ssl=1 1536w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=125%2C88&amp;ssl=1 125w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=471%2C330&amp;ssl=1 471w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?resize=900%2C630&amp;ssl=1 900w, https://i1.wp.com/a16z.com/wp-content/uploads/2023/06/2657-Emerging-LLM-App-Stack-R2-4-of-4-2.png?w=2000&amp;ssl=1 2000w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1"></a></p>
+<p><span style="font-weight: 400">Today, OpenAI is the leader among </span><b>language models</b><span style="font-weight: 400">. Nearly every developer we spoke with starts new LLM apps using the OpenAI API, usually with the </span><em><span style="font-weight: 400">gpt-4</span></em><span style="font-weight: 400"> or </span><em><span style="font-weight: 400">gpt-4-32k</span></em><span style="font-weight: 400"> model. This gives a best-case scenario for app performance and is easy to use, in that it operates on a wide range of input domains and usually requires no fine-tuning or self-hosting.</span></p>
+<p><span style="font-weight: 400">When projects go into production and start to scale, a broader set of options come into play. Some of the common ones we heard include:</span></p>
+<ul>
+<li style="font-weight: 400"><b>Switching to</b> <em><b>gpt-3.5-turbo</b></em><b>:</b><span style="font-weight: 400"> It’s ~</span><a href="https://github.com/ray-project/llm-numbers"><span style="font-weight: 400">50x cheaper</span></a><span style="font-weight: 400"> and significantly faster than GPT-4. Many apps don’t need GPT-4-level accuracy, but do require low latency inference and cost effective support for free users.</span></li>
+<li style="font-weight: 400"><b>Experimenting with other proprietary vendors</b> <span style="font-weight: 400">(especially Anthropic’s Claude models)</span><b>:</b><span style="font-weight: 400"> Claude offers fast inference, GPT-3.5-level accuracy, more customization options for large customers, and up to a 100k context window (though we’ve found accuracy degrades with the length of input).</span></li>
+<li style="font-weight: 400"><b>Triaging some requests to open source models:</b><span style="font-weight: 400"> This can be especially effective in high-volume B2C use cases like search or chat, where there’s wide variance in query complexity and a need to serve free users cheaply.</span>
+<ul>
+<li style="font-weight: 400"><span style="font-weight: 400">This usually makes the most sense in conjunction with fine-tuning open source base models. We don’t go deep on that tooling stack in this article, but platforms like Databricks, Anyscale, Mosaic, Modal, and RunPod are used by a growing number of engineering teams.</span></li>
+<li style="font-weight: 400"><span style="font-weight: 400">A variety of inference options are available for open source models, including simple API interfaces from Hugging Face and Replicate; raw compute resources from the major cloud providers; and more opinionated cloud offerings like those listed above.</span></li>
+</ul>
+</li>
+</ul>
+<p><b>Open-source models</b><span style="font-weight: 400"> trail proprietary offerings right now, but the gap is starting to close. The LLaMa models from Meta set a new bar for open source accuracy and kicked off a flurry of variants. Since LLaMa was licensed for research use only, a number of new providers have stepped in to train alternative base models (e.g., Together, Mosaic, Falcon, Mistral). Meta is also </span><a href="https://youtu.be/6PDk-_uhUt8?t=139"><span style="font-weight: 400">debating</span></a><span style="font-weight: 400"> a truly open source release of LLaMa 2.</span></p>
+<p><span style="font-weight: 400">When (not if) open source LLMs reach accuracy levels comparable to GPT-3.5, we expect to see a Stable Diffusion-like moment for text—including massive experimentation, sharing, and productionizing of fine-tuned models. Hosting companies like Replicate are already adding tooling to make these models easier for software developers to consume. There’s a growing belief among developers that smaller, fine-tuned models can reach state-of-the-art accuracy in narrow use cases.</span></p>
+<p><span style="font-weight: 400">Most developers we spoke with haven’t gone deep on </span><b>operational tooling</b><span style="font-weight: 400"> for LLMs yet. Caching is relatively common—usually based on Redis—because it improves application response times and cost. Tools like Weights &amp; Biases and MLflow (ported from traditional machine learning) or PromptLayer and Helicone (purpose-built for LLMs) are also fairly widely used. They can log, track, and evaluate LLM outputs, usually for the purpose of improving prompt construction, tuning pipelines, or selecting models. There are also a number of new tools being developed to validate LLM outputs (e.g., Guardrails) or detect prompt injection attacks (e.g., Rebuff). Most of these operational tools encourage use of their own Python clients to make LLM calls, so it will be interesting to see how these solutions coexist over time.</span></p>
+<p><span style="font-weight: 400">Finally, the static portions of LLM apps (i.e. everything other than the model) also need to be </span><b>hosted</b><span style="font-weight: 400"> somewhere. The most common solutions we’ve seen so far are standard options like Vercel or the major cloud providers. However, two new categories are emerging. Startups like Steamship provide end-to-end hosting for LLM apps, including orchestration (LangChain), multi-tenant data contexts, async tasks, vector storage, and key management. And companies like Anyscale and Modal allow developers to host models and Python code in one place.</span></p>
+<h2><span style="font-weight: 400"><div id="section--6" data-toc-header="What about agents?"></div>What about agents?</span></h2>
+<p><span style="font-weight: 400">The most important components missing from this reference architecture are </span><strong>AI agent frameworks</strong><span style="font-weight: 400">. <a href="https://github.com/Significant-Gravitas/Auto-GPT" target="_blank" rel="noopener">AutoGPT</a>, described as “</span><span style="font-weight: 400">an experimental open-source attempt to make GPT-4 fully autonomous</span><span style="font-weight: 400">,” was the <a href="https://twitter.com/OfficialLoganK/status/1647757809654562816" target="_blank" rel="noopener">fastest-growing Github repo in history</a> this spring, and practically every AI project or startup out there today includes agents in some form.</span></p>
+<p><span style="font-weight: 400">Most developers we speak with are incredibly excited about the potential of agents. The in-context learning pattern we describe in this post is effective at solving hallucination and data-freshness problems, in order to better support content-generation tasks. Agents, on the other hand, give AI apps a fundamentally new set of capabilities: to solve complex problems, to act on the outside world, and to learn from experience post-deployment. They do this through a combination of advanced reasoning/planning, tool usage, and memory / recursion / self-reflection.</span></p>
+<p><span style="font-weight: 400">So, agents have the potential to become a central piece of the LLM app architecture (or even take over the whole stack, if you believe in recursive self-improvement). And existing frameworks like LangChain have incorporated some agent concepts already. There’s only one problem: agents don’t really work yet. Most agent frameworks today are in the proof-of-concept phase—capable of incredible demos but not yet reliable, reproducible task-completion. We’re keeping an eye on how they develop in the near future.</span></p>
+<h2><span style="font-weight: 400"><div id="section--7" data-toc-header="Looking ahead"></div>Looking ahead</span></h2>
+<p><span style="font-weight: 400">Pre-trained AI models represent the most important architectural change in software since the internet. They make it possible for individual developers to build incredible AI apps, in a matter of days, that surpass supervised machine learning projects that took big teams months to build.</span></p>
+<p><span style="font-weight: 400">The tools and patterns we’ve laid out here are likely the starting point, not the end state, for integrating LLMs. We’ll update this as major changes take place (e.g., a shift toward model training) and release new reference architectures where it makes sense. Please reach out if you have any feedback or suggestions.</span></p>
+<p style="text-align: center">* * *<br>
+<i data-stringify-type="italic"></i></p>
+<p><i data-stringify-type="italic">The views expressed here are those of the individual AH Capital Management, L.L.C. (“a16z”) personnel quoted and are not the views of a16z or its affiliates. Certain information contained in here has been obtained from third-party sources, including from portfolio companies of funds managed by a16z. While taken from sources believed to be reliable, a16z has not independently verified such information and makes no representations about the enduring accuracy of the information or its appropriateness for a given situation. In addition, this content may include third-party advertisements; a16z has not reviewed such advertisements and does not endorse any advertising content contained therein.</i></p>
+<p><i data-stringify-type="italic">This content is provided for informational purposes only, and should not be relied upon as legal, business, investment, or tax advice. You should consult your own advisers as to those matters. References to any securities or digital assets are for illustrative purposes only, and do not constitute an investment recommendation or offer to provide investment advisory services. Furthermore, this content is not directed at nor intended for use by any investors or prospective investors, and may not under any circumstances be relied upon when making a decision to invest in any fund managed by a16z. (An offering to invest in an a16z fund will be made only by the private placement memorandum, subscription agreement, and other relevant documentation of any such fund and should be read in their entirety.) Any investments or portfolio companies mentioned, referred to, or described are not representative of all investments in vehicles managed by a16z, and there can be no assurance that the investments will be profitable or that other investments made in the future will have similar characteristics or results. A list of investments made by funds managed by Andreessen Horowitz (excluding investments for which the issuer has not provided permission for a16z to disclose publicly as well as unannounced investments in publicly traded digital assets) is available at&nbsp;</i><i data-stringify-type="italic"><a class="c-link" href="https://a16z.com/investments/" target="_blank" rel="noopener noreferrer" data-stringify-link="https://a16z.com/investments/" data-sk="tooltip_parent">https://a16z.com/investments/</a></i><i data-stringify-type="italic">.</i></p>
+<p><i data-stringify-type="italic">Charts and graphs provided within are for informational purposes solely and should not be relied upon when making any investment decision. Past performance is not indicative of future results. The content speaks only as of the date indicated. Any projections, estimates, forecasts, targets, prospects, and/or opinions expressed in these materials are subject to change without notice and may differ or be contrary to opinions expressed by others. Please see&nbsp;</i><i data-stringify-type="italic"><a class="c-link" href="https://a16z.com/disclosures" target="_blank" rel="noopener noreferrer" data-stringify-link="https://a16z.com/disclosures" data-sk="tooltip_parent">https://a16z.com/disclosures</a></i><i data-stringify-type="italic">&nbsp;for additional important information.</i></p>
+                    </div>
+	                                    <div class="entry-content__post-date">
+                        June 20, 2023                    </div>
+
+<div class="section-row related-posts-new">
+    <div class="box">
+        <h4>Related Stories</h4>
+        <ul class="related-stories-list">
+
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/ai/"><img src="https://a16z.com/wp-content/uploads/2023/06/aia16z-Banner-1920x1080-1-720x360.jpg" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/ai/">AI + a16z</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/a16z-editorial/" target="" class="author">a16z editorial</a>		</span>
+</div>
+    </div>
+</li>
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/ai-glossary/"><img src="https://a16z.com/wp-content/uploads/2023/06/aia16z-Glossary-Yoast-1920x1080-1-720x360.jpg" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/ai-glossary/">AI Glossary by a16z</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/a16z-editorial/" target="" class="author">a16z editorial</a>		</span>
+</div>
+    </div>
+</li>
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/2023/05/25/ai-canon/"><img src="https://a16z.com/wp-content/uploads/2023/05/stacks_of_books_and_GPU-720x360.png" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/2023/05/25/ai-canon/">AI Canon</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/derrick-harris/" target="" class="author">Derrick Harris</a>,
+			<a href="https://a16z.com/author/matt-bornstein/" target="" class="author">Matt Bornstein</a>, and
+			<a href="https://a16z.com/author/guido-appenzeller/" target="" class="author">Guido Appenzeller</a>		</span>
+</div>
+    </div>
+</li>
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/2023/06/21/ai-bio-health-thesis/"><img src="https://a16z.com/wp-content/uploads/2023/06/The-a16z-Investment-Thesis-on-AI-in-Bio-Health-Yoast-Facebook-720x360.jpg" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/2023/06/21/ai-bio-health-thesis/">AI at the Intersection: The a16z Investment Thesis on AI in Bio + Health</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/vijay-pande/" target="" class="author">Vijay Pande</a>		</span>
+</div>
+    </div>
+</li>
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/2023/06/21/the-getting-started-with-ai-stack-for-javascript/"><img src="https://a16z.com/wp-content/uploads/2023/06/image2-720x360.png" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/2023/06/21/the-getting-started-with-ai-stack-for-javascript/">The Getting Started with AI Stack for JavaScript</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/yoko-li/" target="" class="author">Yoko Li</a>,
+			<a href="https://a16z.com/author/jennifer-li/" target="" class="author">Jennifer Li</a>, and
+			<a href="https://a16z.com/author/martin-casado/" target="" class="author">Martin Casado</a>		</span>
+</div>
+    </div>
+</li>        </ul>
+    </div>
+</div>                </div>
+                <aside class="blog-aside-right"><div class="inner-wrapper-sticky">
+                    <div class="blog-aside-right__inner">
+
+<div class="section-row related-posts-new">
+    <div class="box">
+        <h4>Related Stories</h4>
+        <ul class="related-stories-list">
+
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/ai/"><img src="https://a16z.com/wp-content/uploads/2023/06/aia16z-Banner-1920x1080-1-720x360.jpg" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/ai/">AI + a16z</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/a16z-editorial/" target="" class="author">a16z editorial</a>		</span>
+</div>
+    </div>
+</li>
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/ai-glossary/"><img src="https://a16z.com/wp-content/uploads/2023/06/aia16z-Glossary-Yoast-1920x1080-1-720x360.jpg" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/ai-glossary/">AI Glossary by a16z</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/a16z-editorial/" target="" class="author">a16z editorial</a>		</span>
+</div>
+    </div>
+</li>
+<li>
+	    <div class="img-wrap">
+        <a href="https://a16z.com/2023/05/25/ai-canon/"><img src="https://a16z.com/wp-content/uploads/2023/05/stacks_of_books_and_GPU-720x360.png" alt=""></a>
+    </div>
+	    <div class="detail">
+        <h5>
+	        <a href="https://a16z.com/2023/05/25/ai-canon/">AI Canon</a>        </h5>
+
+<div class="byline byline--post-list">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+
+			<a href="https://a16z.com/author/derrick-harris/" target="" class="author">Derrick Harris</a>,
+			<a href="https://a16z.com/author/matt-bornstein/" target="" class="author">Matt Bornstein</a>, and
+			<a href="https://a16z.com/author/guido-appenzeller/" target="" class="author">Guido Appenzeller</a>		</span>
+</div>
+    </div>
+</li>        </ul>
+    </div>
+</div>                    </div>
+                </div></aside>
+            </div>
+        </div>
+    </main>
+</article>
+
+<section class="bio-lp-newsletter" data-component="subscribeSection" style="background: #F2F2F2 ">
+    <div class="bio-lp-newsletter__container">
+        <div class="bio-lp-newsletter__form">
+            <div class="form-wrap" id="vlp-signup-form-01">
+				                    <h2 class="bio-lp-newsletter__title">
+						The enterprise is changing                    </h2>
+								                    <p class="bio-lp-newsletter__text">
+						Sign up for our enterprise newsletter to get the a16z take on the trends reshaping B2B and enterprise tech.                    </p>
+				                <form class="input-addon mktoForm mktoHasWidth mktoLayoutLeft" data-formid="1565" data-forminstance="subscribe-footer" target="_blank" id="" data-thankyou-message="#vlp-signup-ty-01" data-thankyou-container="#vlp-signup-form-01" novalidate="novalidate" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: rgb(51, 51, 51); width: 211px;"><style type="text/css">.mktoForm .mktoButtonWrap.mktoSimple .mktoButton {
+color:#fff;
+border:1px solid #75ae4c;
+padding:0.4em 1em;
+font-size:1em;
+background-color:#99c47c;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#99c47c), to(#75ae4c));
+background-image: -webkit-linear-gradient(top, #99c47c, #75ae4c);
+background-image: -moz-linear-gradient(top, #99c47c, #75ae4c);
+background-image: linear-gradient(to bottom, #99c47c, #75ae4c);
+}
+.mktoForm .mktoButtonWrap.mktoSimple .mktoButton:hover {
+border:1px solid #447f19;
+}
+.mktoForm .mktoButtonWrap.mktoSimple .mktoButton:focus {
+outline:none;
+border:1px solid #447f19;
+}
+.mktoForm .mktoButtonWrap.mktoSimple .mktoButton:active{
+background-color:#75ae4c;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#75ae4c), to(#99c47c));
+background-image: -webkit-linear-gradient(top, #75ae4c, #99c47c);
+background-image: -moz-linear-gradient(top, #75ae4c, #99c47c);
+background-image: linear-gradient(to bottom, #75ae4c, #99c47c);
+}
+</style><div class="mktoFormRow"><div class="mktoFieldDescriptor mktoFormCol" style="margin-bottom: 10px;"><div class="mktoOffset" style="width: 10px;"></div><div class="mktoFieldWrap mktoRequiredField"><label for="Email_16876116963980.5643364099610573" id="LblEmail" class="mktoLabel mktoHasWidth" style="width: 100px;"><div class="mktoAsterix">*</div></label><div class="mktoGutter mktoHasWidth" style="width: 10px;"></div><input id="Email_16876116963980.5643364099610573" name="Email" placeholder="Email Address*" maxlength="255" aria-labelledby="LblEmail InstructEmail" type="email" class="mktoField mktoEmailField mktoHasWidth mktoRequired" aria-required="true" style="width: 430px;"><span id="InstructEmail" tabindex="-1" class="mktoInstruction"></span><div class="mktoClear"></div></div><div class="mktoClear"></div></div><div class="mktoClear"></div></div><div class="mktoFormRow"><input type="hidden" name="subscribetoEnterpriseNewsletter" class="mktoField mktoFieldDescriptor mktoFormCol" value="yes" style="margin-bottom: 10px;"><div class="mktoClear"></div></div><div class="mktoButtonRow"><span class="mktoButtonWrap mktoSimple" style="margin-left: 120px;"><button type="submit" class="mktoButton" aria-label="Submit email and proceed to the next step"><img alt="" id="subscribeBtn-0" src="/wp-content/themes/a16z-2015/client/images/arrow-right.svg" class="subscribe-input__btn"></button></span></div><input type="hidden" name="formid" class="mktoField mktoFieldDescriptor" value="1565"><input type="hidden" name="munchkinId" class="mktoField mktoFieldDescriptor" value="382-JZB-798"></form>
+            </div>
+            <div id="vlp-signup-ty-01" class="bio-lp-newsletter__thanks-msg thanks-msg" style="display: none;">
+                <div class="title-wrap">
+                    <h2>Thanks for signing up.</h2>
+                </div>
+                <p>Check your inbox for a welcome note.</p>
+            </div>
+        </div>
+    </div>
+</section>
+                                        </div>
+                    </div>
+			    			</main>
+		</div><!-- #content -->
+
+
+        <footer id="footer" class="footer-new">
+                        <div class="footer-above">
+                <div class="container">
+                    <div class="footer-l">
+                        <span class="copyright">
+                            Software is eating the world                        </span>
+                    </div>
+                </div>
+            </div>
+                        <div class="container">
+                <div class="footer-l">
+                    <span class="copyright">
+                        © 2023 Andreessen Horowitz                    </span>
+                                            <div class="footer-above--mobile">
+                            <div class="container">
+                                <div class="footer-l">
+                        <span class="copyright">
+                            Software is eating the world                        </span>
+                                </div>
+                            </div>
+                        </div>
+                                        <ul class="social-networks site-footer__social-media-menu">
+	                    <div class="menu-social-media-container"><ul id="social-media-menu" class="menu"><li id="menu-item-208636" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208636"><a href="https://twitter.com/a16z">Twitter</a></li>
+<li id="menu-item-208637" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208637"><a href="https://a16z.simplecast.com">Simplecast</a></li>
+</ul></div>                    </ul>
+                </div>
+                <nav class="footer-nav">
+	                <div class="menu-footer-2017-container"><ul id="utilities-menu" class="menu"><li id="menu-item-13150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13150"><a href="https://a16z.com/about/contact/">Contact</a></li>
+<li id="menu-item-208638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208638"><a href="https://a16z.com/about/jobs/">Jobs</a></li>
+<li id="menu-item-296893" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296893"><a href="https://a16z.com/briefings/">Briefings</a></li>
+<li id="menu-item-13267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13267"><a href="https://a16z.com/tos-privacy/">Terms of Use &amp; Privacy</a></li>
+<li id="menu-item-284008" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-284008"><a href="https://a16z.com/disclosures/">Disclosures</a></li>
+<li id="menu-item-95459" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95459"><a href="https://a16z.com/conduct/">Conduct</a></li>
+<li id="menu-item-300281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300281"><a href="https://a16z.com/values/">Who We Are</a></li>
+</ul></div>                </nav>
+            </div>
+        </footer>
+
+
+			</div><!-- #page -->
+
+		<script type="text/javascript">
+						var _sf_async_config={};
+			_sf_async_config.uid = 66597;
+			_sf_async_config.domain = "a16z.com";
+			_sf_async_config.useCanonical = true;
+				(function(){
+			        function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				  }
+				  var oldonload = window.onload;
+				  window.onload = (typeof window.onload != 'function') ?
+					 loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+				})();
+		</script>
+
+
+<!-- START Parse.ly Include: Standard -->
+
+<div id="parsely-root" style="display: none">
+	<div id="parsely-cfg" data-parsely-site="a16z.com"></div>
+<script id="parsely-script" async="" data-cfasync="false" src="https://d1z2jf7jlzjs58.cloudfront.net/p.js"></script><script id="parsely-script-sst-12245969" async="" src="https://cdn.parsely.com/keys/a16z.com/p.js"></script></div>
+<script data-cfasync="false">
+	(function (s, p, d) {
+		var h = d.location.protocol, i = p + "-" + s,
+			e = d.getElementById(i), r = d.getElementById(p + "-root"),
+			u = h === "https:" ? "d1z2jf7jlzjs58.cloudfront.net"
+				: "static." + p + ".com";
+		if (e) return;
+		e = d.createElement(s);
+		e.id = i;
+		e.async = true;
+		e.setAttribute('data-cfasync', 'false');
+		e.src = h + "//" + u + "/p.js";
+		r.appendChild(e);
+	})("script", "parsely", document);
+</script>
+
+<!-- END Parse.ly Include: Standard -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHMSDPX" height="0" width="0" style="display:none"></iframe></noscript><script type="text/javascript" src="https://c0.wp.com/p/jetpack/8.6/_inc/build/photon/photon.min.js" id="jetpack-photon-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/build/js/global.b70ab9441f18d82f2968.bundle.min.js?ver=1.03" id="a16z-global-js-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/build/js/single.3b83f6c1d9457b8c6f6e.bundle.min.js?ver=1.03" id="a16z-single-js-js"></script><iframe src="https://a15432930010.cdn.optimizely.com/client_storage/a15432930010.html" hidden="" tabindex="-1" title="Optimizely Internal Frame" height="0" width="0" style="display: none;" data-gtm-yt-inspected-8610062_10="true" data-gtm-yt-inspected-8610062_35="true" data-gtm-yt-inspected-8610062_51="true" data-gtm-yt-inspected-8610062_52="true" data-gtm-yt-inspected-8610062_53="true" data-gtm-yt-inspected-8610062_54="true" data-gtm-yt-inspected-8610062_55="true" data-gtm-yt-inspected-8610062_56="true"></iframe>
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?ver=3.0.0" id="google-maps-api-js"></script>
+<script type="text/javascript" src="//munchkin.marketo.net/munchkin.js?ver=610" id="marketo-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/build/js/marketoForms.6e33a46823c55b7fa6d2.bundle.min.js?ver=1.01" id="marketo-forms-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/libs/digitalpi-utm.js?ver=1.0" id="digitalpi-utm-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/libs/grayscale.js?ver=1.0" id="grayscale-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/libs/custom-scroll.min.js?ver=1.0" id="custom-scroll-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/libs/bg-video.js?ver=1.0" id="bg-video-js"></script>
+<script type="text/javascript" src="https://a16z.com/wp-content/themes/a16z-2015/client/libs/mobile-hover.js?ver=1.0" id="mobile-hover-js"></script>
+<script type="text/javascript" src="https://stats.wp.com/e-202325.js" async="async" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.6',blog:'147973073',post:'323509',tz:'-7',srv:'a16z.com'} ]);
+	_stq.push([ 'clickTrackerInit', '147973073', '323509' ]);
+</script>
+
+
+
+<img src="https://pixel.wp.com/g.gif?v=ext&amp;j=1%3A8.6&amp;blog=147973073&amp;post=323509&amp;tz=-7&amp;srv=a16z.com&amp;host=a16z.com&amp;ref=&amp;fcp=3011&amp;rand=0.225335221777077" alt="" width="6" height="5" id="wpstats"><div id="modal-container"></div><script type="text/javascript" id="">(function(){function b(){!1===c&&(c=!0,Munchkin.init("382-JZB-798"))}var c=!1,a=document.createElement("script");a.type="text/javascript";a.async=!0;a.src="//munchkin.marketo.net/munchkin-beta.js";a.onreadystatechange=function(){"complete"!=this.readyState&&"loaded"!=this.readyState||b()};a.onload=b;document.getElementsByTagName("head")[0].appendChild(a)})();</script><meta name="google-site-verification" content="P0GXb2pbBqt8KUgYlOlJ1WQIEIKCcv82t4HIeTqinPk">
+
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","1043281702814709");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1043281702814709&amp;ev=PageView&amp;noscript=1"></noscript>
+<div id="mktoStyleLoaded" style="display: none; border-top-color: rgb(18, 52, 86);"></div><style id="wistia_22_style" type="text/css" class="wistia_injected_style">
+@font-face {
+font-family: 'WistiaPlayerInterNumbersSemiBold';
+font-feature-settings: 'tnum' 1;
+src: url(data:application/x-font-woff;charset=utf-8;base64,d09GMk9UVE8AAAaMAAwAAAAACgAAAAZBAAMD1wAAAAAAAAAAAAAAAAAAAAAAAAAADYpwGhQbIBwqBmAAgTIBNgIkAzAEBgWDGgcgGykJEZWkARP8KHCbm2tEznyIN98tPTUk9Ig3oiVV3pbDIzXa+f/fZgXpALFTZhBoMVFC9cp036dXvRKVmVnsxe+D+1NDQI5lG7ikZWEINIElTeBIdnxlhauQ5GQtoLHA/wN0riVdSx5xgbxF3KTbgnjVQ4B9P7YqCx7FpEZK+6ilx0AoopUh4aExJEKmkU+0ncdr4iFfKhdSFD9y91LCRaxNbVqvi0dND3rxI7ndUDR7EiwT3bhiua9krFA0oepCy2hCjwmjnjDjKjNTDz2ZuHtN8820Wfw/l8u4w4yV/f8/6uscs5rmiN00LcP4hAofyZUSyS3WinX0RGFFtnGrjj36x6dlNa57+PLTlrUisH2n9orfgd+R34XfDd0NsWDXwfwhvKHpbs3UBni37dBlPvO4KYn/PgylilcgSdw6sjsSSxsRGfIJgqhi14bKZCHcQvjUh/+3HMotTYrGLVYCxyMFjEnYC98yTAp6atAKVxaZ9eu2NMji8WTj4w/Y34elD60PPwb5bEywLqAX/amwmUo6TBCy14N/TL44jb3sE5JdUIPXXI0RBSoGt3BUObn4agKGIxxQhlyQacbstK4fS2mZoBtFNQ1bd+4zND2vQu6anl7gWFOj8MV2DVMtU44xMhpwElrrjA7zO5IqWojd/v1Vso6cqp91zC2YrGhDOy07Iqyza2q9smDIwUYek0AWbCt/8x78QmrzayQ6xtpmqfCYsLfgU9HdeP3UqutZTTNd/9Q8k08XzXzIxSdvLPda8YaeeZnkxUwql0nDKyUYdaWZjGAy7UDLHpVqBVHTxSV0wBy21El9u/491ik2J3YkdiP2LPZL41RBeeNUWtp97Bbn0Ee1g9wr9qqV/X+4R9nlPX03743dylnaXZyNp8v58yLOsFYCbUnCVQzjN+5QhlmKccO7aMkueWJggROd4qnw2x5LydUcg/NRamE3XMlkGovpRWPKWEavP74P2O1RANM/3gIIPJj7TX+lqU2geQuaBx4B/7cWAOx0ucTiEHYJU9y5DBuUMYNIHeHZz9tn+Fw2G5EBTqUlHRfRi4eB5wNlJsRsv5k4b6HyFkhIC6BO4LzPbWhW7rbCcxubeKHOc6UaBKZBMMd4j8XuRUynOCCa4EMfF9grkI1NcTaSAVtk1nrIOwFfeEBlQw4f4phb6zHzBOm0ZZ0dBcaZRVdYIo5xYiyOMEWONwQHmjKGE//VuRBgul1QrpyxmMvF4vGj0xfuuQrNt4tVTsRhEnjY9AuKa1FVLSEneQWzFd5WbO7hasX08ONUOVQgwQuVqACFXkSoIoUgK1hJEkAgbkG5CjqBS5wrRFuY2IfVwhRnLsVyZTZpatveGR4yEbYqbE6J80nM4aa+LD7Oqmr8PdSJFUQVynmgN4lerGQV1+uLdYzdOFWHPW/iK2gIQayhizQ0NMwyvBEBlrDczRfmU40CTtAHqLQGnjQG8MYkxm1MwJuTqjHwVCu9iRJ1C8ojWGHxUYowH0c5X57zpXquvlw0wzHHGMTfufxiJ1psFJTzq6nGeDvHF4LgmHHWCUViZBaInRn+cswnBi460RBPRYg9TRUQ0CZUC5LAT0qLLu50FpdTeBhjGf7/h4dg9hE0uqsBx/saOcYRDIfnOhfzGFBHyizcJK3p2edUjWrC0rn1aGjXtfVUCHMAKKhlxV8eTEIcV2jCOdKiqahv/MisrfRQVnxPJoOU62mR6pu2ZllIzo8zOZqQB7kWJXW2/c0aihata5PcIVJKfFRgHAETmEQVTCELptGMGcyigTnMJ1voUVN6uCZS9pV2hrwl7FYMvBwtUSd7L7E5qP9t7BIPRF7EcmA9ct2nIPHrxgWajtDltbXuBLuaY6qRZGa5ZlX5anfR0lYXaHUzVSFjZa8rfdhZ8rKXFZg21LVL5LFjI5TlDIbwnFGHE2dypHs6Q50N015dpOgLONEUlOqoiQgIaeCsjMq9gITDKwRMieQgKUy9UQY1BTFYZU2KpE2SkILMIjW8IdFwIKmMaK8oClJVssAEtFnz5dQ1s+w6EZoNGtPGQfzx+aoE8ikiP8GCYOWtgB+HBdWDaxACAZInVq14dZI85RRDvZGIghyONw59KV/BBEQ02P1ER8hmNGiURT2hQP8WfAY=);
+}
+</style><form class="input-addon mktoForm mktoHasWidth mktoLayoutLeft" data-formid="1565" data-forminstance="subscribe-footer" target="_blank" data-thankyou-message="#vlp-signup-ty-01" data-thankyou-container="#vlp-signup-form-01" novalidate="novalidate" style="font-family: Helvetica, Arial, sans-serif; font-size: 13px; color: rgb(51, 51, 51); visibility: hidden; position: absolute; top: -500px; left: -1000px; width: 785px;"></form><iframe name="mktoFormsXDIframe0.30693135630538637" id="MktoForms2XDIframe" style="display: none;" src="https://info.a16z.com/index.php/form/XDFrame" data-gtm-yt-inspected-8610062_10="true" data-gtm-yt-inspected-8610062_35="true" data-gtm-yt-inspected-8610062_51="true" data-gtm-yt-inspected-8610062_52="true" data-gtm-yt-inspected-8610062_53="true" data-gtm-yt-inspected-8610062_54="true" data-gtm-yt-inspected-8610062_55="true" data-gtm-yt-inspected-8610062_56="true"></iframe><script language="javascript" type="text/javascript" src="//static.chartbeat.com/js/chartbeat.js"></script></body></html>

@@ -64,7 +64,6 @@ def parse_jsonld_data(data: List[dict]) -> dict:  # noqa: C901
     edge = get_primary_node(master_index)
     items = [edge] if edge else list(master_index.values())
     retval = {}
-
     for item in items:
         if "url" in item:
             output["source"].append(item.get("url"))
@@ -142,7 +141,7 @@ def contextify_authors(authors: list, context_url: str, master_index: dict) -> l
             author_ctx = {"type": "Person", "name": str(author)}
 
         if "type" in author_ctx:
-            author_ctx["type"] = contextify(context_url, author["type"])
+            author_ctx["type"] = contextify(context_url, author_ctx["type"])
 
         output.append(author_ctx)
     return output

@@ -186,3 +186,39 @@ youtube_html = {
     "encodingFormat": "text/html",
     "sourceEncodingFormat": "text/html",
 }
+yoast_jsonld = {
+    "author": [
+        {
+            "id": "https://a16z.com/#/schema/person/919c5e090d740be0076090817db58591",
+            "image": {
+                "caption": "dharris",
+                "contentUrl": (
+                    "https://secure.gravatar.com/avatar/37b22968271038e7833f6768c3ce09cd?s=96&d=identicon&r=g"
+                ),
+                "id": "https://a16z.com/#/schema/person/image/6c0183d836b70fb6abbca31a12615882",
+                "inLanguage": "en-US",
+                "type": "ImageObject",
+                "url": "https://secure.gravatar.com/avatar/37b22968271038e7833f6768c3ce09cd?s=96&d=identicon&r=g",
+            },
+            "name": "dharris",
+            "type": "https://schema.org/Person",
+            "url": "https://a16z.com/author/dharris/",
+        }
+    ],
+    "dateArchived": None,
+    "datePublished": dateutil.parser.isoparse("2023-06-20T19:23:48+00:00"),
+    "description": (
+        "A reference architecture for the LLM app stack. It shows the most common systems, tools, and design patterns "
+        "used by AI startups and tech companies."
+    ),
+    "encodingFormat": "text/html",
+    "headline": "Emerging Architectures for LLM Applications | Andreessen Horowitz",
+    "keywords": set(),
+    "publisher": None,
+    "source": [
+        "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/",
+        "https://a16z.com/2023/06/20/emerging-architectures-for-llm-applications/",
+    ],
+    "sourceEncodingFormat": "text/html",
+    "type": "https://schema.org/WebPage",
+}
