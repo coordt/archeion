@@ -1,12 +1,12 @@
 repos:
   - repo: https://github.com/charliermarsh/ruff-pre-commit
     # Ruff version.
-    rev: 'v0.0.254'
+    rev: 'v0.0.275'
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
   - repo: https://github.com/python/black
-    rev: 23.1.0
+    rev: 23.3.0
     hooks:
       - id: black
         args: ["--line-length", "119", "--check"]
@@ -35,7 +35,7 @@ repos:
         args: ["--remove"]
       - id: requirements-txt-fixer
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.0.1
+    rev: v1.4.1
     hooks:
       - id: mypy
         exclude: test.*
@@ -64,4 +64,4 @@ repos:
         files: ^requirements.*?\.(in|txt)$
         pass_filenames: false
         additional_dependencies:
-          - pip-tools==6.11.0
+          - pip-tools==6.14.0

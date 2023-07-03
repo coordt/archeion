@@ -97,6 +97,9 @@ class SinglefileArchiver:
             "args",
             [
                 "--dump-content",
+                "--browser-load-max-time=10000",
+                "--browser-wait-until-fallback=false",
+                "--browser-wait-until=domcontentloaded",
             ],
         )
 

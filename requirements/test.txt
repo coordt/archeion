@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=test.txt test.in
 #
-anyio==3.6.2
+anyio==3.7.0
     # via
     #   -r prod.txt
     #   httpcore
@@ -15,25 +15,20 @@ argon2-cffi-bindings==21.2.0
     # via
     #   -r prod.txt
     #   argon2-cffi
-asgiref==3.6.0
+asgiref==3.7.2
     # via
     #   -r prod.txt
     #   django
-async-generator==1.10
-    # via
-    #   -r prod.txt
-    #   trio
-attrs==22.2.0
+attrs==23.1.0
     # via
     #   -r prod.txt
     #   outcome
-    #   pytest
     #   trio
-beautifulsoup4==4.11.2
+beautifulsoup4==4.12.2
     # via
     #   -r prod.txt
     #   mf2py
-blinker==1.5
+blinker==1.6.2
     # via
     #   -r prod.txt
     #   selenium-wire
@@ -41,7 +36,7 @@ brotli==1.0.9
     # via
     #   -r prod.txt
     #   selenium-wire
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   -r prod.txt
     #   httpcore
@@ -65,13 +60,13 @@ click==8.1.3
     #   -r prod.txt
     #   rich-click
     #   uvicorn
-coverage[toml]==7.2.2
+coverage[toml]==7.2.7
     # via
     #   -r test.in
     #   pytest-cov
 crispy-bootstrap5==0.7
     # via -r prod.txt
-cryptography==39.0.2
+cryptography==41.0.1
     # via
     #   -r prod.txt
     #   pyopenssl
@@ -79,7 +74,7 @@ dandelion-eu==0.3.2
     # via -r prod.txt
 distlib==0.3.6
     # via virtualenv
-dj-database-url==1.2.0
+dj-database-url==2.0.0
     # via
     #   -r prod.txt
     #   environs
@@ -87,7 +82,7 @@ dj-email-url==1.0.6
     # via
     #   -r prod.txt
     #   environs
-django==4.1.7
+django==4.2.3
     # via
     #   -r prod.txt
     #   crispy-bootstrap5
@@ -101,23 +96,24 @@ django-cache-url==3.4.4
     # via
     #   -r prod.txt
     #   environs
-django-cors-headers==3.14.0
+django-cors-headers==4.1.0
     # via -r prod.txt
 django-crispy-forms==2.0
     # via
     #   -r prod.txt
     #   crispy-bootstrap5
-django-extensions==3.2.1
+django-extensions==3.2.3
     # via -r prod.txt
-django-filter==22.1
+django-filter==23.2
     # via -r prod.txt
-django-tables2==2.5.3
+django-tables2==2.6.0
     # via -r prod.txt
 environs[django]==9.5.0
     # via -r prod.txt
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
     # via
     #   -r prod.txt
+    #   anyio
     #   pytest
     #   trio
     #   trio-websocket
@@ -125,13 +121,13 @@ extruct==0.14.0
     # via -r prod.txt
 factory-boy==3.2.1
     # via -r test.in
-faker==17.6.0
+faker==18.11.2
     # via factory-boy
 feedparser==6.0.10
     # via -r prod.txt
-filelock==3.10.0
+filelock==3.12.2
     # via virtualenv
-fontawesomefree==6.3.0
+fontawesomefree==6.4.0
     # via -r prod.txt
 freezegun==1.2.2
     # via pytest-freezegun
@@ -160,7 +156,7 @@ html5lib==1.1
     #   -r prod.txt
     #   mf2py
     #   pyrdfa3
-httpcore==0.16.3
+httpcore==0.17.2
     # via
     #   -r prod.txt
     #   httpx
@@ -168,21 +164,21 @@ httptools==0.5.0
     # via
     #   -r prod.txt
     #   uvicorn
-httpx==0.23.3
+httpx==0.24.1
     # via -r prod.txt
 hyperframe==6.0.1
     # via
     #   -r prod.txt
     #   h2
     #   selenium-wire
-identify==2.5.21
+identify==2.5.24
     # via pre-commit
 idna==3.4
     # via
     #   -r prod.txt
     #   anyio
+    #   httpx
     #   requests
-    #   rfc3986
     #   trio
     #   yarl
 iniconfig==2.0.0
@@ -204,11 +200,11 @@ lxml==4.9.2
     #   -r prod.txt
     #   extruct
     #   html-text
-markdown-it-py==2.2.0
+markdown-it-py==3.0.0
     # via
     #   -r prod.txt
     #   rich
-markupsafe==2.1.2
+markupsafe==2.1.3
     # via werkzeug
 marshmallow==3.19.0
     # via
@@ -218,34 +214,34 @@ mdurl==0.1.2
     # via
     #   -r prod.txt
     #   markdown-it-py
-mf2py==1.1.2
+mf2py==1.1.3
     # via
     #   -r prod.txt
     #   extruct
 multidict==6.0.4
     # via yarl
-networkx==3.0
+networkx==3.1
     # via -r prod.txt
-nodeenv==1.7.0
+nodeenv==1.8.0
     # via pre-commit
 outcome==1.2.0
     # via
     #   -r prod.txt
     #   trio
-packaging==23.0
+packaging==23.1
     # via
     #   -r prod.txt
     #   marshmallow
     #   pytest
     #   pytest-sugar
     #   webdriver-manager
-platformdirs==3.1.1
+platformdirs==3.8.0
     # via virtualenv
-pluggy==1.0.0
+pluggy==1.2.0
     # via pytest
-pre-commit==3.2.0
+pre-commit==3.3.3
     # via -r test.in
-pyasn1==0.4.8
+pyasn1==0.5.0
     # via
     #   -r prod.txt
     #   selenium-wire
@@ -253,17 +249,17 @@ pycparser==2.21
     # via
     #   -r prod.txt
     #   cffi
-pydantic==1.10.6
+pydantic==1.10.10
     # via -r prod.txt
-pygments==2.14.0
+pygments==2.15.1
     # via
     #   -r prod.txt
     #   rich
-pyopenssl==23.0.0
+pyopenssl==23.2.0
     # via
     #   -r prod.txt
     #   selenium-wire
-pyparsing==3.0.9
+pyparsing==3.1.0
     # via
     #   -r prod.txt
     #   rdflib
@@ -277,7 +273,7 @@ pysocks==1.7.1
     #   -r prod.txt
     #   selenium-wire
     #   urllib3
-pytest==7.2.2
+pytest==7.4.0
     # via
     #   -r test.in
     #   pytest-cov
@@ -286,7 +282,7 @@ pytest==7.2.2
     #   pytest-mock
     #   pytest-sugar
     #   pytest-vcr
-pytest-cov==4.0.0
+pytest-cov==4.1.0
     # via -r test.in
 pytest-django==4.5.2
     # via -r test.in
@@ -294,9 +290,9 @@ pytest-freezegun==0.4.2
     # via -r test.in
 pytest-localserver==0.7.1
     # via -r test.in
-pytest-mock==3.10.0
+pytest-mock==3.11.1
     # via -r test.in
-pytest-sugar==0.9.6
+pytest-sugar==0.9.7
     # via -r test.in
 pytest-vcr==1.0.2
     # via -r test.in
@@ -319,28 +315,24 @@ pyyaml==6.0
     #   pre-commit
     #   uvicorn
     #   vcrpy
-rdflib==6.3.0
+rdflib==6.3.2
     # via
     #   -r prod.txt
     #   extruct
     #   pyrdfa3
-requests==2.28.2
+requests==2.31.0
     # via
     #   -r prod.txt
     #   dandelion-eu
     #   mf2py
     #   webdriver-manager
-rfc3986[idna2008]==1.5.0
-    # via
-    #   -r prod.txt
-    #   httpx
-rich==13.3.2
+rich==13.4.2
     # via
     #   -r prod.txt
     #   rich-click
 rich-click==1.6.1
     # via -r prod.txt
-selenium==4.8.2
+selenium==4.10.0
     # via
     #   -r prod.txt
     #   selenium-wire
@@ -372,15 +364,15 @@ sortedcontainers==2.4.0
     # via
     #   -r prod.txt
     #   trio
-soupsieve==2.4
+soupsieve==2.4.1
     # via
     #   -r prod.txt
     #   beautifulsoup4
-sqlparse==0.4.3
+sqlparse==0.4.4
     # via
     #   -r prod.txt
     #   django
-termcolor==2.2.0
+termcolor==2.3.0
     # via pytest-sugar
 text-unidecode==1.3
     # via
@@ -394,55 +386,57 @@ tqdm==4.65.0
     # via
     #   -r prod.txt
     #   webdriver-manager
-trio==0.22.0
+trio==0.22.1
     # via
     #   -r prod.txt
     #   selenium
     #   trio-websocket
-trio-websocket==0.10.0
+trio-websocket==0.10.3
     # via
     #   -r prod.txt
     #   selenium
-typing-extensions==4.5.0
+typing-extensions==4.7.1
     # via
     #   -r prod.txt
+    #   asgiref
+    #   dj-database-url
     #   pydantic
-urllib3[socks]==1.26.15
+urllib3[socks]==2.0.3
     # via
     #   -r prod.txt
     #   requests
     #   selenium
-uvicorn[standard]==0.21.1
+uvicorn[standard]==0.22.0
     # via -r prod.txt
 uvloop==0.17.0
     # via
     #   -r prod.txt
     #   uvicorn
-vcrpy==4.2.1
+vcrpy==5.0.0
     # via pytest-vcr
-virtualenv==20.21.0
+virtualenv==20.23.1
     # via pre-commit
 w3lib==2.1.1
     # via
     #   -r prod.txt
     #   extruct
-watchfiles==0.18.1
+watchfiles==0.19.0
     # via
     #   -r prod.txt
     #   uvicorn
-webdriver-manager==3.8.5
+webdriver-manager==3.8.6
     # via -r prod.txt
 webencodings==0.5.1
     # via
     #   -r prod.txt
     #   html5lib
-websockets==10.4
+websockets==11.0.3
     # via
     #   -r prod.txt
     #   uvicorn
-werkzeug==2.2.3
+werkzeug==2.3.6
     # via pytest-localserver
-whitenoise==6.4.0
+whitenoise==6.5.0
     # via -r prod.txt
 wrapt==1.15.0
     # via vcrpy
@@ -451,11 +445,11 @@ wsproto==1.2.0
     #   -r prod.txt
     #   selenium-wire
     #   trio-websocket
-yarl==1.8.2
+yarl==1.9.2
     # via vcrpy
 youtube-dl==2021.12.17
     # via -r prod.txt
-zstandard==0.20.0
+zstandard==0.21.0
     # via
     #   -r prod.txt
     #   selenium-wire

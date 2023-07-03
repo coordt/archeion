@@ -23,7 +23,7 @@ class WebDriverArchiver:
 
     def __init__(self, config: dict):
         """Initialize the plugin."""
-        self.args = config.get("args", ["--headless"])
+        self.args = config.get("args", ["--headless", "--incognito"])
         self.driver = Chrome
         self.options = ChromeOptions()
         for arg in self.args:
@@ -103,6 +103,9 @@ class WebDriverArchiver:
         try:
             with self.driver(self.exec_path, options=self.options) as driver:  # pragma: no-cover
                 driver.implicitly_wait(10)  # seconds
+                driver.set_page_load_timeout(10)  # seconds
+                driver.set_script_timeout(10)  # seconds
+
                 driver.get(artifact.link.url)
                 artifact = await self.save_artifact(driver, artifact)
         except selenium.common.TimeoutException as e:

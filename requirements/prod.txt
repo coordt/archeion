@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=prod.txt prod.in
 #
-anyio==3.6.2
+anyio==3.7.0
     # via
     #   httpcore
     #   watchfiles
@@ -12,21 +12,21 @@ argon2-cffi==21.3.0
     # via -r prod.in
 argon2-cffi-bindings==21.2.0
     # via argon2-cffi
-asgiref==3.6.0
+asgiref==3.7.2
     # via django
-async-generator==1.10
-    # via trio
-attrs==22.2.0
-    # via trio
-beautifulsoup4==4.11.2
+attrs==23.1.0
+    # via
+    #   outcome
+    #   trio
+beautifulsoup4==4.12.2
     # via
     #   -r prod.in
     #   mf2py
-blinker==1.5
+blinker==1.6.2
     # via selenium-wire
 brotli==1.0.9
     # via selenium-wire
-certifi==2022.12.7
+certifi==2023.5.7
     # via
     #   httpcore
     #   httpx
@@ -45,15 +45,15 @@ click==8.1.3
     #   uvicorn
 crispy-bootstrap5==0.7
     # via -r prod.in
-cryptography==39.0.2
+cryptography==41.0.1
     # via pyopenssl
 dandelion-eu==0.3.2
     # via -r prod.in
-dj-database-url==1.2.0
+dj-database-url==2.0.0
     # via environs
 dj-email-url==1.0.6
     # via environs
-django==4.1.7
+django==4.2.3
     # via
     #   -r prod.in
     #   crispy-bootstrap5
@@ -65,29 +65,30 @@ django==4.1.7
     #   django-tables2
 django-cache-url==3.4.4
     # via environs
-django-cors-headers==3.14.0
+django-cors-headers==4.1.0
     # via -r prod.in
 django-crispy-forms==2.0
     # via
     #   -r prod.in
     #   crispy-bootstrap5
-django-extensions==3.2.1
+django-extensions==3.2.3
     # via -r prod.in
-django-filter==22.1
+django-filter==23.2
     # via -r prod.in
-django-tables2==2.5.3
+django-tables2==2.6.0
     # via -r prod.in
 environs[django]==9.5.0
     # via -r prod.in
-exceptiongroup==1.1.1
+exceptiongroup==1.1.2
     # via
+    #   anyio
     #   trio
     #   trio-websocket
 extruct==0.14.0
     # via -r prod.in
 feedparser==6.0.10
     # via -r prod.in
-fontawesomefree==6.3.0
+fontawesomefree==6.4.0
     # via -r prod.in
 h11==0.14.0
     # via
@@ -106,11 +107,11 @@ html5lib==1.1
     # via
     #   mf2py
     #   pyrdfa3
-httpcore==0.16.3
+httpcore==0.17.2
     # via httpx
 httptools==0.5.0
     # via uvicorn
-httpx==0.23.3
+httpx==0.24.1
     # via -r prod.in
 hyperframe==6.0.1
     # via
@@ -119,8 +120,8 @@ hyperframe==6.0.1
 idna==3.4
     # via
     #   anyio
+    #   httpx
     #   requests
-    #   rfc3986
     #   trio
 isodate==0.6.1
     # via rdflib
@@ -132,33 +133,33 @@ lxml==4.9.2
     # via
     #   extruct
     #   html-text
-markdown-it-py==2.2.0
+markdown-it-py==3.0.0
     # via rich
 marshmallow==3.19.0
     # via environs
 mdurl==0.1.2
     # via markdown-it-py
-mf2py==1.1.2
+mf2py==1.1.3
     # via extruct
-networkx==3.0
+networkx==3.1
     # via -r prod.in
 outcome==1.2.0
     # via trio
-packaging==23.0
+packaging==23.1
     # via
     #   marshmallow
     #   webdriver-manager
-pyasn1==0.4.8
+pyasn1==0.5.0
     # via selenium-wire
 pycparser==2.21
     # via cffi
-pydantic==1.10.6
+pydantic==1.10.10
     # via -r prod.in
-pygments==2.14.0
+pygments==2.15.1
     # via rich
-pyopenssl==23.0.0
+pyopenssl==23.2.0
     # via selenium-wire
-pyparsing==3.0.9
+pyparsing==3.1.0
     # via
     #   rdflib
     #   selenium-wire
@@ -181,24 +182,22 @@ pyyaml==6.0
     # via
     #   -r prod.in
     #   uvicorn
-rdflib==6.3.0
+rdflib==6.3.2
     # via
     #   extruct
     #   pyrdfa3
-requests==2.28.2
+requests==2.31.0
     # via
     #   dandelion-eu
     #   mf2py
     #   webdriver-manager
-rfc3986[idna2008]==1.5.0
-    # via httpx
-rich==13.3.2
+rich==13.4.2
     # via
     #   -r prod.in
     #   rich-click
 rich-click==1.6.1
     # via -r prod.in
-selenium==4.8.2
+selenium==4.10.0
     # via selenium-wire
 selenium-wire==5.1.0
     # via -r prod.in
@@ -221,27 +220,30 @@ sniffio==1.3.0
     #   trio
 sortedcontainers==2.4.0
     # via trio
-soupsieve==2.4
+soupsieve==2.4.1
     # via beautifulsoup4
-sqlparse==0.4.3
+sqlparse==0.4.4
     # via django
 text-unidecode==1.3
     # via python-slugify
 tqdm==4.65.0
     # via webdriver-manager
-trio==0.22.0
+trio==0.22.1
     # via
     #   selenium
     #   trio-websocket
-trio-websocket==0.10.0
+trio-websocket==0.10.3
     # via selenium
-typing-extensions==4.5.0
-    # via pydantic
-urllib3[socks]==1.26.15
+typing-extensions==4.7.1
+    # via
+    #   asgiref
+    #   dj-database-url
+    #   pydantic
+urllib3[socks]==2.0.3
     # via
     #   requests
     #   selenium
-uvicorn[standard]==0.21.1
+uvicorn[standard]==0.22.0
     # via -r prod.in
 uvloop==0.17.0
     # via uvicorn
@@ -249,15 +251,15 @@ w3lib==2.1.1
     # via
     #   -r prod.in
     #   extruct
-watchfiles==0.18.1
+watchfiles==0.19.0
     # via uvicorn
-webdriver-manager==3.8.5
+webdriver-manager==3.8.6
     # via -r prod.in
 webencodings==0.5.1
     # via html5lib
-websockets==10.4
+websockets==11.0.3
     # via uvicorn
-whitenoise==6.4.0
+whitenoise==6.5.0
     # via -r prod.in
 wsproto==1.2.0
     # via
@@ -265,5 +267,5 @@ wsproto==1.2.0
     #   trio-websocket
 youtube-dl==2021.12.17
     # via -r prod.in
-zstandard==0.20.0
+zstandard==0.21.0
     # via selenium-wire
