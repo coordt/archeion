@@ -222,3 +222,49 @@ yoast_jsonld = {
     "sourceEncodingFormat": "text/html",
     "type": "https://schema.org/WebPage",
 }
+yoast2_jsonld = {
+    "author": [
+        {
+            "id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081",
+            "image": {
+                "caption": "Trisha Gee",
+                "contentUrl": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "height": 250,
+                "id": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
+                "inLanguage": "en-US",
+                "type": "ImageObject",
+                "url": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "width": 565,
+            },
+            "logo": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
+            "name": "Trisha Gee",
+            "type": "https://schema.org/Person",
+        }
+    ],
+    "datePublished": dateutil.parser.isoparse("2023-05-29T15:31:36+00:00"),
+    "description": None,
+    "encodingFormat": "text/html",
+    "headline": "Why I prefer trunk-based development",
+    "keywords": {"vcs", "ci", "git", "cd"},
+    "publisher": [
+        {
+            "id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081",
+            "image": {
+                "caption": "Trisha Gee",
+                "contentUrl": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "height": 250,
+                "id": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
+                "inLanguage": "en-US",
+                "type": "ImageObject",
+                "url": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "width": 565,
+            },
+            "logo": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
+            "name": "Trisha Gee",
+            "type": "https://schema.org/Person",
+        }
+    ],
+    "source": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#article",
+    "sourceEncodingFormat": "text/html",
+    "type": "https://schema.org/Article",
+}

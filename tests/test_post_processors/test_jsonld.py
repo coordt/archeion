@@ -8,7 +8,7 @@ import pytest
 
 from archeion.post_processors.html_metadata import Normalizer
 
-from .normalized_data import github_jsonld, medium_jsonld, missing_data_jsonld, yoast_jsonld
+from .normalized_data import github_jsonld, medium_jsonld, missing_data_jsonld, yoast2_jsonld, yoast_jsonld
 
 METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
 
@@ -20,6 +20,11 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
             METADATA_DIR / "yoast.json",
             yoast_jsonld,
             id="yoast",
+        ),
+        pytest.param(
+            METADATA_DIR / "yoast2.json",
+            yoast2_jsonld,
+            id="yoast2",
         ),
         pytest.param(
             METADATA_DIR / "missing-data.json",

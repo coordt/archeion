@@ -1,0 +1,981 @@
+{
+  "microdata": [],
+  "json-ld": [
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#article",
+          "isPartOf": {
+            "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/"
+          },
+          "author": {
+            "@id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081"
+          },
+          "headline": "Why I prefer trunk-based development",
+          "datePublished": "2023-05-29T15:31:36+00:00",
+          "dateModified": "2023-05-29T15:43:21+00:00",
+          "mainEntityOfPage": {
+            "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/"
+          },
+          "wordCount": 1368,
+          "commentCount": 15,
+          "publisher": {
+            "@id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081"
+          },
+          "image": {
+            "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#primaryimage"
+          },
+          "thumbnailUrl": "https://trishagee.com/wp-content/uploads/2023/05/tree.jpg",
+          "keywords": [
+            "cd",
+            "ci",
+            "git",
+            "vcs"
+          ],
+          "articleSection": [
+            "Tips and Tech"
+          ],
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "CommentAction",
+              "name": "Comment",
+              "target": [
+                "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#respond"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/",
+          "url": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/",
+          "name": "Why I prefer trunk-based development - Trisha Gee",
+          "isPartOf": {
+            "@id": "https://trishagee.com/#website"
+          },
+          "primaryImageOfPage": {
+            "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#primaryimage"
+          },
+          "image": {
+            "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#primaryimage"
+          },
+          "thumbnailUrl": "https://trishagee.com/wp-content/uploads/2023/05/tree.jpg",
+          "datePublished": "2023-05-29T15:31:36+00:00",
+          "dateModified": "2023-05-29T15:43:21+00:00",
+          "description": "Trisha summarizes the advantages of trunk-based development (as opposed to branch-based development) in this blog post.",
+          "breadcrumb": {
+            "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#breadcrumb"
+          },
+          "inLanguage": "en-US",
+          "potentialAction": [
+            {
+              "@type": "ReadAction",
+              "target": [
+                "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/"
+              ]
+            }
+          ]
+        },
+        {
+          "@type": "ImageObject",
+          "inLanguage": "en-US",
+          "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#primaryimage",
+          "url": "https://trishagee.com/wp-content/uploads/2023/05/tree.jpg",
+          "contentUrl": "https://trishagee.com/wp-content/uploads/2023/05/tree.jpg",
+          "width": 1600,
+          "height": 795,
+          "caption": "Photo of a tree at the side of the river in Sevilla, Spain"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://trishagee.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog",
+              "item": "https://trishagee.com/blog/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Why I prefer trunk-based development"
+            }
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://trishagee.com/#website",
+          "url": "https://trishagee.com/",
+          "name": "Trisha Gee",
+          "description": "I make c*de happen",
+          "publisher": {
+            "@id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081"
+          },
+          "potentialAction": [
+            {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://trishagee.com/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          ],
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": [
+            "Person",
+            "Organization"
+          ],
+          "@id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081",
+          "name": "Trisha Gee",
+          "image": {
+            "@type": "ImageObject",
+            "inLanguage": "en-US",
+            "@id": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
+            "url": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",
+            "contentUrl": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",
+            "width": 565,
+            "height": 250,
+            "caption": "Trisha Gee"
+          },
+          "logo": {
+            "@id": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583"
+          }
+        }
+      ]
+    }
+  ],
+  "opengraph": [
+    {
+      "namespace": {
+        "og": "http://ogp.me/ns#",
+        "article": "http://ogp.me/ns/article#"
+      },
+      "properties": [
+        [
+          "og:locale",
+          "en_US"
+        ],
+        [
+          "og:type",
+          "article"
+        ],
+        [
+          "og:title",
+          "Why I prefer trunk-based development - Trisha Gee"
+        ],
+        [
+          "og:description",
+          "Trisha summarizes the advantages of trunk-based development (as opposed to branch-based development) in this blog post."
+        ],
+        [
+          "og:url",
+          "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/"
+        ],
+        [
+          "og:site_name",
+          "Trisha Gee"
+        ],
+        [
+          "article:published_time",
+          "2023-05-29T15:31:36+00:00"
+        ],
+        [
+          "article:modified_time",
+          "2023-05-29T15:43:21+00:00"
+        ],
+        [
+          "og:image",
+          "https://trishagee.com/wp-content/uploads/2023/05/tree.jpg"
+        ],
+        [
+          "og:image:width",
+          "1600"
+        ],
+        [
+          "og:image:height",
+          "795"
+        ],
+        [
+          "og:image:type",
+          "image/jpeg"
+        ]
+      ]
+    }
+  ],
+  "microformat": [
+    {
+      "type": [
+        "h-entry"
+      ],
+      "properties": {
+        "url": [
+          "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/"
+        ],
+        "published": [
+          "2023-05-29T15:31:36+00:00"
+        ],
+        "updated": [
+          "2023-05-29T15:43:21+00:00"
+        ],
+        "author": [
+          {
+            "type": [
+              "h-card"
+            ],
+            "properties": {
+              "name": [
+                "Trisha Gee"
+              ],
+              "url": [
+                "https://trishagee.com/author/trisha/"
+              ]
+            },
+            "value": "Trisha Gee"
+          },
+          {
+            "type": [
+              "h-card"
+            ],
+            "properties": {
+              "name": [
+                "Trisha Gee"
+              ],
+              "url": [
+                "https://trishagee.com/author/trisha/"
+              ]
+            },
+            "value": "Trisha Gee"
+          }
+        ],
+        "name": [
+          "Why I prefer trunk-based development"
+        ],
+        "content": [
+          {
+            "html": "<p>\n           These days, distributed version control systems like Git have \"won the war\" of version control. One of the arguments I used to hear when DVCSs were gaining traction was around how easy it is to branch and merge with a VCS like Git. However, I'm a big fan of\n           <a href=\"https://en.wikipedia.org/wiki/Trunk-based_development\">\n            Trunk-Based Development (TBD)\n           </a>\n           , and I want to tell you why.\n          </p>\n<p>\n           With trunk-based development, all developers work on a single branch (e.g. 'main'). You might have read or heard\n           <a href=\"https://martinfowler.com/articles/continuousIntegration.html\">\n            Martin Fowler\n           </a>\n           or\n           <a href=\"https://youtu.be/v4Ijkq6Myfc\">\n            Dave Farley\n           </a>\n           talking about it. It was when I was working with Dave (around about the time that Git was rapidly becoming the \"go-to\" version control system) that I really saw the benefits of trunk-based development for the team, particularly in an environment that was pioneering Continuous Delivery - Dave was writing the book with Jez Humble while I worked with him.\n          </p>\n<p>\n           In contrast, the branching model encourages developers to create separate branches for every feature, bug fix, or enhancement. Although branching may seem like a logical approach to isolate changes and reduce risk, several factors make me more comfortable with trunk-based development.\n          </p>\n<span id=\"more-1854\">\n</span>\n<h2 class=\"wp-block-heading\">\n           1. Speed and Efficiency\n          </h2>\n<p>\n           In trunk-based development, the entire team works on a single branch. This model allows for quicker integrations and fewer merge conflicts. This is literally \"\n           <a href=\"https://en.wikipedia.org/wiki/Continuous_integration\">\n            Continuous Integration\n           </a>\n           (CI)\", as originally suggested by the practices of Extreme Programming. While these days we tend to mean \"run your build and tests on a team server every time you commit\" when we say CI, what CI really meant was actually\n           <em>\n            integrate\n           </em>\n           your code regularly. Code living on separate branches is, by definition, not integrated. And the longer these branches live for, the more challenging it is to merge them back into the main codebase. It might seem fast to develop your fixes and improvements on a separate branch that isn't impacted by other developers' changes, but you still have to pay that cost at some point. Integrating small changes regularly into your code is usually less painful than a big merge at the end of a longer period of time.\n          </p>\n<h2 class=\"wp-block-heading\">\n           2. Greater Code Stability\n          </h2>\n<p>\n           Trunk-based development encourages frequent commits, which leads to smaller and more manageable changes. How and why? For the same reason that we don't want big merges from long-lived branches - the longer we leave it to commit our changes, the higher the chances our commit will clash with someone else's changes. By frequently pulling in the other developers' changes, and frequently pushing small changes of working code, we know the codebase is stable and working. Of course, this assumption of \"stable and working\" is easier to check if we have a CI server that's running the build and tests for each of these commits. We also have to\n           <em>\n            stop\n           </em>\n           making commits if the build breaks at any time and focus on fixing that build. Continuously pushing small, frequent commits when the build is already broken isn't going to do anyone any favours.\n          </p>\n<p>\n           In the branching model, large and infrequent merges can introduce bugs that are hard to identify and resolve due to the sheer size of the changes. Have you ever merged the trunk into your branch after someone else has merged their own big piece of work and found your code no longer works? It can take a LOT of time to track down why your tests are failing or the application isn't working the way you expect when you've made a whole bunch of changes and someone else has made a whole bunch of different, or overlapping, changes. And that's assuming you actually have reliable test coverage that can tell you there's a problem.\n          </p>\n<h2 class=\"wp-block-heading\">\n           3. Enhanced Team Collaboration\n          </h2>\n<p>\n           My favourite way of sharing knowledge between team members is pair programming. I know not everyone is a fan or is in a position to do it (especially now more people are working remotely, but if so, check out JetBrains'\n           <a href=\"https://www.helenjoscott.com/2022/12/08/using-code-with-me-to-collaborate-on-getting-to-know-intellij-idea/\">\n            Code With Me\n           </a>\n           ). If you're not pairing, then at least you want to be working on the same code, right? If you're all working on your own branches, you are\n           <em>\n            not\n           </em>\n           collaborating. You are competing. To see who can get their code in fastest. To avoid being stomped on by someone else's code changes.\n          </p>\n<p>\n           If you're all working on the same branch, you tend to have a better awareness of the changes being made. This approach fosters greater team collaboration and knowledge sharing. In contrast, branching can create a siloed work environment where you're all working independently, leading to knowledge gaps within the team.\n          </p>\n<h2 class=\"wp-block-heading\">\n           4. Improved Continuous Integration and Delivery (CI/CD) Practices\n          </h2>\n<p>\n           Dave Farley's book, \"\n           <a href=\"https://amzn.to/43rppXn\">\n            Continuous Delivery\n           </a>\n           \", and his blog posts and videos, argue something along the lines of \"trunk-based development is inherently compatible with Continuous Integration and Continuous Delivery (CI/CD) practices\".\n          </p>\n<p>\n           In a trunk-based model, continuous integration becomes more straightforward because your code is committed frequently to trunk, and that's the branch your CI environment is running the build and tests on. Any failures there are seen and addressed promptly, reducing the risk of nasty failures. It's usually easy to track down which changes caused the problem. If the issue can't be fixed immediately, you can back the specific changes that caused it.\n          </p>\n<p>\n           By now we should know the importance of a quick feedback loop - when you find problems faster you can locate the cause faster, and you can fix it faster. This improves your software's quality.\n          </p>\n<p>\n           Continuous delivery also thrives in a trunk-based development environment. Successful continuous delivery hinges on the ability to have a codebase that is always in a deployable state. The trunk-based development approach ensures this by promoting frequent commits, frequent integrations, and tests on all of these integrations. The small number of changes being introduced at any one time makes the software easier to deploy and test.\n          </p>\n<p>\n           In contrast, implementing effective CI/CD can be more complex and time-consuming with the branching model. While it's tempting to think \"Well, I run my build and all my tests on my branch\", you're not actually\n           <em>\n            integrating\n           </em>\n           every time you commit. It's at merge (or rebase) time that you start to see any integration issues. All those tests you were running on your branch \"in CI\" were not testing any kind of integration at all.\n          </p>\n<p>\n           Merging and testing code from different branches can introduce delays and potential errors, which takes away some of the benefits of having a build pipeline in the first place.\n          </p>\n<h2 class=\"wp-block-heading\">\n           5. Reduced Technical Debt\n          </h2>\n<p>\n           Long-lived branches often lead to 'merge hell', where the differences between one branch (like 'main') and another (for example your feature branch) are so great that merging becomes a nightmare. This can result in technical debt as you may resort to quick fixes to resolve merge conflicts or accept suggestions from your IDE that resolve the merge but that you don't fully understand. With trunk-based development, frequent merges and smaller changes make it easier to manage and reduce the build-up of technical debt.\n          </p>\n<h2 class=\"wp-block-heading\">\n           In conclusion\n          </h2>\n<p>\n           I, personally, think trunk-based development has clear advantages, and I have experienced them first-hand working in teams that have adopted this approach. However, it requires a mindset, a culture, within the development team. You need to frequently merge in other developers' changes into your own code. You need to commit small changes, frequently, which requires you to only change small sections of the code and make incremental changes, something which can be a difficult habit to get used to. Pair programming, comprehensive automated testing, and maybe code reviews are key practices to helping all the team to adopt the same approach and culture.\n          </p>\n<p>\n           Trunk-based development, done in a disciplined way, streamlines the development process, enhances team collaboration, improves code stability, supports efficient CI/CD practices, and may result in less technical debt. While it may be challenging to adapt to this approach if you've been working with a branch-based model, the long-term benefits are worthwhile. If you want to change the way your team works to move to a trunk-based development model, you may also want to read Dave's article addressing\n           <a href=\"https://www.davefarley.net/?p=269\">\n            barriers to trunk-based development\n           </a>\n           .\n          </p>\n<!--begin code -->\n<div class=\"pp-multiple-authors-boxes-wrapper pp-multiple-authors-wrapper pp-multiple-authors-layout-boxed multiple-authors-target-the-content box-post-id-1831 box-instance-id-1 ppma_boxes_1831\" data-additional_class=\"pp-multiple-authors-layout-boxed.multiple-authors-target-the-content\" data-instance_id=\"1\" data-original_class=\"pp-multiple-authors-boxes-wrapper pp-multiple-authors-wrapper box-post-id-1831 box-instance-id-1\" data-post_id=\"1831\">\n<h2 class=\"widget-title box-header-title\">\n            Author\n           </h2>\n<ul class=\"pp-multiple-authors-boxes-ul\">\n<li class=\"pp-multiple-authors-boxes-li author_index_0 author_trisha has-avatar\">\n<div class=\"pp-author-boxes-avatar\">\n<img alt=\"Trisha Gee\" class=\"avatar avatar-80 photo\" decoding=\"async\" height=\"80\" loading=\"lazy\" src=\"https://secure.gravatar.com/avatar/c22a9ab936027d793638d7dae51021b3?s=80&amp;d=mm&amp;r=g\" srcset=\"https://secure.gravatar.com/avatar/c22a9ab936027d793638d7dae51021b3?s=160&amp;d=mm&amp;r=g 2x\" width=\"80\"/>\n</div>\n<div class=\"pp-author-boxes-avatar-details\">\n<div class=\"pp-author-boxes-name multiple-authors-name\">\n<a class=\"author url fn\" href=\"https://trishagee.com/author/trisha/\" rel=\"author\" title=\"Trisha Gee\">\n                Trisha Gee\n               </a>\n</div>\n<p class=\"pp-author-boxes-description multiple-authors-description\">\n               Trisha is a software engineer, Java Champion and author. Trisha has developed Java applications for finance, manufacturing and non-profit organisations, and she's a lead developer advocate at Gradle.\n              </p>\n<p class=\"pp-author-boxes-meta multiple-authors-links\">\n<a href=\"https://trishagee.com/author/trisha/\" title=\"View all posts\">\n<span>\n                 View all posts\n                </span>\n</a>\n<a aria-label=\"Email\" href=\"mailto:trisha@trishagee.com\" target=\"_blank\">\n<span class=\"dashicons dashicons-email-alt\">\n</span>\n</a>\n</p>\n</div>\n</li>\n</ul>\n</div>\n<!--end code -->\n<div class=\"addtoany_share_save_container addtoany_content addtoany_content_bottom\">\n<div class=\"a2a_kit a2a_kit_size_32 addtoany_list\" data-a2a-title=\"Why I prefer trunk-based development\" data-a2a-url=\"https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/\" style=\"line-height: 32px;\">\n<a class=\"a2a_button_twitter\" href=\"/#twitter\" rel=\"nofollow noopener\" target=\"_blank\" title=\"Twitter\">\n<span class=\"a2a_svg a2a_s__default a2a_s_twitter\" style=\"background-color: rgb(29, 155, 240);\">\n<svg aria-hidden=\"true\" focusable=\"false\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M28 8.557a9.913 9.913 0 0 1-2.828.775 4.93 4.93 0 0 0 2.166-2.725 9.738 9.738 0 0 1-3.13 1.194 4.92 4.92 0 0 0-3.593-1.55 4.924 4.924 0 0 0-4.794 6.049c-4.09-.21-7.72-2.17-10.15-5.15a4.942 4.942 0 0 0-.665 2.477c0 1.71.87 3.214 2.19 4.1a4.968 4.968 0 0 1-2.23-.616v.06c0 2.39 1.7 4.38 3.952 4.83-.414.115-.85.174-1.297.174-.318 0-.626-.03-.928-.086a4.935 4.935 0 0 0 4.6 3.42 9.893 9.893 0 0 1-6.114 2.107c-.398 0-.79-.023-1.175-.068a13.953 13.953 0 0 0 7.55 2.213c9.056 0 14.01-7.507 14.01-14.013 0-.213-.005-.426-.015-.637.96-.695 1.795-1.56 2.455-2.55z\" fill=\"#FFF\">\n</path>\n</svg>\n</span>\n<span class=\"a2a_label\">\n              Twitter\n             </span>\n</a>\n<a class=\"a2a_button_linkedin\" href=\"/#linkedin\" rel=\"nofollow noopener\" target=\"_blank\" title=\"LinkedIn\">\n<span class=\"a2a_svg a2a_s__default a2a_s_linkedin\" style=\"background-color: rgb(0, 123, 181);\">\n<svg aria-hidden=\"true\" focusable=\"false\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z\" fill=\"#FFF\">\n</path>\n</svg>\n</span>\n<span class=\"a2a_label\">\n              LinkedIn\n             </span>\n</a>\n<a class=\"a2a_button_facebook\" href=\"/#facebook\" rel=\"nofollow noopener\" target=\"_blank\" title=\"Facebook\">\n<span class=\"a2a_svg a2a_s__default a2a_s_facebook\" style=\"background-color: rgb(24, 119, 242);\">\n<svg aria-hidden=\"true\" focusable=\"false\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M17.78 27.5V17.008h3.522l.527-4.09h-4.05v-2.61c0-1.182.33-1.99 2.023-1.99h2.166V4.66c-.375-.05-1.66-.16-3.155-.16-3.123 0-5.26 1.905-5.26 5.405v3.016h-3.53v4.09h3.53V27.5h4.223z\" fill=\"#FFF\">\n</path>\n</svg>\n</span>\n<span class=\"a2a_label\">\n              Facebook\n             </span>\n</a>\n<a class=\"a2a_button_pinterest\" href=\"/#pinterest\" rel=\"nofollow noopener\" target=\"_blank\" title=\"Pinterest\">\n<span class=\"a2a_svg a2a_s__default a2a_s_pinterest\" style=\"background-color: rgb(189, 8, 28);\">\n<svg aria-hidden=\"true\" focusable=\"false\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M16.539 4.5c-6.277 0-9.442 4.5-9.442 8.253 0 2.272.86 4.293 2.705 5.046.303.125.574.005.662-.33.061-.231.205-.816.27-1.06.088-.331.053-.447-.191-.736-.532-.627-.873-1.439-.873-2.591 0-3.338 2.498-6.327 6.505-6.327 3.548 0 5.497 2.168 5.497 5.062 0 3.81-1.686 7.025-4.188 7.025-1.382 0-2.416-1.142-2.085-2.545.397-1.674 1.166-3.48 1.166-4.689 0-1.081-.581-1.983-1.782-1.983-1.413 0-2.548 1.462-2.548 3.419 0 1.247.421 2.091.421 2.091l-1.699 7.199c-.505 2.137-.076 4.755-.039 5.019.021.158.223.196.314.077.13-.17 1.813-2.247 2.384-4.324.162-.587.929-3.631.929-3.631.46.876 1.801 1.646 3.227 1.646 4.247 0 7.128-3.871 7.128-9.053.003-3.918-3.317-7.568-8.361-7.568z\" fill=\"#FFF\">\n</path>\n</svg>\n</span>\n<span class=\"a2a_label\">\n              Pinterest\n             </span>\n</a>\n<a class=\"a2a_dd addtoany_share_save addtoany_share\" href=\"https://www.addtoany.com/share#url=https%3A%2F%2Ftrishagee.com%2F2023%2F05%2F29%2Fwhy-i-prefer-trunk-based-development%2F&amp;title=Why%20I%20prefer%20trunk-based%20development\">\n<span class=\"a2a_svg a2a_s__default a2a_s_a2a\" style=\"background-color: rgb(1, 102, 255);\">\n<svg aria-hidden=\"true\" focusable=\"false\" viewbox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n<g fill=\"#FFF\">\n<path d=\"M14 7h4v18h-4z\">\n</path>\n<path d=\"M7 14h18v4H7z\">\n</path>\n</g>\n</svg>\n</span>\n<span class=\"a2a_label a2a_localize\" data-a2a-localize=\"inner,Share\">\n              Share\n             </span>\n</a>\n</div>\n</div>",
+            "value": "These days, distributed version control systems like Git have \"won the war\" of version control. One of the arguments I used to hear when DVCSs were gaining traction was around how easy it is to branch and merge with a VCS like Git. However, I'm a big fan of  Trunk-Based Development (TBD)  , and I want to tell you why. \nWith trunk-based development, all developers work on a single branch (e.g. 'main'). You might have read or heard  Martin Fowler  or  Dave Farley  talking about it. It was when I was working with Dave (around about the time that Git was rapidly becoming the \"go-to\" version control system) that I really saw the benefits of trunk-based development for the team, particularly in an environment that was pioneering Continuous Delivery - Dave was writing the book with Jez Humble while I worked with him. \nIn contrast, the branching model encourages developers to create separate branches for every feature, bug fix, or enhancement. Although branching may seem like a logical approach to isolate changes and reduce risk, several factors make me more comfortable with trunk-based development.   1. Speed and Efficiency \nIn trunk-based development, the entire team works on a single branch. This model allows for quicker integrations and fewer merge conflicts. This is literally \"  Continuous Integration  (CI)\", as originally suggested by the practices of Extreme Programming. While these days we tend to mean \"run your build and tests on a team server every time you commit\" when we say CI, what CI really meant was actually  integrate  your code regularly. Code living on separate branches is, by definition, not integrated. And the longer these branches live for, the more challenging it is to merge them back into the main codebase. It might seem fast to develop your fixes and improvements on a separate branch that isn't impacted by other developers' changes, but you still have to pay that cost at some point. Integrating small changes regularly into your code is usually less painful than a big merge at the end of a longer period of time.  2. Greater Code Stability \nTrunk-based development encourages frequent commits, which leads to smaller and more manageable changes. How and why? For the same reason that we don't want big merges from long-lived branches - the longer we leave it to commit our changes, the higher the chances our commit will clash with someone else's changes. By frequently pulling in the other developers' changes, and frequently pushing small changes of working code, we know the codebase is stable and working. Of course, this assumption of \"stable and working\" is easier to check if we have a CI server that's running the build and tests for each of these commits. We also have to  stop  making commits if the build breaks at any time and focus on fixing that build. Continuously pushing small, frequent commits when the build is already broken isn't going to do anyone any favours. \nIn the branching model, large and infrequent merges can introduce bugs that are hard to identify and resolve due to the sheer size of the changes. Have you ever merged the trunk into your branch after someone else has merged their own big piece of work and found your code no longer works? It can take a LOT of time to track down why your tests are failing or the application isn't working the way you expect when you've made a whole bunch of changes and someone else has made a whole bunch of different, or overlapping, changes. And that's assuming you actually have reliable test coverage that can tell you there's a problem.  3. Enhanced Team Collaboration \nMy favourite way of sharing knowledge between team members is pair programming. I know not everyone is a fan or is in a position to do it (especially now more people are working remotely, but if so, check out JetBrains'  Code With Me  ). If you're not pairing, then at least you want to be working on the same code, right? If you're all working on your own branches, you are  not  collaborating. You are competing. To see who can get their code in fastest. To avoid being stomped on by someone else's code changes. \nIf you're all working on the same branch, you tend to have a better awareness of the changes being made. This approach fosters greater team collaboration and knowledge sharing. In contrast, branching can create a siloed work environment where you're all working independently, leading to knowledge gaps within the team.  4. Improved Continuous Integration and Delivery (CI/CD) Practices \nDave Farley's book, \"  Continuous Delivery  \", and his blog posts and videos, argue something along the lines of \"trunk-based development is inherently compatible with Continuous Integration and Continuous Delivery (CI/CD) practices\". \nIn a trunk-based model, continuous integration becomes more straightforward because your code is committed frequently to trunk, and that's the branch your CI environment is running the build and tests on. Any failures there are seen and addressed promptly, reducing the risk of nasty failures. It's usually easy to track down which changes caused the problem. If the issue can't be fixed immediately, you can back the specific changes that caused it. \nBy now we should know the importance of a quick feedback loop - when you find problems faster you can locate the cause faster, and you can fix it faster. This improves your software's quality. \nContinuous delivery also thrives in a trunk-based development environment. Successful continuous delivery hinges on the ability to have a codebase that is always in a deployable state. The trunk-based development approach ensures this by promoting frequent commits, frequent integrations, and tests on all of these integrations. The small number of changes being introduced at any one time makes the software easier to deploy and test. \nIn contrast, implementing effective CI/CD can be more complex and time-consuming with the branching model. While it's tempting to think \"Well, I run my build and all my tests on my branch\", you're not actually  integrating  every time you commit. It's at merge (or rebase) time that you start to see any integration issues. All those tests you were running on your branch \"in CI\" were not testing any kind of integration at all. \nMerging and testing code from different branches can introduce delays and potential errors, which takes away some of the benefits of having a build pipeline in the first place.  5. Reduced Technical Debt \nLong-lived branches often lead to 'merge hell', where the differences between one branch (like 'main') and another (for example your feature branch) are so great that merging becomes a nightmare. This can result in technical debt as you may resort to quick fixes to resolve merge conflicts or accept suggestions from your IDE that resolve the merge but that you don't fully understand. With trunk-based development, frequent merges and smaller changes make it easier to manage and reduce the build-up of technical debt.  In conclusion \nI, personally, think trunk-based development has clear advantages, and I have experienced them first-hand working in teams that have adopted this approach. However, it requires a mindset, a culture, within the development team. You need to frequently merge in other developers' changes into your own code. You need to commit small changes, frequently, which requires you to only change small sections of the code and make incremental changes, something which can be a difficult habit to get used to. Pair programming, comprehensive automated testing, and maybe code reviews are key practices to helping all the team to adopt the same approach and culture. \nTrunk-based development, done in a disciplined way, streamlines the development process, enhances team collaboration, improves code stability, supports efficient CI/CD practices, and may result in less technical debt. While it may be challenging to adapt to this approach if you've been working with a branch-based model, the long-term benefits are worthwhile. If you want to change the way your team works to move to a trunk-based development model, you may also want to read Dave's article addressing  barriers to trunk-based development  .   Author  Trisha Gee  Trisha Gee \nTrisha is a software engineer, Java Champion and author. Trisha has developed Java applications for finance, manufacturing and non-profit organisations, and she's a lead developer advocate at Gradle. \n  View all posts   Twitter   LinkedIn   Facebook   Pinterest   Share"
+          }
+        ],
+        "category": [
+          "tips-tech",
+          "cd",
+          "ci",
+          "git",
+          "vcs"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/da84a171c9ddc778b23e44f817b666ec?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Raja Nagendra Kumar"
+        ],
+        "url": [
+          "http://www.tejasoft.com"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/f065ee37a0ee7c3ae669b036fa022fec?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Marcos Rossini"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/b4bd40b10957af13901f5497b6e56298?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Joshua W Goodrich"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/107c31d3b2899fc246b597e3b07f1309?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Trisha Gee"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/e1678cd805cc148f40f9eaa33be3ec99?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Craig M"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/65181251503b830eb7ede20c28f9c497?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "David Levine"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/107c31d3b2899fc246b597e3b07f1309?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Trisha Gee"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/098f82304fe5b1d0c92af248d86fce37?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Daniel Sturm"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/fd31ec80478a31167be81b9e81add45c?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Daniel Sturm"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/da1a4b55b66d615931c62df86f67b989?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Mark Rummler"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/d5d8f94ec610e18a1e13fbbd362ebc09?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Olivier Mengu\u00e9"
+        ],
+        "url": [
+          "https://github.com/dolmen"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/8a61736c3f6b3e02b173c9aa6ce6ca8e?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Greg"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/107c31d3b2899fc246b597e3b07f1309?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Trisha Gee"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/6bdcfa430f49175e25eda96c8dd29cab?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "sg7"
+        ]
+      }
+    },
+    {
+      "type": [
+        "h-card"
+      ],
+      "properties": {
+        "photo": [
+          "https://secure.gravatar.com/avatar/8d3d1c834362da3b8f626b7851f1a159?s=100&d=mm&r=g"
+        ],
+        "name": [
+          "Daniel"
+        ]
+      }
+    }
+  ],
+  "rdfa": [
+    {
+      "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#a2apage_full_services",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#presentation"
+        }
+      ]
+    },
+    {
+      "@id": "_:N10c419287a4d48a2bc7c02afd64bbfc1",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#a2a_modal",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#dialog"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nd15cc0baa32744e5b1d0cbfc0aedbc1e",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N8dc7c679ad8147b195f30b5448b14719",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#wt-cli-privacy-save-btn",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N106f22fa85684ef39807c29422fd330c",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N28f28e9590884b2faab83f4a4e79d7d1",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N43cd86fcd78a4152a4a8def36944675f",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/",
+      "http://ogp.me/ns#description": [
+        {
+          "@value": "Trisha summarizes the advantages of trunk-based development (as opposed to branch-based development) in this blog post."
+        }
+      ],
+      "http://ogp.me/ns#image": [
+        {
+          "@value": "https://trishagee.com/wp-content/uploads/2023/05/tree.jpg"
+        }
+      ],
+      "http://ogp.me/ns#image:height": [
+        {
+          "@value": "795"
+        }
+      ],
+      "http://ogp.me/ns#image:type": [
+        {
+          "@value": "image/jpeg"
+        }
+      ],
+      "http://ogp.me/ns#image:width": [
+        {
+          "@value": "1600"
+        }
+      ],
+      "http://ogp.me/ns#locale": [
+        {
+          "@value": "en_US"
+        }
+      ],
+      "http://ogp.me/ns#site_name": [
+        {
+          "@value": "Trisha Gee"
+        }
+      ],
+      "http://ogp.me/ns#title": [
+        {
+          "@value": "Why I prefer trunk-based development - Trisha Gee"
+        }
+      ],
+      "http://ogp.me/ns#type": [
+        {
+          "@value": "article"
+        }
+      ],
+      "http://ogp.me/ns#url": [
+        {
+          "@value": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/"
+        }
+      ],
+      "http://ogp.me/ns/article#modified_time": [
+        {
+          "@value": "2023-05-29T15:43:21+00:00"
+        }
+      ],
+      "http://ogp.me/ns/article#published_time": [
+        {
+          "@value": "2023-05-29T15:31:36+00:00"
+        }
+      ],
+      "https://api.w.org/": [
+        {
+          "@id": "https://trishagee.com/wp-json/"
+        }
+      ]
+    },
+    {
+      "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#a2apage_full",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#dialog"
+        }
+      ]
+    },
+    {
+      "@id": "_:N5b2fd4549e9c4e77ab3f282a1372f3f6",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nf07fc994572b417cb9a94ffceac935b0",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#search"
+        }
+      ]
+    },
+    {
+      "@id": "_:N4c9e430bbdef4e0ea868b08c51e62b43",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:N9a61fa5b913449378d7fcb351b017949",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#document"
+        }
+      ]
+    },
+    {
+      "@id": "_:Ne426f7441da84f9383f29fcdcb4f2084",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N181823a42da04c109182ed727a1acf2e",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#cookie_action_close_header",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N1ee1a46266c64bf89b9993eb4415ddc6",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N9a933abade8e4d63812cd3f3270a4305",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N0a6a2309702d4d58ae868ec51f27d8be",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N392c9ad31fd8476caee48dd9e8b390a9",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "https://trishagee.com/2023/05/29/why-i-prefer-trunk-based-development/#cliSettingsPopup",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#dialog"
+        }
+      ]
+    },
+    {
+      "@id": "_:N2079f03dbcdb4e5e935df5ead996729b",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:N513be7f3d6b04701affc8556ab999398",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N452e417f856449d9a0c6256cd5f3353d",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nea1cb92e76e24aae82f321c2cc0ef36d",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N2d94c057d5f04b16a6be5989db4f6ac0",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N4269dfab44da473ba06ac715878e7628",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N790c321ace9043b88be2bb51eb102856",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N9c5c18614b594938a5021cfd0d93df52",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:N670d31c7f21746b09f64c4de834d65fa",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N5a4ddaff8cb042b3862eb8ed698512f0",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N7c4edb2d2350412484cc514154368444",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:N7374bab7096a4b7e879b54be814e6c8b",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:N6dedf57ca43e4990b7dc155df3fda543",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nbd5d4fbfa3f540bfbd92517f57b51de6",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:N51a183347a4f4c9091ba40e72180e621",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#button"
+        }
+      ]
+    },
+    {
+      "@id": "_:N76d37100059841b8afe2013be3f767ec",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#none"
+        }
+      ]
+    },
+    {
+      "@id": "_:N6c240618fc19415cb7da5ff08a43c75d",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N77bb9c2dda6d41acb9860be776f6b805",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:Ne498123ffbb34cf1a2de72a4d9a6ee4d",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N91f40c4df43646b9a0465ad37290c626",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nd30912aafa2b45dd94c95b72fb4f60c2",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:Nb293a0a869cb4715ae56c1dc3c069c4e",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N4783088e449e437ea468428406adbe2a",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:Na812fa7445224f32b9939faba75ac6b5",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N6fc8da4f1ef44fe08135f2261e3edbbd",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N738e31937c31448fa2376f789b1cbf38",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    },
+    {
+      "@id": "_:N9f4ece91ec5647a39669d32b23ff2082",
+      "http://www.w3.org/1999/xhtml/vocab#role": [
+        {
+          "@id": "http://www.w3.org/1999/xhtml/vocab#img"
+        }
+      ]
+    }
+  ],
+  "dublincore": [
+    {
+      "namespaces": {},
+      "elements": [
+        {
+          "content": "Trisha summarizes the advantages of trunk-based development (as opposed to branch-based development) in this blog post.",
+          "name": "description",
+          "URI": "http://purl.org/dc/elements/1.1/description"
+        }
+      ],
+      "terms": []
+    }
+  ],
+  "html": [
+    {
+      "title": "Why I prefer trunk-based development - Trisha Gee",
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+      "description": "Trisha summarizes the advantages of trunk-based development (as opposed to branch-based development) in this blog post.",
+      "author": "Trisha Gee",
+      "generator": "WordPress 6.2.2",
+      "msapplication-TileImage": "https://trishagee.com/wp-content/uploads/2020/09/cropped-tg-270x270.png"
+    }
+  ],
+  "twitter": [
+    {
+      "card": "summary_large_image",
+      "label1": "Written by",
+      "data1": "Trisha Gee",
+      "label2": "Est. reading time",
+      "data2": "6 minutes"
+    }
+  ],
+  "github": {
+    "keywords": []
+  }
+}

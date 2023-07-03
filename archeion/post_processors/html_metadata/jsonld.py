@@ -141,6 +141,9 @@ def contextify_authors(authors: list, context_url: str, master_index: dict) -> l
             author_ctx = {"type": "Person", "name": str(author)}
 
         if "type" in author_ctx:
+            if isinstance(author_ctx["type"], list):
+                author_ctx["type"] = author_ctx["type"][0]
+
             author_ctx["type"] = contextify(context_url, author_ctx["type"])
 
         output.append(author_ctx)

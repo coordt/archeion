@@ -21,7 +21,7 @@ def process_microdata_data(data: dict) -> dict:
         "publisher": [],
         "keywords": set(),
         "datePublished": None,
-        "source": data["properties"].get("url"),
+        "source": data.get("properties", {}).get("url"),
         "sourceEncodingFormat": "text/html",
     }
 
