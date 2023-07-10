@@ -16,8 +16,8 @@ def test_add_links_no_links(mocker, capsys):
     captured = capsys.readouterr()
     output = [line.rstrip() for line in captured.out.splitlines()]
     assert output == [
-        "ℹ Parsing input",
-        "  ℹ Parsed 0 URLs from input",
+        "i Parsing input",
+        "  i Parsed 0 URLs from input",
     ]
     assert len(links) == 0
     assert Link.objects.count() == 0
@@ -33,9 +33,9 @@ def test_add_links_url(mocker, capsys):
     captured = capsys.readouterr()
     output = [line.rstrip() for line in captured.out.splitlines()]
     assert output == [
-        "ℹ Parsing input",
-        "  ℹ Parsed 1 URLs from input",
-        "  ℹ Found 1 new URLs not already in index",
+        "i Parsing input",
+        "  i Parsed 1 URLs from input",
+        "  i Found 1 new URLs not already in index",
     ]
     assert len(links) == 1
     assert Link.objects.count() == 1
@@ -50,9 +50,9 @@ def test_add_links_urllist(mocker, capsys, fixture_dir):
     captured = capsys.readouterr()
     output = [line.rstrip() for line in captured.out.splitlines()]
     assert output == [
-        "ℹ Parsing input",
-        "  ℹ Parsed 8 URLs from input",
-        "  ℹ Found 8 new URLs not already in index",
+        "i Parsing input",
+        "  i Parsed 8 URLs from input",
+        "  i Found 8 new URLs not already in index",
     ]
     assert len(links) == 8
     assert Link.objects.count() == 8
@@ -69,12 +69,12 @@ def test_add_links_url_already_in_archive(mocker, capsys):
     captured = capsys.readouterr()
     output = [line.rstrip() for line in captured.out.splitlines()]
     assert output == [
-        "ℹ Parsing input",
-        "  ℹ Parsed 1 URLs from input",
-        "  ℹ Found 1 new URLs not already in index",
-        "ℹ Parsing input",
-        "  ℹ Parsed 1 URLs from input",
-        "  ℹ Found 0 new URLs not already in index",
+        "i Parsing input",
+        "  i Parsed 1 URLs from input",
+        "  i Found 1 new URLs not already in index",
+        "i Parsing input",
+        "  i Parsed 1 URLs from input",
+        "  i Found 0 new URLs not already in index",
     ]
     assert len(links_1) == 1
     assert len(links_2) == 0
@@ -90,9 +90,9 @@ def test_add_links_index_only(mocker, capsys):
     captured = capsys.readouterr()
     output = [line.rstrip() for line in captured.out.splitlines()]
     assert output == [
-        "ℹ Parsing input",
-        "  ℹ Parsed 1 URLs from input",
-        "  ℹ Found 1 new URLs not already in index",
+        "i Parsing input",
+        "  i Parsed 1 URLs from input",
+        "  i Found 1 new URLs not already in index",
     ]
     assert len(links) == 1
     assert Link.objects.count() == 1
@@ -107,9 +107,9 @@ def test_add_links_specific_archiver(mocker, capsys):
     captured = capsys.readouterr()
     output = [line.rstrip() for line in captured.out.splitlines()]
     assert output == [
-        "ℹ Parsing input",
-        "  ℹ Parsed 1 URLs from input",
-        "  ℹ Found 1 new URLs not already in index",
+        "i Parsing input",
+        "  i Parsed 1 URLs from input",
+        "  i Found 1 new URLs not already in index",
     ]
     assert len(links) == 1
     assert Link.objects.count() == 1
