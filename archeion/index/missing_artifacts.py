@@ -1,8 +1,9 @@
-from archeion.index.models import Link, Artifact
+from archeion.index.models import Artifact, Link
 
 
 def get_existing_artifacts() -> dict:
     from collections import defaultdict
+
     artifacts = Artifact.objects.values_list("link_id", "plugin_name").order_by("link_id")
     artifact_map = defaultdict(set)
     for item in artifacts:
