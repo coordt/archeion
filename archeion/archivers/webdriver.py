@@ -7,6 +7,7 @@ from distlib.util import cached_property
 from django.utils import timezone
 from selenium.common import WebDriverException
 from selenium.webdriver import Remote
+from selenium.webdriver.chrome.service import Service
 from seleniumwire.webdriver import Chrome, ChromeOptions
 from webdriver_manager.chrome import ChromeDriverManager
 
@@ -29,13 +30,16 @@ class WebDriverArchiver:
         for arg in self.args:
             self.options.add_argument(arg)
         self.exec_path = ChromeDriverManager().install()
+        self.service = Service(executable_path=self.exec_path)
+
         self.config = config
 
     @cached_property
     def is_valid(self) -> bool:
         """Make sure the requested WebDriver is installed and ready."""
         try:
-            with self.driver(self.exec_path, options=self.options):
+            # with self.driver(self.exec_path, options=self.options):
+            with self.driver(service=self.service, options=self.options):
                 return True
         except WebDriverException:
             return False
@@ -51,7 +55,7 @@ class WebDriverArchiver:
         if not self.is_valid:
             return f"{selenium.__version__} (Not installed)"
 
-        with self.driver(self.exec_path, options=self.options) as driver:
+        with self.driver(service=self.service, options=self.options) as driver:
             return f"{selenium.__version__} ({driver.caps['browserVersion']})"
 
     @cached_property
@@ -101,7 +105,8 @@ class WebDriverArchiver:
         artifact.start_ts = timezone.now()
         info(f"{self.plugin_name}: Downloading {artifact.link.url}...", left_indent=4)
         try:
-            with self.driver(self.exec_path, options=self.options) as driver:  # pragma: no-cover
+            # with self.driver(self.exec_path, chrome_options=self.options) as driver:  # pragma: no-cover
+            with self.driver(service=self.service, options=self.options) as driver:  # pragma: no-cover
                 driver.implicitly_wait(10)  # seconds
                 driver.set_page_load_timeout(10)  # seconds
                 driver.set_script_timeout(10)  # seconds

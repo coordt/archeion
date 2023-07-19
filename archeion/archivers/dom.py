@@ -1,14 +1,13 @@
 """Download the DOM of the link."""
 import os
 
-from django.core.exceptions import SuspiciousFileOperation
 from django.core.files.base import ContentFile
 from selenium.webdriver import Remote
 
 from archeion.archivers.webdriver import WebDriverArchiver
 from archeion.index.models import Artifact, ArtifactStatus
-from archeion.index.storage import get_artifact_storage
-from archeion.logging import error, info, success
+from archeion.index.storage import save_artifact_file
+from archeion.logging import info
 
 
 class DOMArchiver(WebDriverArchiver):
@@ -32,14 +31,9 @@ class DOMArchiver(WebDriverArchiver):
         info(f"Saving {self.plugin_name}...", left_indent=4)
         artifact.output_path = self.config.get("path", "dom.html")
 
-        try:
-            storage = get_artifact_storage()
-            filepath = os.path.join(artifact.link.archive_path, artifact.output_path)
-            storage.save(filepath, ContentFile(driver.page_source))
-            artifact.status = ArtifactStatus.SUCCEEDED
-            success(f"Saved {self.plugin_name} to {filepath}", left_indent=4)
-        except SuspiciousFileOperation as e:  # pragma: no coverage
-            artifact.status = ArtifactStatus.FAILED
-            error([f"{self.plugin_name} failed:", e])
+        filepath = os.path.join(artifact.link.archive_path, artifact.output_path)
+        content = ContentFile(driver.page_source)
+        successful = save_artifact_file(filepath, content, self.plugin_name)
+        artifact.status = ArtifactStatus.SUCCEEDED if successful else ArtifactStatus.FAILED
 
         return artifact
