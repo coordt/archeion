@@ -1,12 +1,14 @@
 """Search interface for Archeion."""
 from importlib import import_module
-from typing import List, Protocol
+from typing import List, Protocol, Tuple
 
 from django.conf import settings
 from django.db.models import QuerySet
 
-from archeion.index.models import Artifact, Link
+from archeion.index.models import Link
 from archeion.logging import error
+
+SearchResult = Tuple[str, float]
 
 
 class SearchBackend(Protocol):
@@ -15,17 +17,11 @@ class SearchBackend(Protocol):
     def __init__(self, config: dict):
         ...
 
-    def index_link(self, link_id: str, tags: List[str]) -> None:
-        """
-        Index the tags for the link_id.
-        """
+    def index(self, link_id: str, content: str) -> None:
+        """Index the content for a link."""
         ...
 
-    def index_artifact(self, artifact_id: str, link_id: str, content: str) -> None:
-        """Index the content for an artifact/link combination."""
-        ...
-
-    def search(self, query: str) -> List[str]:
+    def search(self, query: str, limit: int = 1000) -> List[SearchResult]:
         """
         Return a list of Link IDs of all the results for the given query.
         """
@@ -43,23 +39,26 @@ def get_search_backend() -> SearchBackend:
         raise ImportError(f"Unable to load search backend {class_name}: {e}") from e
 
 
-def index_link(link: Link) -> None:
-    """Index the attributes of the given Link."""
-    search_backend = get_search_backend()
-    search_backend.index_link(link.id, link.tags)
-
-
-def index_artifact(artifact: Artifact, content: str) -> None:
+def index(link_id: str, content: str) -> None:
     """Index the content of the given Artifact."""
+    # TODO: Allow updating the index
     search_backend = get_search_backend()
-    search_backend.index_artifact(artifact_id=artifact.id, link_id=artifact.link_id, content=content)
+    search_backend.index(link_id, content)
+
+
+def delete(link_id: str) -> None:
+    """Delete the content of the given Link."""
+    # TODO: implement the deleting process
+    pass
 
 
 def search(query: str) -> QuerySet:
     """Search the index and return a QuerySet of Link IDs."""
     search_backend = get_search_backend()
-    link_ids = search_backend.search(query)
-    if link_ids:
+    search_results = search_backend.search(query)
+    if search_results:
+        # TODO: Actually sort by rank
+        link_ids = [link_id for link_id, _ in search_results]
         return Link.objects.filter(pk__in=link_ids)
 
     return Link.objects.none()

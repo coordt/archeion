@@ -66,6 +66,7 @@ ignore = [
     "S101", "S104",
     "D105", "D106", "D107", "D200", "D212",
     "PD011",
+    "RUF012",
 ]
 
 # Allow autofix for all enabled rules (when `--fix`) is provided.

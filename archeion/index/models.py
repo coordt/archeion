@@ -1,10 +1,13 @@
 """Models for keeping track of links and the artifacts generated from them."""
+
+import contextlib
 import os
-from typing import Any
+from typing import Any, Union
 from urllib.parse import urlparse
 
 import httpx
 from django.core.cache import cache
+from django.core.exceptions import SuspiciousOperation
 from django.db import models
 from django.db.models import F
 from django.db.models.signals import m2m_changed
@@ -15,6 +18,7 @@ from django_extensions.db.fields import AutoSlugField
 from shortuuid.django_fields import ShortUUIDField
 
 from archeion.index.storage import get_artifact_storage
+from archeion.logging import error
 from archeion.utils import IterableEncoder, get_dir_size, model_slugify
 
 
@@ -169,12 +173,15 @@ class Link(models.Model):
         """
         Describe why you are overriding the save method here.
         """
+        from archeion.index.model_functions import save_link_data
+
         if not self.parsed_url:
             self.parsed_url = urlparse(self.url)
 
         if self.content_type is None:
-            result = httpx.head(self.url, follow_redirects=True)
-            self.content_type = result.headers["Content-Type"] if result.status_code == 200 else None
+            with contextlib.suppress(httpx.ConnectError, httpx.ConnectTimeout):
+                result = httpx.head(self.url, follow_redirects=True)
+                self.content_type = result.headers["Content-Type"] if result.status_code == 200 else None
 
         if not self.archive_path:
             self.archive_path = self.id
@@ -184,8 +191,22 @@ class Link(models.Model):
 
         if not self.favicon_url:
             self.favicon_url = f"https://www.google.com/s2/favicons?domain={self.parsed_url.netloc}"
-
+        try:
+            save_link_data(self)
+        except (SuspiciousOperation, ValueError) as e:
+            error(f"Failed to save link data. {e}")
         super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs) -> None:
+        """Delete the link and its artifacts."""
+        storage = get_artifact_storage()
+        for artifact in self.artifacts.all():
+            artifact.delete()
+        if storage.exists(f"{self.archive_path}/index.yaml"):
+            storage.delete(f"{self.archive_path}/index.yaml")
+        if storage.exists(self.archive_path):
+            storage.delete(self.archive_path)
+        super().delete(*args, **kwargs)
 
     @cached_property
     def archive_size(self) -> int:
@@ -210,8 +231,8 @@ class Link(models.Model):
         if not self.ld_type and "type" in metadata:
             self.ld_type = metadata.get("type", None)
 
-        if not self.title and "headline" in metadata:
-            self.title = metadata["headline"][:255]
+        if not self.title and metadata.get("headline", ""):
+            self.title = metadata.get("headline", "")[:255]
 
 
 class ArtifactStatus(models.TextChoices):
@@ -295,6 +316,12 @@ class Artifact(models.Model):
     def __str__(self) -> str:
         return self.plugin_name
 
+    def delete(self, using: Any = None, keep_parents: bool = False) -> None:
+        """Clean up the files when deleting the artifact."""
+        with contextlib.suppress(FileNotFoundError):
+            get_artifact_storage().delete(self.archive_output_path)
+        super().delete(using=using, keep_parents=keep_parents)
+
     def get_absolute_url(self) -> str:
         """Return the absolute URL of the artifact."""
         return reverse("artifact-detail", kwargs={"link_id": self.link_id, "slug": self.plugin_name})
@@ -303,6 +330,18 @@ class Artifact(models.Model):
     def archive_output_path(self) -> str:
         """Return the full path to the output file."""
         return os.path.join(self.link.archive_path, self.output_path)
+
+    @property
+    def content(self) -> Union[str, bytes]:
+        """Return the content of the artifact."""
+        import mimetypes
+
+        mtype = mimetypes.guess_type(self.archive_output_path)[0]
+        is_text = mtype and mtype.startswith("text/")
+        mode = "r" if is_text else "rb"
+
+        with get_artifact_storage().open(self.archive_output_path, mode) as f:
+            return f.read()
 
 
 def m2m_save_listener(

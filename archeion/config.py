@@ -193,7 +193,7 @@ class SearchSettings(BaseSettings):
 class Settings(BaseSettings):
     """Configurations for Archeion."""
 
-    server_config: ServerSettings = Field(default_factory=ServerSettings)
+    server_config: ServerSettings = Field(default_factory=ServerSettings)  # type: ignore[arg-type]
     search_config: SearchSettings = Field(default_factory=SearchSettings)
     archive_root: Path
     artifact_storage: str
