@@ -1,4 +1,5 @@
 """URL route definitions for the application."""
+
 import mimetypes
 
 from django.conf import settings

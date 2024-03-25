@@ -1,4 +1,5 @@
 """Functions to transform HTML to other formats."""
+
 from copy import deepcopy
 from functools import cached_property
 from pathlib import Path
@@ -19,8 +20,7 @@ class PostProcessorPlugin(Protocol):  # pragma: no cover
     plugin_name: str
     extracts_from_plugin: str
 
-    def __init__(self, config: dict, *args, **kwargs):
-        ...
+    def __init__(self, config: dict, *args, **kwargs): ...
 
     @cached_property
     def is_valid(self) -> bool:

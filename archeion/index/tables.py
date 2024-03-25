@@ -1,4 +1,5 @@
 """Tables for listing the models in HTML."""
+
 from typing import Any
 
 import django_filters

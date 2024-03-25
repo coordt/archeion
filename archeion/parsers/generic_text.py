@@ -1,4 +1,5 @@
 """Parser for URLs in text files."""
+
 import os
 import re
 from pathlib import Path

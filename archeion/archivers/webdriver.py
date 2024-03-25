@@ -1,4 +1,5 @@
 """Download a link using Selenium WebDriver."""
+
 from pathlib import Path
 from typing import Optional
 

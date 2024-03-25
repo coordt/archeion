@@ -1,4 +1,5 @@
 """Tests for the URL list link parser."""
+
 from pathlib import Path
 
 import pytest

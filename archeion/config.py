@@ -1,4 +1,5 @@
 """Configuration setup for Archeion."""
+
 from copy import deepcopy
 from pathlib import Path, PosixPath, WindowsPath
 from typing import Any, Dict, List, Optional, Pattern

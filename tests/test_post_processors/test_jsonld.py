@@ -1,4 +1,5 @@
 """Tests for JSON-LD html_metadata."""
+
 import datetime
 import json
 from pathlib import Path
@@ -73,7 +74,7 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
                 ],
                 "keywords": set(),
                 "datePublished": dateutil.parser.isoparse("2021-07-11T01:15:44.247Z"),
-                "source": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",  # noqa: E501
+                "source": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",
                 "encodingFormat": "text/html",
                 "sourceEncodingFormat": "text/html",
             },

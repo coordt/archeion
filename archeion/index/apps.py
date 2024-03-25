@@ -1,4 +1,5 @@
 """Application entry point."""
+
 from django.apps import AppConfig
 
 

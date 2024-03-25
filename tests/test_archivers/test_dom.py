@@ -1,4 +1,5 @@
 """Tests for the DOM archiver plugin."""
+
 import asyncio
 from pathlib import Path
 

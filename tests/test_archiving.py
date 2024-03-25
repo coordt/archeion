@@ -1,4 +1,5 @@
 """Tests for automated archiving of a URL."""
+
 import pytest
 
 from archeion import archive

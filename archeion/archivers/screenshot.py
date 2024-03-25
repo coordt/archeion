@@ -1,4 +1,5 @@
 """Save a screenshot of the link."""
+
 import os
 import subprocess
 
@@ -18,7 +19,7 @@ def optimize_png(img_data: bytes) -> bytes:
     """Optimize the PNG image data to reduce the file size."""
     # TODO: Add pngquant to dependency checker and use existing functions.
     cmd = ["pngquant", "--strip", "--quality", "70-95", "-"]
-    result = subprocess.run(cmd, input=img_data, capture_output=True)  # noqa: S603
+    result = subprocess.run(cmd, input=img_data, capture_output=True, check=False)  # noqa: S603
     return result.stdout if len(img_data) > len(result.stdout) else img_data
 
 

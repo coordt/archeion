@@ -1,4 +1,5 @@
 """Search interface for Archeion."""
+
 from importlib import import_module
 from typing import List, Protocol, Tuple
 
@@ -14,8 +15,7 @@ SearchResult = Tuple[str, float]
 class SearchBackend(Protocol):
     """The minimum expected interface for a search backend."""
 
-    def __init__(self, config: dict):
-        ...
+    def __init__(self, config: dict): ...
 
     def index(self, link_id: str, content: str) -> None:
         """Index the content for a link."""

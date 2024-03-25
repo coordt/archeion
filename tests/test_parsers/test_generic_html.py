@@ -1,4 +1,5 @@
 """Tests for the generic HTML link parser."""
+
 from pathlib import Path
 
 import pytest

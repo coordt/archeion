@@ -1,4 +1,5 @@
 """Gather and normalize HTML html_metadata."""
+
 import logging
 from collections import ChainMap
 from datetime import datetime, timezone

@@ -1,4 +1,5 @@
 """Download the DOM of the link."""
+
 import os
 
 from django.core.files.base import ContentFile

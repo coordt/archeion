@@ -1,4 +1,5 @@
 """Test json2html.py."""
+
 import pytest
 from pytest import param
 

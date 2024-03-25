@@ -1,4 +1,5 @@
 """JSON-LD parsing."""
+
 import json
 from collections import ChainMap
 from typing import List, Optional

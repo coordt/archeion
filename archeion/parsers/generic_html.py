@@ -1,4 +1,5 @@
 """Parse an HTML document for its links."""
+
 from html.parser import HTMLParser
 from typing import List, Optional, Tuple
 from urllib.parse import urljoin

@@ -1,4 +1,5 @@
 """A long list of stopwords to ignore when tokenizing."""
+
 STOPWORDS = (
     "able",
     "about",

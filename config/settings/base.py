@@ -1,6 +1,7 @@
 """
 Base settings to build other settings files upon.
 """
+
 from pathlib import Path
 
 from environs import Env, _dj_cache_url_parser, _dj_db_url_parser

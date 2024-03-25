@@ -1,4 +1,5 @@
 """Plugins for archiving a link or extracting data from a link."""
+
 import logging
 from copy import deepcopy
 from pathlib import Path
@@ -21,8 +22,7 @@ class ArchivePlugin(Protocol):  # pragma: no cover
 
     plugin_name: str
 
-    def __init__(self, config: dict, *args, **kwargs):
-        ...
+    def __init__(self, config: dict, *args, **kwargs): ...
 
     @cached_property
     def is_valid(self) -> bool:

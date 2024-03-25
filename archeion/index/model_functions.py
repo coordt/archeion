@@ -1,4 +1,5 @@
 """Functions that provide service to one or more models."""
+
 from archeion.index.models import ArtifactStatus, Link
 from archeion.index.storage import get_artifact_storage
 

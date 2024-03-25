@@ -1,15 +1,15 @@
 """Migrate a project from the old format to the new format."""
+
+import datetime
 import functools
 import shutil
-from pathlib import Path
 import sqlite3
+from collections import namedtuple
+from pathlib import Path
 from typing import Callable
 from urllib.parse import urlparse
-import datetime
-from archeion.index.models import Link, Artifact
 
-
-from collections import namedtuple
+from archeion.index.models import Artifact, Link
 
 
 def namedtuple_factory(cursor, row):
@@ -84,9 +84,13 @@ def convert_snapshots(old_snapshots: list, get_archive_results: Callable, src_pa
                 defaults={
                     "output_path": output_map[archiveresult.output],
                     "status": archiveresult.status,
-                    "start_ts": datetime.datetime.fromisoformat(archiveresult.start_ts).replace(tzinfo=datetime.timezone.utc),
-                    "end_ts": datetime.datetime.fromisoformat(archiveresult.end_ts).replace(tzinfo=datetime.timezone.utc),
-                }
+                    "start_ts": datetime.datetime.fromisoformat(archiveresult.start_ts).replace(
+                        tzinfo=datetime.timezone.utc
+                    ),
+                    "end_ts": datetime.datetime.fromisoformat(archiveresult.end_ts).replace(
+                        tzinfo=datetime.timezone.utc
+                    ),
+                },
             )
             from_path = src_path.joinpath(f"{snapshot.timestamp}/{archiveresult.output}")
             to_path = link_path / output_map[archiveresult.output]

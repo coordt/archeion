@@ -228,12 +228,12 @@ yoast2_jsonld = {
             "id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081",
             "image": {
                 "caption": "Trisha Gee",
-                "contentUrl": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "contentUrl": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",
                 "height": 250,
                 "id": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
                 "inLanguage": "en-US",
                 "type": "ImageObject",
-                "url": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "url": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",
                 "width": 565,
             },
             "logo": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
@@ -251,12 +251,12 @@ yoast2_jsonld = {
             "id": "https://trishagee.com/#/schema/person/4737d3294c02a8c1b44e08946d0c6081",
             "image": {
                 "caption": "Trisha Gee",
-                "contentUrl": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "contentUrl": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",
                 "height": 250,
                 "id": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
                 "inLanguage": "en-US",
                 "type": "ImageObject",
-                "url": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",  # NOQA: E501
+                "url": "https://trishagee.com/wp-content/uploads/2022/09/cropped-TRISHA-GEE-NEGATIVE-transparent-1.png",
                 "width": 565,
             },
             "logo": "https://trishagee.com/#/schema/person/image/be51a6d663f3c07c984f3a770818f583",
