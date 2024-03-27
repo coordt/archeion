@@ -1,4 +1,5 @@
 """Methods for parsing links from input sources."""
+
 from pathlib import Path
 from typing import Callable, List
 

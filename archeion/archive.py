@@ -1,4 +1,5 @@
 """Methods for archiving Links into the index."""
+
 import asyncio
 from typing import List, Optional
 

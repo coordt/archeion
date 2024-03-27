@@ -1,4 +1,5 @@
 """Admin classes for the index app."""
+
 from typing import Any, List
 
 from django.conf import settings

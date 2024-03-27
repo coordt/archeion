@@ -1,4 +1,5 @@
 """Artifact storage functions."""
+
 from pathlib import Path
 
 from django.core.exceptions import SuspiciousFileOperation

@@ -1,4 +1,5 @@
 """Tests for GitHub tag parsing."""
+
 from pathlib import Path
 
 from archeion.post_processors.html_metadata import github

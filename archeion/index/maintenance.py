@@ -1,4 +1,5 @@
 """Functions to maintain the archive and index."""
+
 from typing import List, Tuple
 
 from django.core.files.storage import Storage

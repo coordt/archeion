@@ -1,4 +1,5 @@
 """Tests for microdata html_metadata."""
+
 import datetime
 import json
 from pathlib import Path

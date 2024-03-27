@@ -14,6 +14,7 @@ Contributors:
 LICENSE: MIT
 --------
 """
+
 import json as json_parser
 from collections import OrderedDict
 from html import escape as html_escape

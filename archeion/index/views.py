@@ -1,4 +1,5 @@
 """External views for the index app."""
+
 from typing import Any
 
 from django.conf import settings

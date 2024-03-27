@@ -1,4 +1,5 @@
 """Archive the link using the singlepage CLI utility."""
+
 import json
 import os
 import shutil

@@ -1,4 +1,5 @@
 """Tests of catalog.extract_html."""
+
 import json
 from json import JSONEncoder
 from pathlib import Path

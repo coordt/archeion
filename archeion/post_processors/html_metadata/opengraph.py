@@ -1,6 +1,7 @@
 """
 Open Graph processing.
 """
+
 from collections import defaultdict
 
 import dateutil

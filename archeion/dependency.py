@@ -1,4 +1,5 @@
 """External binary dependency management."""
+
 import importlib.resources
 import shutil
 import subprocess  # nosec B404

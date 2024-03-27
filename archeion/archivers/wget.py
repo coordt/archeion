@@ -1,4 +1,5 @@
 """Archive a link using wget."""
+
 from functools import cached_property
 from pathlib import Path
 from typing import Optional

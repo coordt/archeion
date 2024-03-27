@@ -1,4 +1,5 @@
 """Tests the adding of links to the archive."""
+
 import pytest
 from httpx import Response
 

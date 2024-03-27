@@ -1,4 +1,5 @@
 """Tests for Open Graph html_metadata."""
+
 import datetime
 import json
 from pathlib import Path
@@ -76,7 +77,7 @@ METADATA_DIR = Path(__file__).parent.parent / "fixtures" / "html-metadata"
                 "publisher": [{"type": "https://schema.org/Organization", "name": "Medium"}],
                 "keywords": set(),
                 "datePublished": dateutil.parser.isoparse("2021-07-21T17:53:30.905Z"),
-                "source": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",  # noqa: E501
+                "source": "https://uxdesign.cc/how-to-design-data-visualizations-that-are-actually-valuable-e8b752835b9a",
                 "encodingFormat": "text/html",
                 "sourceEncodingFormat": "text/html",
             },

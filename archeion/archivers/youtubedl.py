@@ -1,4 +1,5 @@
 """Download content from YouTube."""
+
 from pathlib import Path
 from typing import Optional
 

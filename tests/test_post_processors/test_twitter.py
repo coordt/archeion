@@ -1,4 +1,5 @@
 """Tests for Twitter html_metadata."""
+
 import datetime
 import json
 from pathlib import Path

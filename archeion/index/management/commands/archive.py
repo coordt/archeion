@@ -1,4 +1,5 @@
 """Archives any pending or failed Artifacts."""
+
 from argparse import ArgumentParser
 
 from asgiref.sync import async_to_sync

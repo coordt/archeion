@@ -1,4 +1,5 @@
 """Modified from https://github.com/scrapinghub/extruct ."""
+
 import logging
 from typing import Any, Iterable, List, Optional, Protocol, Tuple
 

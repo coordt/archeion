@@ -1,4 +1,5 @@
 """User views."""
+
 from typing import Any, Optional
 
 from django.contrib.auth import get_user_model

@@ -1,4 +1,5 @@
 """Test tag models."""
+
 import pytest
 
 from ..factories import LinkFactory, TagFactory

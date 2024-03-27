@@ -1,4 +1,5 @@
 """Run post-processing methods on all DOM artifacts."""
+
 from typing import Any
 
 from django.core.management.base import BaseCommand

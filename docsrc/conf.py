@@ -1,13 +1,14 @@
 """
 Sphinx configuration.
 """
+
 import os
 import sys
 from datetime import date
 
 sys.path.insert(0, os.path.abspath(".."))
 
-import archeion  # noqa: E402
+import archeion
 
 project = "archeion"
 copyright = f"{date.today():%Y}, C H Robinson"

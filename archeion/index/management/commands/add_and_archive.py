@@ -1,4 +1,5 @@
 """Add and archive a URL or list of URLs."""
+
 from argparse import ArgumentParser
 
 from django.core.management.base import BaseCommand

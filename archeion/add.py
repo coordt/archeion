@@ -1,4 +1,5 @@
 """Add a link to the archive."""
+
 from typing import List, Optional
 
 from archeion.archivers import get_default_archivers

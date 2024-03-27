@@ -1,4 +1,5 @@
 """Initialize the archive."""
+
 from django.core.management.base import BaseCommand
 
 

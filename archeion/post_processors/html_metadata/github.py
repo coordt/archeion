@@ -1,4 +1,5 @@
 """Pulling tags from github pages."""
+
 from bs4 import BeautifulSoup
 
 

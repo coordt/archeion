@@ -1,4 +1,5 @@
 """Clone a git repo."""
+
 import urllib.parse
 from pathlib import Path
 from typing import Optional
